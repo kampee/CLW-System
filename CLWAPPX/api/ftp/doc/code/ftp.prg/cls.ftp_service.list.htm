@@ -1,0 +1,499 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+<head>
+<title>Method List of class FTP_SERVICE</title>
+<meta content="text/html; charset=windows-1250" http-equiv="Content-Type" />
+<meta name="Generator" content="Project Documenting Machine" />
+<meta name="Version" content="1.2.3" />
+<link rel="stylesheet" href="../../css/foxw.css" type="text/css" />
+<link rel="stylesheet" href="../../css/sc.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diamp_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab_notes.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diaf_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diap_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diac_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/ftp.css" type="text/css" />
+<script src="../../js/pdm.js" language="JavaScript" type="text/javascript"></script>
+<script src="../../repository/pdm_ab.js" language="JavaScript" type="text/javascript"></script>
+</head>
+<body>
+<div class="diaxp_mhead">List Method</div>
+<div class="diaxp_mbody_class">
+
+<table class="clear_table">
+ <tbody>
+  <tr><td>Class: </td><td><a href="cls.ftp_service.htm" title="Skip to class ftp_service">FTP_SERVICE</a></td></tr>
+ </tbody>
+</table>
+</div>
+<div class="diaxp_mbody">
+<!-- Created with _diamp_pdm_ab by Agnes Beste    03.09.2007 19:34 -->
+ <div class="PDM_AB_Descr"><!-- Descr Begin -->
+Get detail list of folders and files.
+ </div><!-- Descr End -->
+
+ <div class="DIAMP_PDM_AB_Syntax"><!-- Syntax Begin -->
+  <div class="SColor">
+   <div class="RetVal"><a href="#_26715Y51Q">RetVal</a>&nbsp;</div>   <div class="RetValEq">=</div>   <div class="PEM">
+    Object.List
+   </div>
+   <div class="Para">
+    (@<a href="#_26715Y51R">luData</a>
+     <wbr />,<a href="#_26715Y51S">lcMask</a>
+     [<wbr />,<a href="#_26715Y51T">liFlags</a>
+     [<wbr />,<a href="#_26715Y51U">lnFlag</a>]])
+   </div>
+   <div style="clear: both"></div>
+  </div><!-- Colour End -->
+ </div><!-- Syntax End -->
+
+ <div class="DIAMP_PDM_AB_Params"><!-- Parameters Begin -->
+  <span class="PDM_AB_Head">
+   Parameter
+  </span>
+  <dl class="DIAMP_PDM_AB_Params_List">
+   <dt class="dt_">
+    <a class="DIAMP_PDM_AB_Params_ParaName" id="_26715Y51R" name="_26715Y51R">
+     <span class="PDMEXPR PDMNor" ><span class='PDMVar'>luData</span></span>
+
+    </a>
+   </dt>
+   <dd class="dd_">
+    <span class="Params_Short">
+     Local file name, string or array
+    </span>
+    <table class="Params_Info">
+     <colgroup>
+      <col class="ColumnValue" />
+      <col class="ColumnData" />
+     </colgroup>
+     <tbody>
+      <tr>
+       <td class="CellValue">Type</td>
+       <td class="CellData">Character/Array</td>
+      </tr>
+      <tr>
+       <td class="CellValue">By reference</td>
+       <td class="CellData">&nbsp;</td>
+      </tr>
+      <tr>
+       <td class="CellValue">Direction</td>
+       <td class="CellData">Input</td>
+      </tr>
+     </tbody>
+    </table>
+    <span class="Params_Detail">
+This parameter is depends on parameter <a class="DIAMP_PDM_AB_Para_Link" href="#_26715Y51T">liFlags</a>.
+ For more informations see to example part.
+   <!-- Note -->
+
+   <div class="PDM_AB_nExclamation">
+    <div class="Block_Picture">
+     <img class="NotePicture" title="" src="../../repository/excla.gif">
+    </div>
+    <div class="Block_Text">
+This parameter cannot be empty.
+    </div><!-- end of note text -->
+    <div style="clear: both"></div>
+   </div><!-- end of note -->
+
+If is parameter <a class="DIAMP_PDM_AB_Para_Link" href="#_26715Y51T">liFlags</a>
+<ul>
+ <li /><span class="PDMEXPR PDMNor" ><span class='PDMVar'>_FTPS_RWF_File</span></span>
+ - The parametr is file name. The result will be save as file.
+ <li /><span class="PDMEXPR PDMNor" ><span class='PDMVar'>_FTPS_RWF_String</span></span>
+ - The parameter is string and must be send by reference. The result will be save as string.
+ <li /><span class="PDMEXPR PDMNor" ><span class='PDMVar'>_FTPS_RWF_Array</span></span>
+ - The parameter is array and must be send by reference. The result will be save as array. Each row of array contain informations about a file or folder name.
+The format of array is:
+<table class="listvalues">
+ <tr class="Head"><td>Column</td><td>Description</td><td>Type</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>laArray</span><span class='PDMOper'>(</span><span class='PDMVar'>x</span><span class='PDMOper'>,</span><span class='PDMLit'>1</span><span class='PDMOper'>)</span></span>
+</td><td>File Attributes</td><td>String</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>laArray</span><span class='PDMOper'>(</span><span class='PDMVar'>x</span><span class='PDMOper'>,</span><span class='PDMLit'>2</span><span class='PDMOper'>)</span></span>
+</td><td>Links count</td><td>Number</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>laArray</span><span class='PDMOper'>(</span><span class='PDMVar'>x</span><span class='PDMOper'>,</span><span class='PDMLit'>3</span><span class='PDMOper'>)</span></span>
+</td><td>Owner</td><td>String</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>laArray</span><span class='PDMOper'>(</span><span class='PDMVar'>x</span><span class='PDMOper'>,</span><span class='PDMLit'>4</span><span class='PDMOper'>)</span></span>
+</td><td>Group</td><td>String</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>laArray</span><span class='PDMOper'>(</span><span class='PDMVar'>x</span><span class='PDMOper'>,</span><span class='PDMLit'>5</span><span class='PDMOper'>)</span></span>
+</td><td>File Size</td><td>Number</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>laArray</span><span class='PDMOper'>(</span><span class='PDMVar'>x</span><span class='PDMOper'>,</span><span class='PDMLit'>6</span><span class='PDMOper'>)</span></span>
+</td><td>File Last Write Time</td><td>DateTime</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>laArray</span><span class='PDMOper'>(</span><span class='PDMVar'>x</span><span class='PDMOper'>,</span><span class='PDMLit'>7</span><span class='PDMOper'>)</span></span>
+</td><td>File Name</td><td>String</td></tr>
+</table>
+   <!-- Note -->
+
+   <div class="PDM_AB_nInformation">
+    <div class="Block_Picture">
+     <img class="NotePicture" title="" src="../../repository/info.gif">
+    </div>
+    <div class="Block_Text">
+Parsing to array do after calling event <a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.afterlist.htm" title="Skip to method FTP_SERVICE::AfterList()">FTP_SERVICE::AfterList()</a>.
+    </div><!-- end of note text -->
+    <div style="clear: both"></div>
+   </div><!-- end of note -->
+
+</ul>
+
+    </span>
+   </dd>
+   <dt class="dt_">
+    <a class="DIAMP_PDM_AB_Params_ParaName" id="_26715Y51S" name="_26715Y51S">
+     <span class="PDMEXPR PDMNor" ><span class='PDMVar'>lcMask</span></span>
+
+    </a>
+   </dt>
+   <dd class="dd_">
+    <span class="Params_Short">
+     Mask for selecting folders and files
+    </span>
+    <table class="Params_Info">
+     <colgroup>
+      <col class="ColumnValue" />
+      <col class="ColumnData" />
+     </colgroup>
+     <tbody>
+      <tr>
+       <td class="CellValue">Type</td>
+       <td class="CellData">Character</td>
+      </tr>
+      <tr>
+       <td class="CellValue">Direction</td>
+       <td class="CellData">Input</td>
+      </tr>
+     </tbody>
+    </table>
+    <span class="Params_Detail">
+
+   <!-- Note -->
+
+   <div class="PDM_AB_nInformation">
+    <div class="Block_Picture">
+     <img class="NotePicture" title="" src="../../repository/info.gif">
+    </div>
+    <div class="Block_Text">
+Don't set this parameter if output is to array, because parser can failed at parsing.
+    </div><!-- end of note text -->
+    <div style="clear: both"></div>
+   </div><!-- end of note -->
+
+
+    </span>
+   </dd>
+   <dt class="dt_">
+    <a class="DIAMP_PDM_AB_Params_ParaName" id="_26715Y51T" name="_26715Y51T">
+     <span class="PDMEXPR PDMNor" ><span class='PDMVar'>liFlags</span></span>
+
+    </a>
+   </dt>
+   <dd class="dd_">
+    <span class="Params_Short">
+     Mode flags
+    </span>
+    <table class="Params_Info">
+     <colgroup>
+      <col class="ColumnValue" />
+      <col class="ColumnData" />
+     </colgroup>
+     <tbody>
+      <tr>
+       <td class="CellValue">Type</td>
+       <td class="CellData">Boolean</td>
+      </tr>
+      <tr>
+       <td class="CellValue">Direction</td>
+       <td class="CellData">Input</td>
+      </tr>
+      <tr>
+       <td class="CellValue">Optional</td>
+      <td class="CellData">&nbsp;</td>
+      </tr>
+     </tbody>
+    </table>
+    <span class="Params_Detail">
+
+This parameter define type of first parameter <a class="DIAMP_PDM_AB_Para_Link" href="#_26715Y51R">luData</a>.
+List of <a class="PDM_AB_See" href="../../others/ftp.h/main.htm" title="Skip to file types">types</a>
+<table class="listvalues">
+ <tr class="Head"><td>Value</td><td>Description</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>_FTPS_RWF_File</span></span>
+</td><td><a class="DIAMP_PDM_AB_Para_Link" href="#_26715Y51R">luData</a> is file name.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>_FTPS_RWF_String</span></span>
+</td><td><a class="DIAMP_PDM_AB_Para_Link" href="#_26715Y51R">luData</a> is string.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>_FTPS_RWF_Array</span></span>
+</td><td><a class="DIAMP_PDM_AB_Para_Link" href="#_26715Y51R">luData</a> is array.</td></tr>
+</table>
+
+    </span>
+   </dd>
+   <dt class="dt_">
+    <a class="DIAMP_PDM_AB_Params_ParaName" id="_26715Y51U" name="_26715Y51U">
+     <span class="PDMEXPR PDMNor" ><span class='PDMVar'>lnFlag</span></span>
+
+    </a>
+   </dt>
+   <dd class="dd_">
+    <span class="Params_Short">
+     The flags that indicate various options.
+    </span>
+    <table class="Params_Info">
+     <colgroup>
+      <col class="ColumnValue" />
+      <col class="ColumnData" />
+     </colgroup>
+     <tbody>
+      <tr>
+       <td class="CellValue">Type</td>
+       <td class="CellData">Numeric</td>
+      </tr>
+      <tr>
+       <td class="CellValue">Direction</td>
+       <td class="CellData">Input</td>
+      </tr>
+      <tr>
+       <td class="CellValue">Optional</td>
+      <td class="CellData">&nbsp;</td>
+      </tr>
+     </tbody>
+    </table>
+    <span class="Params_Detail">
+
+A passed value is equal to <span class="PDMEXPR PDMNor" ><span class='PDMVar'>dwFlags</span></span>
+ parameter of API function.
+If this parameter ommited, then default value is <span class="PDMEXPR PDMNor" ><span class='PDMVar'>FTP_TRANSFER_TYPE_UNKNOWN</span></span>
+.
+Can be one of the following:
+<table class="listvalues">
+ <tr class="Head"><td>Value</td><td>Description</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>FTP_TRANSFER_TYPE_ASCII</span></span>
+</td><td>Transfers the file as ASCII.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>FTP_TRANSFER_TYPE_BINARY</span></span>
+</td><td>Transfers the file as binary.</td></tr>
+</table>
+Assumed from <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/wininet/wininet/ftpopenfile.asp">MSDN</a>.
+
+    </span>
+   </dd>
+  </dl>
+ </div><!-- Parameters End -->
+
+ <div class="DIAMP_PDM_AB_RetVal"><!-- Returns Begin -->
+  <div>
+   <span class="PDM_AB_Head">
+    <a id="_26715Y51Q" name="_26715Y51Q">
+     Return value
+    </a>
+   </span> <span class="RetVal_Ttype">Boolean</span>
+  </div>
+  <div class="PDM_AB_Body">
+The return value is <span class="PDMEXPR PDMNor" ><span class='PDMLit'>.T.</span></span>
+ if list is downloaded or <span class="PDMEXPR PDMNor" ><span class='PDMLit'>.F.</span></span>
+ is not.
+  </div>
+ </div><!-- Returns End -->
+
+ <div class="PDM_AB_Remarks"><!-- Remarks Begin -->
+  <span class="PDM_AB_Head">
+   Remarks
+  </span>
+  <div class="PDM_AB_Body">
+
+
+    <!-- Note -->
+
+   <div class="PDM_AB_Note">
+    <div class="Block_Picture" title="">
+     Note
+    </div>
+    <div class="Block_Text">
+ This method doesn't support  multioperations - <a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.lmultioperations.htm" title="Skip to property FTP_SERVICE::lMultiOperations">FTP_SERVICE::lMultiOperations</a>.
+    </div><!-- end of note text -->
+    <div style="clear: both"></div>
+   </div><!-- end of note -->
+
+
+  </div>
+ </div><!-- Remarks End -->
+
+ <div class="PDM_AB_Example"><!-- Example Begin -->
+  <span class="PDM_AB_Head">
+   Example
+  </span>
+  <div class="PDM_AB_Body">
+
+<!-- Code Begin -->
+<pre class="PDMCODE PDMNor" >
+<span class='PDMResK'>LOCAL</span> <span class='PDMVar'>loFTP</span>
+<span class='PDMResK'>LOCAL</span> <span class='PDMResK'>ARRAY</span> <span class='PDMVar'>laFiles</span><span class='PDMOper'>(</span><span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>,</span><span class='PDMVar'>laFile</span><span class='PDMOper'>(</span><span class='PDMLit'>1</span><span class='PDMOper'>)</span>
+
+<span class='PDMOper'>#</span><span class='PDMResK'>INCLUDE</span> <span class='PDMStr'>"ftp.h"</span>
+<span class='PDMResK'>SET</span> <span class='PDMResK'>PROCEDURE</span> <span class='PDMResK'>TO</span> <span class='PDMVar'>ftp</span><span class='PDMOper'>.</span><span class='PDMVar'>prg</span> <span class='PDMResK'>ADDITIVE</span> 
+<span class='PDMVar'>loFTP</span><span class='PDMOper'>=</span><span class='PDMResF'>CREATEOBJECT</span><span class='PDMOper'>(</span><span class='PDMStr'>'_myftp'</span><span class='PDMOper'>)</span> 
+
+<span class='PDMResK'>IF</span> <span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMVar'>OpenInternet</span><span class='PDMOper'>(</span><span class='PDMStr'>"anonymous"</span><span class='PDMOper'>,</span> <span class='PDMStr'>"gorila@gorila.cz"</span><span class='PDMOper'>,</span><span class='PDMStr'>"192.168.2.21"</span><span class='PDMOper'>,</span> <span class='PDMStr'>"21"</span><span class='PDMOper'>)</span>
+
+<span class='PDMCom'>    * Get "Name list" and save it as file</span>
+    <span class='PDMOper'>=</span><span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMResE'>List</span><span class='PDMOper'>(</span><span class='PDMStr'>"c:\nlstx.txt"</span><span class='PDMOper'>,</span><span class='PDMStr'>""</span><span class='PDMOper'>,</span><span class='PDMVar'>_FTPS_RWF_File</span><span class='PDMOper'>,</span><span class='PDMLit'>0</span><span class='PDMOper'>)</span>
+    <span class='PDMResK'>MODI</span> <span class='PDMResK'>FILE</span> <span class='PDMStr'>"c:\nlst.txt"</span> <span class='PDMResK'>NOWAIT</span>
+
+
+<span class='PDMCom'>    * Get "Name list" and return it as string</span>
+    <span class='PDMOper'>=</span><span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMResE'>List</span><span class='PDMOper'>(</span><span class='PDMOper'>@</span><span class='PDMVar'>lcPom</span><span class='PDMOper'>,</span><span class='PDMStr'>""</span><span class='PDMOper'>,</span><span class='PDMVar'>_FTPS_RWF_String</span><span class='PDMOper'>,</span><span class='PDMLit'>0</span><span class='PDMOper'>)</span>
+    <span class='PDMOper'>?</span><span class='PDMVar'>lcPom</span>
+
+
+<span class='PDMCom'>    * Get "Name list" and save it to array</span>
+    <span class='PDMOper'>?</span><span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMResE'>List</span><span class='PDMOper'>(</span><span class='PDMOper'>@</span><span class='PDMVar'>laFiles</span><span class='PDMOper'>,</span><span class='PDMStr'>"download"</span><span class='PDMOper'>,</span><span class='PDMVar'>_FTPS_RWF_Array</span><span class='PDMOper'>,</span><span class='PDMLit'>0</span><span class='PDMOper'>)</span>
+
+<span class='PDMCom'>    * For each file get other informations</span>
+    <span class='PDMResK'>FOR</span> <span class='PDMVar'>lii</span><span class='PDMOper'>=</span><span class='PDMLit'>1</span> <span class='PDMResK'>to</span> <span class='PDMResF'>ALEN</span><span class='PDMOper'>(</span><span class='PDMVar'>laFiles</span><span class='PDMOper'>)</span>
+        <span class='PDMOper'>?</span>
+        <span class='PDMOper'>?</span><span class='PDMVar'>laFiles</span><span class='PDMOper'>[</span><span class='PDMVar'>lii</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>]</span>
+        <span class='PDMOper'>?</span><span class='PDMVar'>laFiles</span><span class='PDMOper'>[</span><span class='PDMVar'>lii</span><span class='PDMOper'>,</span> <span class='PDMLit'>2</span><span class='PDMOper'>]</span>
+        <span class='PDMOper'>?</span><span class='PDMVar'>laFiles</span><span class='PDMOper'>[</span><span class='PDMVar'>lii</span><span class='PDMOper'>,</span> <span class='PDMLit'>3</span><span class='PDMOper'>]</span>
+        <span class='PDMOper'>?</span><span class='PDMVar'>laFiles</span><span class='PDMOper'>[</span><span class='PDMVar'>lii</span><span class='PDMOper'>,</span> <span class='PDMLit'>4</span><span class='PDMOper'>]</span>
+        <span class='PDMOper'>?</span><span class='PDMVar'>laFiles</span><span class='PDMOper'>[</span><span class='PDMVar'>lii</span><span class='PDMOper'>,</span> <span class='PDMLit'>5</span><span class='PDMOper'>]</span>
+        <span class='PDMOper'>?</span><span class='PDMVar'>laFiles</span><span class='PDMOper'>[</span><span class='PDMVar'>lii</span><span class='PDMOper'>,</span> <span class='PDMLit'>6</span><span class='PDMOper'>]</span>
+        <span class='PDMOper'>?</span><span class='PDMVar'>laFiles</span><span class='PDMOper'>[</span><span class='PDMVar'>lii</span><span class='PDMOper'>,</span> <span class='PDMLit'>7</span><span class='PDMOper'>]</span>
+    <span class='PDMResK'>NEXT</span>
+
+   <span class='PDMOper'>=</span><span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMVar'>CloseInternet</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span> 
+<span class='PDMResK'>ENDIF</span>
+<span class='PDMResK'>RELEASE</span> <span class='PDMResK'>PROCEDURE</span> <span class='PDMVar'>ftp</span><span class='PDMOper'>.</span><span class='PDMVar'>prg</span>
+
+<span class='PDMResK'>DEFINE</span> <span class='PDMResK'>CLASS</span> <span class='PDMVar'>_myFTP</span> <span class='PDMResK'>AS</span> <span class='PDMVar'>FTP_SERVICE</span>
+   <span class='PDMResK'>PROCEDURE</span> <span class='PDMVar'>BeforeList</span><span class='PDMOper'>(</span><span class='PDMVar'>luData</span><span class='PDMOper'>,</span><span class='PDMVar'>lcMask</span><span class='PDMOper'>,</span><span class='PDMVar'>liFlags</span><span class='PDMOper'>,</span><span class='PDMVar'>lnFlag</span><span class='PDMOper'>)</span>
+      <span class='PDMOper'>?</span><span class='PDMResF'>PROGRAM</span><span class='PDMOper'>(</span><span class='PDMLit'>16</span><span class='PDMOper'>)</span>
+      <span class='PDMOper'>?</span><span class='PDMResF'>CHR</span><span class='PDMOper'>(</span><span class='PDMLit'>9</span><span class='PDMOper'>)</span><span class='PDMOper'>,</span><span class='PDMVar'>luData</span><span class='PDMOper'>,</span><span class='PDMVar'>lcMask</span><span class='PDMOper'>,</span><span class='PDMVar'>liFlags</span><span class='PDMOper'>,</span><span class='PDMVar'>lnFlag</span>
+   <span class='PDMResK'>ENDPROC</span>
+
+   <span class='PDMResK'>PROCEDURE</span> <span class='PDMVar'>AfterList</span><span class='PDMOper'>(</span><span class='PDMVar'>luData</span><span class='PDMOper'>,</span><span class='PDMVar'>lcMask</span><span class='PDMOper'>,</span><span class='PDMVar'>liFlags</span><span class='PDMOper'>,</span><span class='PDMVar'>lnFlag</span><span class='PDMOper'>,</span><span class='PDMVar'>liResult</span><span class='PDMOper'>)</span>
+      <span class='PDMOper'>?</span><span class='PDMResF'>PROGRAM</span><span class='PDMOper'>(</span><span class='PDMLit'>16</span><span class='PDMOper'>)</span>
+      <span class='PDMOper'>?</span><span class='PDMResF'>CHR</span><span class='PDMOper'>(</span><span class='PDMLit'>9</span><span class='PDMOper'>)</span><span class='PDMOper'>,</span><span class='PDMVar'>luData</span><span class='PDMOper'>,</span><span class='PDMVar'>lcMask</span><span class='PDMOper'>,</span><span class='PDMVar'>liFlags</span><span class='PDMOper'>,</span><span class='PDMVar'>lnFlag</span><span class='PDMOper'>,</span><span class='PDMVar'>liResult</span>
+   <span class='PDMResK'>ENDPROC</span>
+
+   <span class='PDMResK'>PROCEDURE</span> <span class='PDMVar'>AtList</span><span class='PDMOper'>(</span><span class='PDMVar'>luData</span><span class='PDMOper'>,</span><span class='PDMVar'>lcMask</span><span class='PDMOper'>,</span><span class='PDMVar'>liFlags</span><span class='PDMOper'>,</span><span class='PDMVar'>lnFlag</span><span class='PDMOper'>,</span><span class='PDMVar'>lcBuffer</span><span class='PDMOper'>,</span><span class='PDMVar'>liResult</span><span class='PDMOper'>)</span>
+      <span class='PDMOper'>?</span><span class='PDMResF'>PROGRAM</span><span class='PDMOper'>(</span><span class='PDMLit'>16</span><span class='PDMOper'>)</span>
+      <span class='PDMOper'>?</span><span class='PDMResF'>CHR</span><span class='PDMOper'>(</span><span class='PDMLit'>9</span><span class='PDMOper'>)</span><span class='PDMOper'>,</span><span class='PDMVar'>luData</span><span class='PDMOper'>,</span><span class='PDMVar'>lcMask</span><span class='PDMOper'>,</span><span class='PDMVar'>liFlags</span><span class='PDMOper'>,</span><span class='PDMVar'>lnFlag</span><span class='PDMOper'>,</span><span class='PDMVar'>lcBuffer</span><span class='PDMOper'>,</span><span class='PDMVar'>liResult</span>
+   <span class='PDMResK'>ENDPROC</span>
+<span class='PDMResK'>ENDDEFINE</span> </pre>
+ <!-- Code End -->
+
+
+  </div>
+ </div><!-- Example End -->
+
+ <div class="PDM_AB_SeeAlso"><!-- SeeAlso Begin -->
+  <span class="PDM_AB_Head">
+   See also
+  </span>
+  <div class="PDM_AB_Body">
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.beforelist.htm" title="Skip to method FTP_SERVICE::BeforeList()">FTP_SERVICE::BeforeList()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.afterlist.htm" title="Skip to method FTP_SERVICE::AfterList()">FTP_SERVICE::AfterList()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.atlist.htm" title="Skip to method FTP_SERVICE::AtList()">FTP_SERVICE::AtList()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.nlst.htm" title="Skip to method FTP_SERVICE::NLST()">FTP_SERVICE::NLST()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.getfilesize.htm" title="Skip to method FTP_SERVICE::GetFileSize()">FTP_SERVICE::GetFileSize()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.getftpdirectoryarray.htm" title="Skip to method FTP_SERVICE::GetFTPDirectoryArray()">FTP_SERVICE::GetFTPDirectoryArray()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.lmultioperations.htm" title="Skip to property FTP_SERVICE::lMultiOperations">FTP_SERVICE::lMultiOperations</a>
+  </div><!-- Body End -->
+  <!--- "Applies to" need to be inserted here---->
+  <PlaceAppliesTo_Here />
+  <!--- /"Applies to" need to be inserted here---->
+ </div><!-- SeeAlso End -->
+
+
+<!-- /Created with _diamp_pdm_ab by Agnes Beste    03.09.2007 19:34 -->
+
+ <div class="SC">
+  <img onclick="ExpandSC('SP_1',-1);"class="imgEC" src="../../imgs/uptab.gif" alt="Expand/Collapse source code of procedure List" id="IMG_SP_1" />
+  <span ondblclick="ExpandSC('SP_1',-1);" class="SCCaption"><a name="FTP_SERVICE">Source Code</a></span>
+  <div ondblclick="ExpandSC('SP_1',-1);" class="SCE" id="TX_SP_1">
+<!-- Code Begin -->
+<pre class="PDMCODE PDMNor" >      <span class='PDMResK'>LPARAMETERS</span> <span class='PDMVar'>OUTREF</span> <span class='PDMVar'>luData</span><span class='PDMOper'>,</span> <span class='PDMVar'>INP</span> <span class='PDMVar'>lcMask</span><span class='PDMOper'>,</span><span class='PDMVar'>OPT_INP</span> <span class='PDMVar'>liFlags</span><span class='PDMOper'>,</span><span class='PDMVar'>OPT_INP</span> <span class='PDMVar'>lnFlag</span>
+      <span class='PDMResK'>EXTERNAL</span> <span class='PDMResK'>ARRAY</span> <span class='PDMVar'>luData</span>
+      <span class='PDMResK'>LOCAL</span> <span class='PDMVar'>liResult</span><span class='PDMOper'>,</span> <span class='PDMVar'>lihFTP</span><span class='PDMOper'>,</span><span class='PDMVar'>lii</span><span class='PDMOper'>,</span><span class='PDMVar'>lcBuffer</span><span class='PDMOper'>,</span><span class='PDMVar'>lcData</span><span class='PDMOper'>,</span><span class='PDMVar'>liData</span><span class='PDMOper'>,</span><span class='PDMVar'>liEnd</span><span class='PDMOper'>,</span><span class='PDMVar'>liCount</span><span class='PDMOper'>,</span><span class='PDMVar'>llRet</span>
+
+      <span class='PDMVar'>liFlags</span><span class='PDMOper'>=</span><span class='PDMResF'>IIF</span><span class='PDMOper'>(</span><span class='PDMResF'>PCOUNT</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span><span class='PDMOper'>&lt;</span><span class='PDMLit'>3</span><span class='PDMOper'>,</span><span class='PDMVar'>_FTPS_RWF_File</span><span class='PDMOper'>,</span><span class='PDMVar'>liFlags</span><span class='PDMOper'>)</span>
+      <span class='PDMVar'>lnFlag</span><span class='PDMOper'>=</span><span class='PDMResF'>IIF</span><span class='PDMOper'>(</span><span class='PDMResF'>PCOUNT</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span><span class='PDMOper'>&lt;</span><span class='PDMLit'>4</span><span class='PDMOper'>,</span><span class='PDMVar'>FTP_TRANSFER_TYPE_ASCII</span><span class='PDMOper'>,</span><span class='PDMVar'>lnFlag</span><span class='PDMOper'>)</span>
+
+      <span class='PDMResK'>IF</span> <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>OpenFTPConnection</span><span class='PDMOper'>(</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>cCurrentDir</span><span class='PDMOper'>)</span>     <span class='PDMCom'>&amp;&amp; Open an FTP Handle</span>
+         <span class='PDMResK'>IF</span> <span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>liFlags</span><span class='PDMOper'>,</span><span class='PDMLit'>2</span><span class='PDMOper'>)</span> <span class='PDMCom'>&amp;&amp; Array?</span>
+            <span class='PDMResK'>DIMENSION</span> <span class='PDMVar'>luData</span> <span class='PDMOper'>[</span><span class='PDMLit'>1</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>]</span>
+            <span class='PDMVar'>luData</span> <span class='PDMOper'>[</span><span class='PDMLit'>1</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>]</span> <span class='PDMOper'>=</span> <span class='PDMOper'>.</span><span class='PDMResK'>NULL</span><span class='PDMOper'>.</span>
+         <span class='PDMResK'>ENDIF</span>
+         <span class='PDMVar'>lihFTP</span><span class='PDMOper'>=</span><span class='PDMLit'>0</span>
+
+         <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>BeforeList</span><span class='PDMOper'>(</span><span class='PDMOper'>@</span><span class='PDMVar'>luData</span><span class='PDMOper'>,</span><span class='PDMOper'>@</span><span class='PDMVar'>lcMask</span><span class='PDMOper'>,</span><span class='PDMVar'>liFlags</span><span class='PDMOper'>,</span><span class='PDMVar'>lnFlag</span><span class='PDMOper'>)</span>
+
+         <span class='PDMVar'>liResult</span><span class='PDMOper'>=</span><span class='PDMResF'>IIF</span><span class='PDMOper'>(</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>FTPCommand</span><span class='PDMOper'>(</span><span class='PDMStr'>"LIST "</span><span class='PDMOper'>+</span><span class='PDMVar'>lcMask</span><span class='PDMOper'>,</span><span class='PDMVar'>FTP_TRANSFER_TYPE_ASCII</span><span class='PDMOper'>,</span><span class='PDMLit'>0</span><span class='PDMOper'>,</span><span class='PDMOper'>@</span><span class='PDMVar'>lihFTP</span><span class='PDMOper'>)</span><span class='PDMOper'>,</span><span class='PDMLit'>1</span><span class='PDMOper'>,</span><span class='PDMLit'>0</span><span class='PDMOper'>)</span>
+         <span class='PDMResK'>IF</span> <span class='PDMVar'>liResult</span> <span class='PDMOper'>#</span><span class='PDMLit'>0</span> <span class='PDMCom'>&amp;&amp; OK, FTP list is openned</span>
+            <span class='PDMVar'>llRet</span><span class='PDMOper'>=</span><span class='PDMLit'>.T.</span>         
+            <span class='PDMVar'>lii</span><span class='PDMOper'>=</span><span class='PDMLit'>0</span>
+            <span class='PDMVar'>liData</span><span class='PDMOper'>=</span><span class='PDMLit'>500</span>
+            <span class='PDMResK'>STORE</span> <span class='PDMLit'>1</span> <span class='PDMResK'>TO</span> <span class='PDMVar'>fResult</span><span class='PDMOper'>,</span><span class='PDMVar'>liRead</span>
+            <span class='PDMVar'>lcData</span><span class='PDMOper'>=</span><span class='PDMStr'>""</span>
+
+            <span class='PDMResK'>DO</span> <span class='PDMResK'>WHILE</span> <span class='PDMVar'>liRead</span><span class='PDMOper'>&gt;</span><span class='PDMLit'>0</span>
+               <span class='PDMVar'>liRead</span><span class='PDMOper'>=</span><span class='PDMLit'>0</span>
+               <span class='PDMVar'>lcBuffer</span><span class='PDMOper'>=</span><span class='PDMResF'>SPACE</span><span class='PDMOper'>(</span><span class='PDMVar'>liData</span><span class='PDMOper'>)</span>
+               <span class='PDMVar'>liResult</span> <span class='PDMOper'>=</span> <span class='PDMVar'>InternetReadFile</span><span class='PDMOper'>(</span><span class='PDMVar'>lihFTP</span><span class='PDMOper'>,</span> <span class='PDMOper'>@</span><span class='PDMVar'>lcBuffer</span><span class='PDMOper'>,</span> <span class='PDMVar'>liData</span><span class='PDMOper'>,</span> <span class='PDMOper'>@</span><span class='PDMVar'>liRead</span><span class='PDMOper'>)</span>
+               <span class='PDMOper'>=</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>GetExtendedError</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span>
+               <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>AtList</span><span class='PDMOper'>(</span><span class='PDMOper'>@</span><span class='PDMVar'>luData</span><span class='PDMOper'>,</span><span class='PDMOper'>@</span><span class='PDMVar'>lcMask</span><span class='PDMOper'>,</span><span class='PDMVar'>liFlags</span><span class='PDMOper'>,</span><span class='PDMVar'>lnFlag</span><span class='PDMOper'>,</span><span class='PDMOper'>@</span><span class='PDMVar'>lcBuffer</span><span class='PDMOper'>,</span><span class='PDMVar'>liResult</span><span class='PDMOper'>)</span>
+
+               <span class='PDMVar'>lcData</span><span class='PDMOper'>=</span><span class='PDMVar'>lcData</span><span class='PDMOper'>+</span><span class='PDMResF'>LEFT</span><span class='PDMOper'>(</span><span class='PDMVar'>lcBuffer</span><span class='PDMOper'>,</span><span class='PDMVar'>liRead</span><span class='PDMOper'>)</span>
+               <span class='PDMVar'>lii</span><span class='PDMOper'>=</span><span class='PDMVar'>lii</span><span class='PDMOper'>+</span><span class='PDMVar'>liRead</span>
+            <span class='PDMResK'>ENDDO</span>
+
+            <span class='PDMOper'>=</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>AfterList</span><span class='PDMOper'>(</span><span class='PDMVar'>luData</span><span class='PDMOper'>,</span><span class='PDMVar'>lcMask</span><span class='PDMOper'>,</span><span class='PDMVar'>liFlags</span><span class='PDMOper'>,</span><span class='PDMVar'>lnFlag</span><span class='PDMOper'>,</span><span class='PDMVar'>liResult</span><span class='PDMOper'>)</span>
+
+            <span class='PDMResK'>DO</span> <span class='PDMResK'>CASE</span>
+               <span class='PDMResK'>CASE</span> <span class='PDMVar'>liResult</span><span class='PDMOper'>=</span><span class='PDMLit'>0</span>
+
+               <span class='PDMResK'>CASE</span> <span class='PDMOper'>!</span><span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>liFlags</span><span class='PDMOper'>,</span><span class='PDMLit'>0</span><span class='PDMOper'>)</span> <span class='PDMOper'>AND</span> <span class='PDMOper'>!</span><span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>liFlags</span><span class='PDMOper'>,</span><span class='PDMLit'>2</span><span class='PDMOper'>)</span> <span class='PDMCom'>&amp;&amp; File?</span>
+                    <span class='PDMResK'>IF</span> <span class='PDMResF'>STRTOFILE</span><span class='PDMOper'>(</span><span class='PDMVar'>lcData</span><span class='PDMOper'>,</span><span class='PDMVar'>luData</span><span class='PDMOper'>)</span><span class='PDMOper'>=</span><span class='PDMLit'>0</span>
+                       <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>SetExtendedError</span><span class='PDMOper'>(</span><span class='PDMVar'>_FTPS_UE_CWF</span><span class='PDMOper'>,</span><span class='PDMStr'>""</span><span class='PDMOper'>)</span>
+                       <span class='PDMVar'>llRet</span><span class='PDMOper'>=</span><span class='PDMLit'>.F.</span>
+                    <span class='PDMResK'>ENDIF</span>
+
+               <span class='PDMResK'>CASE</span> <span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>liFlags</span><span class='PDMOper'>,</span><span class='PDMLit'>0</span><span class='PDMOper'>)</span> <span class='PDMCom'>&amp;&amp; String?</span>
+                    <span class='PDMVar'>luData</span><span class='PDMOper'>=</span><span class='PDMVar'>lcData</span>
+
+               <span class='PDMResK'>CASE</span> <span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>liFlags</span><span class='PDMOper'>,</span><span class='PDMLit'>2</span><span class='PDMOper'>)</span> <span class='PDMCom'>&amp;&amp; Array?</span>
+                    <span class='PDMResK'>IF</span> <span class='PDMResF'>ISNULL</span><span class='PDMOper'>(</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>oLIstPE</span><span class='PDMOper'>)</span>
+                       <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>oLIstPE</span><span class='PDMOper'>=</span><span class='PDMResF'>CREATEOBJECT</span><span class='PDMOper'>(</span><span class='PDMStr'>"_LIST_PARSER_ENGINE"</span><span class='PDMOper'>)</span>
+                    <span class='PDMResK'>ENDIF</span>
+                    <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>oLIstPE</span><span class='PDMOper'>.</span><span class='PDMVar'>oFTP</span><span class='PDMOper'>=</span><span class='PDMResK'>This</span>
+                    <span class='PDMVar'>llRet</span><span class='PDMOper'>=</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>oLIstPE</span><span class='PDMOper'>.</span><span class='PDMVar'>Parse</span><span class='PDMOper'>(</span><span class='PDMOper'>@</span><span class='PDMVar'>luData</span><span class='PDMOper'>,</span><span class='PDMOper'>@</span><span class='PDMVar'>lcData</span><span class='PDMOper'>)</span>
+                    <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>oLIstPE</span><span class='PDMOper'>.</span><span class='PDMVar'>oFTP</span><span class='PDMOper'>=</span><span class='PDMOper'>.</span><span class='PDMResK'>NULL</span><span class='PDMOper'>.</span>
+            <span class='PDMResK'>ENDCASE</span>
+
+            <span class='PDMOper'>=</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>_FTPCommand</span><span class='PDMOper'>(</span><span class='PDMStr'>"NOOP"</span><span class='PDMOper'>,</span> <span class='PDMVar'>FTP_TRANSFER_TYPE_BINARY</span><span class='PDMOper'>,</span><span class='PDMLit'>0</span><span class='PDMOper'>,</span><span class='PDMOper'>.</span><span class='PDMResK'>NULL</span><span class='PDMOper'>.</span><span class='PDMOper'>)</span>
+            <span class='PDMOper'>=</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>CloseFTPConnection</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span>  <span class='PDMCom'>&amp;&amp; Close FTP Handle</span>
+         <span class='PDMResK'>ENDIF</span>
+         <span class='PDMResK'>RETURN</span> <span class='PDMVar'>llRet</span>
+      <span class='PDMResK'>ELSE</span>
+         <span class='PDMResK'>RETURN</span> <span class='PDMLit'>.F.</span>     <span class='PDMCom'>&amp;&amp; Unable to get FTP Connection   </span>
+      <span class='PDMResK'>ENDIF</span></pre>
+ <!-- Code End -->
+  </div>
+ </div>
+</div>
+<div class="diaxp_mfoot"> <div class="PDM_AB_CopyRight"><!-- Footer Begin -->
+  <hr />
+  <div class="PDM_AB_Body">
+&copy; 2007-01-09 Martina Jindr&uacute;
+  </div><!-- Body End -->
+ </div><!-- Footer End -->
+</div>
+<script language="JavaScript" type="text/javascript">
+lo=document.getElementById("TX_SP_1");
+lo.XType="SourceCode";
+lo.Dir="../../imgs/";
+
+
+</script>
+</body>
+</html>

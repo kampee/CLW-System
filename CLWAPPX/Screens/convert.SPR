@@ -1,0 +1,149 @@
+*- [CONVERTER] Declare arraysEXTERNAL ARRAY toarry
+
+*- [CONVERTER] Declare variables for record pointersPUBLIC _iconvUnitsGoToPlaceHolder
+PUBLIC _iconvFactorsGoToPlaceHolder
+
+EXTERNAL PROC convert.scx
+
+DO FORM "convert.scx" NAME _33L1F8YST LINKED 
+
+*- [CONVERTER] Begin CLEANUP and other procedures from 2.x Form
+
+FUNCTION convrt
+PARAMETER m.new, m.old, m.direction
+PRIVATE m.toid, m.fromid, m.tounit, m.fromunit
+
+IF (VAL(m.old) = 0 AND m.unittype<>"Temperature") OR ;
+	(m.old = SPACE(19) AND m.unittype="Temperature") OR ;
+	m.topop = m.frompop
+	m.new = m.old
+	SHOW GETS
+	RETURN
+ENDIF
+DO WHILE AT(",",m.old)<>0
+	m.old = STUFF(m.old, AT(",",m.old),1, "")
+ENDDO
+
+IF m.direction = "right"
+	m.tounit = ALLTRIM(m.topop)
+	m.fromunit = ALLTRIM(m.frompop)
+ELSE
+	m.tounit = ALLTRIM(m.frompop)
+	m.fromunit = ALLTRIM(m.topop)
+ENDIF
+IF m.unittype = "Temperature"
+	DO CASE
+	CASE m.fromunit = "Celsius"
+		IF m.tounit = "Fahrenheit"
+		 	m.new = formatget(9/5 * val(m.old) + 32)
+		ELSE
+			m.new = formatget(val(m.old) + 273.15)
+		ENDIF
+	CASE m.fromunit = "Fahrenheit"	
+		m.new = formatget((val(m.old) - 32) * 5 / 9)
+		IF m.tounit = "Kelvin"
+			m.new = formatget(val(m.new) + 273.15)
+		ENDIF
+	CASE m.fromunit = "Kelvin"
+		m.new = formatget(val(m.old) - 273.15)
+		IF m.tounit = "Fahrenheit"
+		 	m.new = formatget(9/5 * val(m.new) + 32)
+		ENDIF		
+	ENDCASE
+	m.new = stripzeros(m.new)
+	m.old = stripzeros(m.old)
+	SHOW GETS
+	RETURN .T.
+ENDIF
+
+SELECT units
+LOCATE FOR Unit = m.tounit
+m.toid = Id
+GO TOP
+LOCATE FOR Unit = m.fromunit
+m.fromid = Id
+		
+SELECT factors
+LOCATE FOR To = m.toid ;
+	AND From = m.fromid
+		 
+IF NOT FOUND()
+	GO TOP
+	LOCATE FOR To = m.fromid ;
+		AND From = m.toid
+	m.new = formatget((val(m.old) / val(Multiplier)))
+ELSE
+	m.new = formatget((val(m.old) * val(Multiplier)))
+ENDIF
+m.old = formatget(val(m.old))
+
+m.new = stripzeros(m.new)
+m.old = stripzeros(m.old)
+SHOW GETS
+
+*
+* FORMATGET - Format the string to be displayed.
+* 
+FUNCTION formatget
+PARAMETER m.val1
+PRIVATE m.retval, m.digits, m.transtring, m.digcnt, m.comacnt
+
+IF m.val1 < 0.000000001 OR m.val1 > 9999999999
+	m.retval = TRANSFORM(m.val1, "@Z^")
+ELSE
+	m.transtring = "9.999999999"
+	m.digits  = 9
+	m.digcnt  = 1
+	m.comacnt = 0
+	
+	DO WHILE .T.
+		IF m.val1 < m.digits
+			EXIT
+		ENDIF
+		m.digits = m.digits*10 + 9
+		m.digcnt = m.digcnt + 1
+		IF m.digcnt > 10
+			m.transtring = "9,999,999,999"
+			EXIT
+		ELSE
+			IF MOD(m.digcnt,3) = 1
+				m.comacnt = m.comacnt + 1
+				m.transtring = SUBSTR("9,"+m.transtring,1,11+m.comacnt)
+			ELSE
+				m.transtring = SUBSTR("9"+m.transtring,1,11+m.comacnt)
+			ENDIF
+		ENDIF
+	ENDDO
+	m.retval = TRANSFORM(ROUND(m.val1,10-m.digcnt), (m.transtring))
+ENDIF
+RETURN m.retval
+
+*
+* STRIPZEROS - Strip trailing zeros.
+*
+FUNCTION stripzeros
+PARAMETER m.string
+PRIVATE m.period, m.i
+
+IF RAT("E",m.string)<>0
+	RETURN m.string
+ENDIF
+m.period = AT(".",m.string)
+IF m.period = 0
+	RETURN m.string
+ENDIF
+m.i = LEN(m.string)
+DO WHILE m.i >= m.period
+	IF SUBSTR(m.string, m.i)="0"
+		m.string = STUFF(m.string, m.i, 1, " ")
+	ELSE
+		EXIT
+	ENDIF
+	m.i = m.i - 1
+ENDDO
+IF m.i=m.period
+	m.string = STUFF(m.string, m.i, 1, " ")
+ENDIF
+RETURN ALLTRIM(m.string)
+
+*- [CONVERTER] End CLEANUP and other procedures from 2.x Form

@@ -1,0 +1,14 @@
+[OPTIONS]
+Compatibility=1.1
+Compiled file=MyHelp.chm
+Contents file=TOC.hhc
+Default topic=Welcome.htm
+Display compile progress=No
+Index file=Index.hhk
+Language=0x41e Thai
+Title=เรียนเขียนโปรแกรม Visual Foxpro
+
+
+[FILES]
+Welcome.htm
+Article.htm

@@ -1,0 +1,11 @@
+
+
+
+SELECT Ulog.*, User.dept, User.deptname, User.user, User.fname, User.lname,;
+  Dept.dept_name;
+ FROM ;
+     ulog ;
+    INNER JOIN user ;
+   ON  Ulog.uid = User.userid ;
+    INNER JOIN dept ;
+   ON  User.dept = Dept.dept_code

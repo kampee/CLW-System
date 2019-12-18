@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+<head>
+<title>Method GetSystemOption of class FTP_SERVICE</title>
+<meta content="text/html; charset=windows-1250" http-equiv="Content-Type" />
+<meta name="Generator" content="Project Documenting Machine" />
+<meta name="Version" content="1.2.3" />
+<link rel="stylesheet" href="../../css/foxw.css" type="text/css" />
+<link rel="stylesheet" href="../../css/sc.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diamp_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab_notes.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diaf_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diap_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diac_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/ftp.css" type="text/css" />
+<script src="../../js/pdm.js" language="JavaScript" type="text/javascript"></script>
+<script src="../../repository/pdm_ab.js" language="JavaScript" type="text/javascript"></script>
+</head>
+<body>
+<div class="diaxp_mhead">GetSystemOption Method</div>
+<div class="diaxp_mbody_class">
+
+<table class="clear_table">
+ <tbody>
+  <tr><td>Class: </td><td><a href="cls.ftp_service.htm" title="Skip to class ftp_service">FTP_SERVICE</a></td></tr>
+ </tbody>
+</table>
+</div>
+<div class="diaxp_mbody">
+<!-- Created with _diamp_pdm_ab by Agnes Beste    03.09.2007 19:34 -->
+ <div class="PDM_AB_Descr"><!-- Descr Begin -->
+This method return any system option.
+ </div><!-- Descr End -->
+
+ <div class="DIAMP_PDM_AB_Syntax"><!-- Syntax Begin -->
+  <div class="SColor">
+   <div class="RetVal"><a href="#_26715Y9V8">RetVal</a>&nbsp;</div>   <div class="RetValEq">=</div>   <div class="PEM">
+    Object.GetSystemOption
+   </div>
+   <div class="Para">
+    (<a href="#_26715Y9V9">liOption</a>)
+   </div>
+   <div style="clear: both"></div>
+  </div><!-- Colour End -->
+ </div><!-- Syntax End -->
+
+ <div class="DIAMP_PDM_AB_Params"><!-- Parameters Begin -->
+  <span class="PDM_AB_Head">
+   Parameter
+  </span>
+  <dl class="DIAMP_PDM_AB_Params_List">
+   <dt class="dt_">
+    <a class="DIAMP_PDM_AB_Params_ParaName" id="_26715Y9V9" name="_26715Y9V9">
+     <span class="PDMEXPR PDMNor" ><span class='PDMVar'>liOption</span></span>
+
+    </a>
+   </dt>
+   <dd class="dd_">
+    <span class="Params_Short">
+     Option type
+    </span>
+    <table class="Params_Info">
+     <colgroup>
+      <col class="ColumnValue" />
+      <col class="ColumnData" />
+     </colgroup>
+     <tbody>
+      <tr>
+       <td class="CellValue">Type</td>
+       <td class="CellData">Numeric</td>
+      </tr>
+      <tr>
+       <td class="CellValue">Direction</td>
+       <td class="CellData">Input</td>
+      </tr>
+     </tbody>
+    </table>
+    <span class="Params_Detail">
+Can be one of the following:
+<table class="listvalues">
+ <tr class="Head"><td>Value</td><td>Description</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>_FTPS_Option_CurrentDir</span></span>
+</td><td>Current folder on FTP session.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>_FTPS_Option_DLL_Loaded</span></span>
+</td><td>Flag.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>_FTPS_Option_Inet_Handle</span></span>
+</td><td>Internet handle.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>_FTPS_Option_Connect_Handle</span></span>
+</td><td>FTP session handle.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>_FTPS_Option_IPAddress</span></span>
+</td><td>IP adress of FTP Server.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>_FTPS_Option_UserName</span></span>
+</td><td>User name.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>_FTPS_Option_Password</span></span>
+</td><td>Password.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>_FTPS_Option_Port</span></span>
+</td><td>FTP port.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>_FTPS_Option_UseProxy</span></span>
+</td><td>Flag of using proxy settings.</td></tr>
+</table>
+
+    </span>
+   </dd>
+  </dl>
+ </div><!-- Parameters End -->
+
+ <div class="DIAMP_PDM_AB_RetVal"><!-- Returns Begin -->
+  <div>
+   <span class="PDM_AB_Head">
+    <a id="_26715Y9V8" name="_26715Y9V8">
+     Return value
+    </a>
+   </span>
+  </div>
+  <div class="PDM_AB_Body">
+The return value is depend on <a class="DIAMP_PDM_AB_Para_Link" href="#_26715Y9V9">liOption</a>. If is unkown value the parameter, then return values is <span class="PDMEXPR PDMNor" ><span class='PDMOper'>.</span><span class='PDMResK'>NULL</span><span class='PDMOper'>.</span></span>
+
+  </div>
+ </div><!-- Returns End -->
+
+ <div class="PDM_AB_Example"><!-- Example Begin -->
+  <span class="PDM_AB_Head">
+   Example
+  </span>
+  <div class="PDM_AB_Body">
+
+<!-- Code Begin -->
+<pre class="PDMCODE PDMNor" >
+<span class='PDMResK'>LOCAL</span> <span class='PDMVar'>loFTP</span><span class='PDMOper'>,</span> <span class='PDMVar'>liState</span><span class='PDMOper'>,</span><span class='PDMVar'>liResult</span>
+<span class='PDMResK'>SET</span> <span class='PDMResK'>PROCEDURE</span> <span class='PDMResK'>TO</span> <span class='PDMVar'>ftp</span><span class='PDMOper'>.</span><span class='PDMVar'>prg</span> <span class='PDMResK'>ADDITIVE</span> 
+<span class='PDMVar'>loFTP</span><span class='PDMOper'>=</span><span class='PDMResF'>CREATEOBJECT</span><span class='PDMOper'>(</span><span class='PDMStr'>'ftp_service'</span><span class='PDMOper'>)</span> 
+
+<span class='PDMResK'>IF</span> <span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMVar'>OpenInternet</span><span class='PDMOper'>(</span><span class='PDMStr'>"ABONNE"</span><span class='PDMOper'>,</span> <span class='PDMStr'>"PWD"</span><span class='PDMOper'>,</span> <span class='PDMStr'>"10.10.10.10"</span><span class='PDMOper'>,</span> <span class='PDMStr'>"21"</span><span class='PDMOper'>)</span> 
+   <span class='PDMOper'>?</span><span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMVar'>GetSystemOption</span><span class='PDMOper'>(</span><span class='PDMVar'>_FTPS_Option_Inet_Handle</span><span class='PDMOper'>)</span>
+   <span class='PDMOper'>=</span><span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMVar'>CloseInternet</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span>
+<span class='PDMResK'>ENDIF</span>
+<span class='PDMResK'>RELEASE</span> <span class='PDMResK'>PROCEDURE</span> <span class='PDMVar'>ftp</span><span class='PDMOper'>.</span><span class='PDMVar'>prg</span></pre>
+ <!-- Code End -->
+
+
+  </div>
+ </div><!-- Example End -->
+
+ <div class="PDM_AB_SeeAlso"><!-- SeeAlso Begin -->
+  <span class="PDM_AB_Head">
+   See also
+  </span>
+  <div class="PDM_AB_Body">
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.ldll_loaded.htm" title="Skip to property FTP_SERVICE::lDLL_Loaded">FTP_SERVICE::lDLL_Loaded</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.ninet_handle.htm" title="Skip to property FTP_SERVICE::nInet_Handle">FTP_SERVICE::nInet_Handle</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.nconnect_handle.htm" title="Skip to property FTP_SERVICE::nConnect_Handle">FTP_SERVICE::nConnect_Handle</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.luseproxy.htm" title="Skip to property FTP_SERVICE::lUseProxy">FTP_SERVICE::lUseProxy</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.cipaddress.htm" title="Skip to property FTP_SERVICE::cIPAddress">FTP_SERVICE::cIPAddress</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.cusername.htm" title="Skip to property FTP_SERVICE::cUserName">FTP_SERVICE::cUserName</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.cpassword.htm" title="Skip to property FTP_SERVICE::cPassword">FTP_SERVICE::cPassword</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.cport.htm" title="Skip to property FTP_SERVICE::cPort">FTP_SERVICE::cPort</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.luseproxy.htm" title="Skip to property FTP_SERVICE::lUseProxy">FTP_SERVICE::lUseProxy</a>
+  </div><!-- Body End -->
+  <!--- "Applies to" need to be inserted here---->
+  <PlaceAppliesTo_Here />
+  <!--- /"Applies to" need to be inserted here---->
+ </div><!-- SeeAlso End -->
+
+
+<!-- /Created with _diamp_pdm_ab by Agnes Beste    03.09.2007 19:34 -->
+
+ <div class="SC">
+  <img onclick="ExpandSC('SP_1',-1);"class="imgEC" src="../../imgs/uptab.gif" alt="Expand/Collapse source code of procedure GetSystemOption" id="IMG_SP_1" />
+  <span ondblclick="ExpandSC('SP_1',-1);" class="SCCaption"><a name="FTP_SERVICE">Source Code</a></span>
+  <div ondblclick="ExpandSC('SP_1',-1);" class="SCE" id="TX_SP_1">
+<!-- Code Begin -->
+<pre class="PDMCODE PDMNor" >      <span class='PDMResK'>LPARAMETERS</span> <span class='PDMVar'>INP</span> <span class='PDMVar'>liOption</span>
+
+      <span class='PDMResK'>DO</span> <span class='PDMResK'>CASE</span>
+         <span class='PDMResK'>CASE</span> <span class='PDMVar'>liOption</span><span class='PDMOper'>=</span><span class='PDMVar'>_FTPS_Option_CurrentDir</span>
+              <span class='PDMResK'>RETURN</span> <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>cCurrentDir</span>
+
+         <span class='PDMResK'>CASE</span> <span class='PDMVar'>liOption</span><span class='PDMOper'>=</span><span class='PDMVar'>_FTPS_Option_DLL_Loaded</span>
+              <span class='PDMResK'>RETURN</span> <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>lDLL_Loaded</span>
+
+         <span class='PDMResK'>CASE</span> <span class='PDMVar'>liOption</span><span class='PDMOper'>=</span><span class='PDMVar'>_FTPS_Option_Inet_Handle</span>
+              <span class='PDMResK'>RETURN</span> <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>nInet_Handle</span>
+
+         <span class='PDMResK'>CASE</span> <span class='PDMVar'>liOption</span><span class='PDMOper'>=</span><span class='PDMVar'>_FTPS_Option_Connect_Handle</span>
+              <span class='PDMResK'>RETURN</span> <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>nConnect_Handle</span>
+
+         <span class='PDMResK'>CASE</span> <span class='PDMVar'>liOption</span><span class='PDMOper'>=</span><span class='PDMVar'>_FTPS_Option_IPAddress</span>
+              <span class='PDMResK'>RETURN</span> <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>cIPAddress</span>
+
+         <span class='PDMResK'>CASE</span> <span class='PDMVar'>liOption</span><span class='PDMOper'>=</span><span class='PDMVar'>_FTPS_Option_UserName</span>
+              <span class='PDMResK'>RETURN</span> <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>cUserName</span>
+
+         <span class='PDMResK'>CASE</span> <span class='PDMVar'>liOption</span><span class='PDMOper'>=</span><span class='PDMVar'>_FTPS_Option_Password</span>
+              <span class='PDMResK'>RETURN</span> <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>cPassword</span>
+
+         <span class='PDMResK'>CASE</span> <span class='PDMVar'>liOption</span><span class='PDMOper'>=</span><span class='PDMVar'>_FTPS_Option_Port</span>
+              <span class='PDMResK'>RETURN</span> <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>cPort</span>
+
+         <span class='PDMResK'>CASE</span> <span class='PDMVar'>liOption</span><span class='PDMOper'>=</span><span class='PDMVar'>_FTPS_Option_UseProxy</span>
+              <span class='PDMResK'>RETURN</span> <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>lUseProxy</span>
+
+         <span class='PDMResK'>OTHERWISE</span>
+              <span class='PDMResK'>RETURN</span> <span class='PDMOper'>.</span><span class='PDMResK'>NULL</span><span class='PDMOper'>.</span>
+      <span class='PDMResK'>ENDCASE</span></pre>
+ <!-- Code End -->
+  </div>
+ </div>
+</div>
+<div class="diaxp_mfoot"> <div class="PDM_AB_CopyRight"><!-- Footer Begin -->
+  <hr />
+  <div class="PDM_AB_Body">
+&copy; 24.11.2005 Martina Jindr&uacute;
+  </div><!-- Body End -->
+ </div><!-- Footer End -->
+</div>
+<script language="JavaScript" type="text/javascript">
+lo=document.getElementById("TX_SP_1");
+lo.XType="SourceCode";
+lo.Dir="../../imgs/";
+
+
+</script>
+</body>
+</html>

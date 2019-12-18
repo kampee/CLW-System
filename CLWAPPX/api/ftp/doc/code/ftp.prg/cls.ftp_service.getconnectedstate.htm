@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+<head>
+<title>Method GetConnectedState of class FTP_SERVICE</title>
+<meta content="text/html; charset=windows-1250" http-equiv="Content-Type" />
+<meta name="Generator" content="Project Documenting Machine" />
+<meta name="Version" content="1.2.3" />
+<link rel="stylesheet" href="../../css/foxw.css" type="text/css" />
+<link rel="stylesheet" href="../../css/sc.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diamp_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab_notes.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diaf_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diap_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diac_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/ftp.css" type="text/css" />
+<script src="../../js/pdm.js" language="JavaScript" type="text/javascript"></script>
+<script src="../../repository/pdm_ab.js" language="JavaScript" type="text/javascript"></script>
+</head>
+<body>
+<div class="diaxp_mhead">GetConnectedState Method</div>
+<div class="diaxp_mbody_class">
+
+<table class="clear_table">
+ <tbody>
+  <tr><td>Class: </td><td><a href="cls.ftp_service.htm" title="Skip to class ftp_service">FTP_SERVICE</a></td></tr>
+ </tbody>
+</table>
+</div>
+<div class="diaxp_mbody">
+<!-- Created with _diamp_pdm_ab by Agnes Beste    03.09.2007 19:33 -->
+ <div class="PDM_AB_Descr"><!-- Descr Begin -->
+Returns the current type of internet connection.
+ </div><!-- Descr End -->
+
+ <div class="DIAMP_PDM_AB_Syntax"><!-- Syntax Begin -->
+  <div class="SColor">
+   <div class="RetVal"><a href="#_26715XRKQ">RetVal</a>&nbsp;</div>   <div class="RetValEq">=</div>   <div class="PEM">
+    Object.GetConnectedState
+   </div>
+   <div class="Para">
+    ()
+   </div>
+   <div style="clear: both"></div>
+  </div><!-- Colour End -->
+ </div><!-- Syntax End -->
+
+ <div class="DIAMP_PDM_AB_RetVal"><!-- Returns Begin -->
+  <div>
+   <span class="PDM_AB_Head">
+    <a id="_26715XRKQ" name="_26715XRKQ">
+     Return value
+    </a>
+   </span> <span class="RetVal_Ttype">Integer</span>
+  </div>
+  <div class="PDM_AB_Body">
+Current Connection Type.
+<table class="listvalues">
+ <tr class="Head"><td>Value</td><td>Description</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>INTERNET_CONNECTION_MODEM</span></span>
+</td><td>Local system uses a modem to connect to the Internet.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>INTERNET_CONNECTION_LAN</span></span>
+</td><td>Local system uses a local area network to connect to the Internet.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>INTERNET_CONNECTION_PROXY</span></span>
+</td><td>Local system uses a proxy server to connect to the Internet.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>INTERNET_CONNECTION_MODEM_BUSY</span></span>
+</td><td>No longer used.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>INTERNET_RAS_INSTALLED</span></span>
+</td><td>Local system has RAS installed.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>INTERNET_CONNECTION_OFFLINE</span></span>
+</td><td>Local system is in offline mode.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>INTERNET_CONNECTION_CONFIGURED</span></span>
+</td><td>Local system has a valid connection to the Internet, but it might or might not be currently connected.</td></tr>
+</table>
+ Possibly other codes could be returned.
+Assumed from <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/wininet/wininet/internetgetconnectedstate.asp">MSDN</a>.
+
+  </div>
+ </div><!-- Returns End -->
+
+ <div class="PDM_AB_Example"><!-- Example Begin -->
+  <span class="PDM_AB_Head">
+   Example
+  </span>
+  <div class="PDM_AB_Body">
+
+<!-- Code Begin -->
+<pre class="PDMCODE PDMNor" >
+<span class='PDMResK'>LOCAL</span> <span class='PDMVar'>loFTP</span><span class='PDMOper'>,</span> <span class='PDMVar'>liState</span><span class='PDMOper'>,</span><span class='PDMVar'>liCID</span>
+<span class='PDMResK'>SET</span> <span class='PDMResK'>PROCEDURE</span> <span class='PDMResK'>TO</span> <span class='PDMVar'>ftp</span><span class='PDMOper'>.</span><span class='PDMVar'>prg</span> <span class='PDMResK'>ADDITIVE</span> 
+<span class='PDMVar'>loFTP</span><span class='PDMOper'>=</span><span class='PDMResF'>CREATEOBJECT</span><span class='PDMOper'>(</span><span class='PDMStr'>'ftp_service'</span><span class='PDMOper'>)</span> 
+<span class='PDMVar'>liState</span><span class='PDMOper'>=</span><span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMVar'>GetConnectedState</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span> <span class='PDMCom'>&amp;&amp; Check Connected state</span>
+<span class='PDMResK'>IF</span> <span class='PDMVar'>liState</span><span class='PDMOper'>=</span><span class='PDMOper'>-</span><span class='PDMLit'>1</span>
+   <span class='PDMOper'>?</span><span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMVar'>GetExtendedErrorCode</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span><span class='PDMOper'>,</span><span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMVar'>GetExtendedErrorMsg</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span>
+<span class='PDMResK'>ELSE</span>
+   <span class='PDMResK'>IF</span> <span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>liState</span><span class='PDMOper'>,</span><span class='PDMLit'>0</span><span class='PDMOper'>)</span> <span class='PDMCom'>&amp;&amp; INTERNET_CONNECTION_MODEM</span>
+      <span class='PDMOper'>?</span><span class='PDMStr'>"Use modem"</span>
+   <span class='PDMResK'>ENDIF</span>
+   <span class='PDMResK'>IF</span> <span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>liState</span><span class='PDMOper'>,</span><span class='PDMLit'>1</span><span class='PDMOper'>)</span> <span class='PDMCom'>&amp;&amp; INTERNET_CONNECTION_LAN</span>
+      <span class='PDMOper'>?</span><span class='PDMStr'>"Use LAN"</span>
+   <span class='PDMResK'>ENDIF</span>
+   <span class='PDMResK'>IF</span> <span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>liState</span><span class='PDMOper'>,</span><span class='PDMLit'>2</span><span class='PDMOper'>)</span> <span class='PDMCom'>&amp;&amp; INTERNET_CONNECTION_PROXY</span>
+      <span class='PDMOper'>?</span><span class='PDMStr'>"Use proxy"</span>
+   <span class='PDMResK'>ENDIF</span>
+   <span class='PDMResK'>IF</span> <span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>liState</span><span class='PDMOper'>,</span><span class='PDMLit'>3</span><span class='PDMOper'>)</span> <span class='PDMCom'>&amp;&amp; INTERNET_CONNECTION_MODEM_BUSY</span>
+      <span class='PDMOper'>?</span><span class='PDMStr'>"Modem busy"</span>
+   <span class='PDMResK'>ENDIF</span>
+   <span class='PDMResK'>IF</span> <span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>liState</span><span class='PDMOper'>,</span><span class='PDMLit'>4</span><span class='PDMOper'>)</span> <span class='PDMCom'>&amp;&amp; INTERNET_RAS_INSTALLED</span>
+      <span class='PDMOper'>?</span><span class='PDMStr'>"RAS installed"</span>
+   <span class='PDMResK'>ENDIF</span>
+   <span class='PDMResK'>IF</span> <span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>liState</span><span class='PDMOper'>,</span><span class='PDMLit'>5</span><span class='PDMOper'>)</span> <span class='PDMCom'>&amp;&amp; INTERNET_CONNECTION_OFFLINE</span>
+      <span class='PDMOper'>?</span><span class='PDMStr'>"Offline mode"</span>
+   <span class='PDMResK'>ENDIF</span>
+   <span class='PDMResK'>IF</span> <span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>liState</span><span class='PDMOper'>,</span><span class='PDMLit'>6</span><span class='PDMOper'>)</span> <span class='PDMCom'>&amp;&amp; INTERNET_CONNECTION_CONFIGURED</span>
+      <span class='PDMOper'>?</span><span class='PDMStr'>"Valid connection, but not cennected"</span>
+   <span class='PDMResK'>ENDIF</span>
+<span class='PDMResK'>ENDIF</span>
+<span class='PDMResK'>RELEASE</span> <span class='PDMResK'>PROCEDURE</span> <span class='PDMVar'>ftp</span><span class='PDMOper'>.</span><span class='PDMVar'>prg</span></pre>
+ <!-- Code End -->
+
+
+  </div>
+ </div><!-- Example End -->
+
+ <div class="PDM_AB_SeeAlso"><!-- SeeAlso Begin -->
+  <span class="PDM_AB_Head">
+   See also
+  </span>
+  <div class="PDM_AB_Body">
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.beforegetconnectedstate.htm" title="Skip to method FTP_SERVICE::BeforeGetConnectedState()">FTP_SERVICE::BeforeGetConnectedState()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.aftergetconnectedstate.htm" title="Skip to method FTP_SERVICE::AfterGetConnectedState()">FTP_SERVICE::AfterGetConnectedState()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.loadapifuncs.htm" title="Skip to method FTP_SERVICE::LoadAPIFuncs()">FTP_SERVICE::LoadAPIFuncs()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.getextendederror.htm" title="Skip to method FTP_SERVICE::GetExtendedError()">FTP_SERVICE::GetExtendedError()</a>
+  </div><!-- Body End -->
+  <!--- "Applies to" need to be inserted here---->
+  <PlaceAppliesTo_Here />
+  <!--- /"Applies to" need to be inserted here---->
+ </div><!-- SeeAlso End -->
+
+
+<!-- /Created with _diamp_pdm_ab by Agnes Beste    03.09.2007 19:34 -->
+
+ <div class="SC">
+  <img onclick="ExpandSC('SP_1',-1);"class="imgEC" src="../../imgs/uptab.gif" alt="Expand/Collapse source code of procedure GetConnectedState" id="IMG_SP_1" />
+  <span ondblclick="ExpandSC('SP_1',-1);" class="SCCaption"><a name="FTP_SERVICE">Source Code</a></span>
+  <div ondblclick="ExpandSC('SP_1',-1);" class="SCE" id="TX_SP_1">
+<!-- Code Begin -->
+<pre class="PDMCODE PDMNor" >      <span class='PDMResK'>LOCAL</span> <span class='PDMVar'>fResult</span><span class='PDMOper'>,</span> <span class='PDMVar'>lnConnectionState</span>
+
+      <span class='PDMResK'>IF</span> <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>LoadAPIFuncs</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span> <span class='PDMOper'>!</span><span class='PDMOper'>=</span> <span class='PDMVar'>ERROR_SUCCESS</span>
+         <span class='PDMResK'>RETURN</span> <span class='PDMOper'>-</span><span class='PDMLit'>1</span>
+      <span class='PDMResK'>ENDIF</span>
+
+      <span class='PDMVar'>lnConnectionState</span> <span class='PDMOper'>=</span> <span class='PDMLit'>0</span>
+
+      <span class='PDMOper'>=</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>BeforeGetConnectedState</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span>
+      <span class='PDMVar'>fResult</span> <span class='PDMOper'>=</span> <span class='PDMVar'>InternetGetConnectedState</span><span class='PDMOper'>(</span><span class='PDMOper'>@</span><span class='PDMVar'>lnConnectionState</span><span class='PDMOper'>,</span> <span class='PDMLit'>0</span><span class='PDMOper'>)</span>
+      <span class='PDMOper'>=</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>GetExtendedError</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span>
+      <span class='PDMOper'>=</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>AfterGetConnectedState</span><span class='PDMOper'>(</span><span class='PDMVar'>fResult</span><span class='PDMOper'>,</span><span class='PDMVar'>lnConnectionState</span><span class='PDMOper'>)</span>
+      <span class='PDMResK'>RETURN</span> <span class='PDMResF'>IIF</span><span class='PDMOper'>(</span><span class='PDMVar'>fResult</span> <span class='PDMOper'>=</span> <span class='PDMLit'>0</span><span class='PDMOper'>,</span><span class='PDMOper'>-</span><span class='PDMLit'>1</span><span class='PDMOper'>,</span><span class='PDMVar'>lnConnectionState</span><span class='PDMOper'>)</span></pre>
+ <!-- Code End -->
+  </div>
+ </div>
+</div>
+<div class="diaxp_mfoot"> <div class="PDM_AB_CopyRight"><!-- Footer Begin -->
+  <hr />
+  <div class="PDM_AB_Body">
+&copy; 2004-03-23 Robert Abram, &copy; 24.11.2005 Martina Jindr&uacute;
+  </div><!-- Body End -->
+ </div><!-- Footer End -->
+</div>
+<script language="JavaScript" type="text/javascript">
+lo=document.getElementById("TX_SP_1");
+lo.XType="SourceCode";
+lo.Dir="../../imgs/";
+
+
+</script>
+</body>
+</html>

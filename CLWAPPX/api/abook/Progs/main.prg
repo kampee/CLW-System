@@ -1,0 +1,29 @@
+* Set SCREEN=OFF in config.fpw 
+=SetEnvironment()
+
+WITH _SCREEN
+	.WindowState = 2	
+	.Show() && or Visible = .T.
+	.Left = -5000  && Temporary Hide _SCREEN
+ENDWITH
+
+DO FORM abFriend
+READ EVENTS
+
+CLEAR ALL
+RELEASE ALL EXTENDED
+
+*---------------------------------------------
+FUNCTION SetEnvironment
+
+SET DATE TO DMY
+SET DELETED ON
+SET EXCLUSIVE OFF
+SET HOUR TO 24
+SET MULTILOCKS ON
+SET SAFETY OFF
+SET SECOND OFF
+SET TALK OFF
+SET COLLATE TO "MACHINE"
+SET NULLDISPLAY TO ""
+SET CENTURY ON

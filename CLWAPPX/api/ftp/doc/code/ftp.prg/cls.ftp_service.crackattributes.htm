@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+<head>
+<title>Method CrackAttributes of class FTP_SERVICE</title>
+<meta content="text/html; charset=windows-1250" http-equiv="Content-Type" />
+<meta name="Generator" content="Project Documenting Machine" />
+<meta name="Version" content="1.2.3" />
+<link rel="stylesheet" href="../../css/foxw.css" type="text/css" />
+<link rel="stylesheet" href="../../css/sc.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diamp_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab_notes.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diaf_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diap_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diac_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/ftp.css" type="text/css" />
+<script src="../../js/pdm.js" language="JavaScript" type="text/javascript"></script>
+<script src="../../repository/pdm_ab.js" language="JavaScript" type="text/javascript"></script>
+</head>
+<body>
+<div class="diaxp_mhead">CrackAttributes Method</div>
+<div class="diaxp_mbody_class">
+
+<table class="clear_table">
+ <tbody>
+  <tr><td>Class: </td><td><a href="cls.ftp_service.htm" title="Skip to class ftp_service">FTP_SERVICE</a></td></tr>
+ </tbody>
+</table>
+</div>
+<div class="diaxp_mbody">
+<!-- Created with _diamp_pdm_ab by Agnes Beste    03.09.2007 19:34 -->
+ <div class="PDM_AB_Descr"><!-- Descr Begin -->
+Internal method for converting file's attributes to human's format.
+ </div><!-- Descr End -->
+
+ <div class="DIAMP_PDM_AB_Syntax"><!-- Syntax Begin -->
+  <div class="SColor">
+   <div class="PEM">
+    Object.CrackAttributes
+   </div>
+   <div class="Para">
+    (<a href="#_26715Y8DE">lcBuffer</a>)
+   </div>
+   <div style="clear: both"></div>
+  </div><!-- Colour End -->
+ </div><!-- Syntax End -->
+
+ <div class="DIAMP_PDM_AB_Params"><!-- Parameters Begin -->
+  <span class="PDM_AB_Head">
+   Parameter
+  </span>
+  <dl class="DIAMP_PDM_AB_Params_List">
+   <dt class="dt_">
+    <a class="DIAMP_PDM_AB_Params_ParaName" id="_26715Y8DE" name="_26715Y8DE">
+     <span class="PDMEXPR PDMNor" ><span class='PDMVar'>lcBuffer</span></span>
+
+    </a>
+   </dt>
+   <dd class="dd_">
+    <span class="Params_Short">
+     
+    </span>
+    <table class="Params_Info">
+     <colgroup>
+      <col class="ColumnValue" />
+      <col class="ColumnData" />
+     </colgroup>
+     <tbody>
+      <tr>
+       <td class="CellValue">Type</td>
+       <td class="CellData">Character</td>
+      </tr>
+      <tr>
+       <td class="CellValue">Direction</td>
+       <td class="CellData">Input</td>
+      </tr>
+     </tbody>
+    </table>
+   </dd>
+  </dl>
+ </div><!-- Parameters End -->
+
+ <div class="PDM_AB_Example"><!-- Example Begin -->
+  <span class="PDM_AB_Head">
+   Example
+  </span>
+  <div class="PDM_AB_Body">
+See source code of method <a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.crackfile.htm" title="Skip to method FTP_SERVICE::CrackFile()">FTP_SERVICE::CrackFile()</a>
+  </div>
+ </div><!-- Example End -->
+
+ <div class="PDM_AB_SeeAlso"><!-- SeeAlso Begin -->
+  <span class="PDM_AB_Head">
+   See also
+  </span>
+  <div class="PDM_AB_Body">
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.crackfile.htm" title="Skip to method FTP_SERVICE::CrackFile()">FTP_SERVICE::CrackFile()</a>
+  </div><!-- Body End -->
+  <!--- "Applies to" need to be inserted here---->
+  <PlaceAppliesTo_Here />
+  <!--- /"Applies to" need to be inserted here---->
+ </div><!-- SeeAlso End -->
+
+
+<!-- /Created with _diamp_pdm_ab by Agnes Beste    03.09.2007 19:34 -->
+
+ <div class="SC">
+  <img onclick="ExpandSC('SP_1',-1);"class="imgEC" src="../../imgs/uptab.gif" alt="Expand/Collapse source code of procedure CrackAttributes" id="IMG_SP_1" />
+  <span ondblclick="ExpandSC('SP_1',-1);" class="SCCaption"><a name="FTP_SERVICE">Source Code</a></span>
+  <div ondblclick="ExpandSC('SP_1',-1);" class="SCE" id="TX_SP_1">
+<!-- Code Begin -->
+<pre class="PDMCODE PDMNor" >      <span class='PDMResK'>LPARAMETERS</span> <span class='PDMVar'>INP</span> <span class='PDMVar'>lcBuffer</span>
+      <span class='PDMResK'>LOCAL</span> <span class='PDMVar'>lcAttributes</span><span class='PDMOper'>,</span> <span class='PDMVar'>lnValue</span>
+      <span class='PDMVar'>lcAttributes</span> <span class='PDMOper'>=</span> <span class='PDMStr'>''</span>
+
+      <span class='PDMVar'>lnValue</span> <span class='PDMOper'>=</span> <span class='PDMOper'>(</span><span class='PDMResF'>ASC</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcBuffer</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>*</span> <span class='PDMVar'>BYTE_1</span><span class='PDMOper'>)</span> <span class='PDMOper'>+</span> <span class='PDMOper'>;</span>
+                <span class='PDMOper'>(</span><span class='PDMResF'>ASC</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcBuffer</span><span class='PDMOper'>,</span> <span class='PDMLit'>2</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>*</span> <span class='PDMVar'>BYTE_2</span><span class='PDMOper'>)</span> <span class='PDMOper'>+</span> <span class='PDMOper'>;</span>
+                <span class='PDMOper'>(</span><span class='PDMResF'>ASC</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcBuffer</span><span class='PDMOper'>,</span> <span class='PDMLit'>3</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>*</span> <span class='PDMVar'>BYTE_3</span><span class='PDMOper'>)</span> <span class='PDMOper'>+</span> <span class='PDMOper'>;</span>
+                <span class='PDMOper'>(</span><span class='PDMResF'>ASC</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcBuffer</span><span class='PDMOper'>,</span> <span class='PDMLit'>4</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>*</span> <span class='PDMVar'>BYTE_4</span><span class='PDMOper'>)</span> 
+
+      <span class='PDMResK'>DO</span> <span class='PDMResK'>CASE</span>
+         <span class='PDMResK'>CASE</span> <span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>lnValue</span><span class='PDMOper'>,</span> <span class='PDMVar'>BIT_ATTRIBUTE_READONLY</span><span class='PDMOper'>)</span> 
+              <span class='PDMVar'>lcAttributes</span> <span class='PDMOper'>=</span> <span class='PDMVar'>lcAttributes</span> <span class='PDMOper'>+</span> <span class='PDMStr'>'R'</span>
+
+         <span class='PDMResK'>CASE</span> <span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>lnValue</span><span class='PDMOper'>,</span> <span class='PDMVar'>BIT_ATTRIBUTE_HIDDEN</span><span class='PDMOper'>)</span> 
+              <span class='PDMVar'>lcAttributes</span> <span class='PDMOper'>=</span> <span class='PDMVar'>lcAttributes</span> <span class='PDMOper'>+</span> <span class='PDMStr'>'H'</span>
+
+         <span class='PDMResK'>CASE</span> <span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>lnValue</span><span class='PDMOper'>,</span> <span class='PDMVar'>BIT_ATTRIBUTE_SYSTEM</span><span class='PDMOper'>)</span> 
+              <span class='PDMVar'>lcAttributes</span> <span class='PDMOper'>=</span> <span class='PDMVar'>lcAttributes</span> <span class='PDMOper'>+</span> <span class='PDMStr'>'S'</span>
+
+         <span class='PDMResK'>CASE</span> <span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>lnValue</span><span class='PDMOper'>,</span> <span class='PDMVar'>BIT_ATTRIBUTE_DIRECTORY</span><span class='PDMOper'>)</span> 
+              <span class='PDMVar'>lcAttributes</span> <span class='PDMOper'>=</span> <span class='PDMVar'>lcAttributes</span> <span class='PDMOper'>+</span> <span class='PDMStr'>'D'</span>
+
+         <span class='PDMResK'>CASE</span> <span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>lnValue</span><span class='PDMOper'>,</span> <span class='PDMVar'>BIT_ATTRIBUTE_ARCHIVE</span><span class='PDMOper'>)</span> 
+              <span class='PDMVar'>lcAttributes</span> <span class='PDMOper'>=</span> <span class='PDMVar'>lcAttributes</span> <span class='PDMOper'>+</span> <span class='PDMStr'>'A'</span>
+
+         <span class='PDMResK'>CASE</span> <span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>lnValue</span><span class='PDMOper'>,</span> <span class='PDMVar'>BIT_ATTRIBUTE_NORMAL</span><span class='PDMOper'>)</span> 
+              <span class='PDMVar'>lcAttributes</span> <span class='PDMOper'>=</span> <span class='PDMVar'>lcAttributes</span> <span class='PDMOper'>+</span> <span class='PDMStr'>'N'</span>
+
+         <span class='PDMResK'>CASE</span> <span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>lnValue</span><span class='PDMOper'>,</span> <span class='PDMVar'>BIT_ATTRIBUTE_TEMPORARY</span><span class='PDMOper'>)</span> 
+              <span class='PDMVar'>lcAttributes</span> <span class='PDMOper'>=</span> <span class='PDMVar'>lcAttributes</span> <span class='PDMOper'>+</span> <span class='PDMStr'>'T'</span>
+
+         <span class='PDMResK'>CASE</span> <span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>lnValue</span><span class='PDMOper'>,</span> <span class='PDMVar'>BIT_ATTRIBUTE_COMPRESSED</span><span class='PDMOper'>)</span> 
+              <span class='PDMVar'>lcAttributes</span> <span class='PDMOper'>=</span> <span class='PDMVar'>lcAttributes</span> <span class='PDMOper'>+</span> <span class='PDMStr'>'C'</span>
+
+         <span class='PDMResK'>CASE</span> <span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>lnValue</span><span class='PDMOper'>,</span> <span class='PDMVar'>BIT_ATTRIBUTE_OFFLINE</span><span class='PDMOper'>)</span> 
+              <span class='PDMVar'>lcAttributes</span> <span class='PDMOper'>=</span> <span class='PDMVar'>lcAttributes</span> <span class='PDMOper'>+</span> <span class='PDMStr'>'O'</span>
+      <span class='PDMResK'>ENDCASE</span>
+
+      <span class='PDMResK'>RETURN</span> <span class='PDMVar'>lcAttributes</span></pre>
+ <!-- Code End -->
+  </div>
+ </div>
+</div>
+<div class="diaxp_mfoot"> <div class="PDM_AB_CopyRight"><!-- Footer Begin -->
+  <hr />
+  <div class="PDM_AB_Body">
+&copy; 2004-03-23 Robert Abram, &copy; 24.11.2005 Martina Jindr&uacute;
+  </div><!-- Body End -->
+ </div><!-- Footer End -->
+</div>
+<script language="JavaScript" type="text/javascript">
+lo=document.getElementById("TX_SP_1");
+lo.XType="SourceCode";
+lo.Dir="../../imgs/";
+
+
+</script>
+</body>
+</html>

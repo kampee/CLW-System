@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+<head>
+<title>Method DialInternet of class FTP_SERVICE</title>
+<meta content="text/html; charset=windows-1250" http-equiv="Content-Type" />
+<meta name="Generator" content="Project Documenting Machine" />
+<meta name="Version" content="1.2.3" />
+<link rel="stylesheet" href="../../css/foxw.css" type="text/css" />
+<link rel="stylesheet" href="../../css/sc.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diamp_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab_notes.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diaf_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diap_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diac_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/ftp.css" type="text/css" />
+<script src="../../js/pdm.js" language="JavaScript" type="text/javascript"></script>
+<script src="../../repository/pdm_ab.js" language="JavaScript" type="text/javascript"></script>
+</head>
+<body>
+<div class="diaxp_mhead">DialInternet Method</div>
+<div class="diaxp_mbody_class">
+
+<table class="clear_table">
+ <tbody>
+  <tr><td>Class: </td><td><a href="cls.ftp_service.htm" title="Skip to class ftp_service">FTP_SERVICE</a></td></tr>
+ </tbody>
+</table>
+</div>
+<div class="diaxp_mbody">
+<!-- Created with _diamp_pdm_ab by Agnes Beste    03.09.2007 19:33 -->
+ <div class="PDM_AB_Descr"><!-- Descr Begin -->
+Attempts to use a preconfigured Dial Up account to connect to the internet.
+ </div><!-- Descr End -->
+
+ <div class="DIAMP_PDM_AB_Syntax"><!-- Syntax Begin -->
+  <div class="SColor">
+   <div class="RetVal"><a href="#_26715XQMR">RetVal</a>&nbsp;</div>   <div class="RetValEq">=</div>   <div class="PEM">
+    Object.DialInternet
+   </div>
+   <div class="Para">
+    (<a href="#_26715XQMS">lcDialUpName</a>
+     <wbr />,<a href="#_26715XQMT">lnFlag</a>)
+   </div>
+   <div style="clear: both"></div>
+  </div><!-- Colour End -->
+ </div><!-- Syntax End -->
+
+ <div class="DIAMP_PDM_AB_Params"><!-- Parameters Begin -->
+  <span class="PDM_AB_Head">
+   Parameter
+  </span>
+  <dl class="DIAMP_PDM_AB_Params_List">
+   <dt class="dt_">
+    <a class="DIAMP_PDM_AB_Params_ParaName" id="_26715XQMS" name="_26715XQMS">
+     <span class="PDMEXPR PDMNor" ><span class='PDMVar'>lcDialUpName</span></span>
+
+    </a>
+   </dt>
+   <dd class="dd_">
+    <span class="Params_Short">
+     Name of the DialUp Connection to use.
+    </span>
+    <table class="Params_Info">
+     <colgroup>
+      <col class="ColumnValue" />
+      <col class="ColumnData" />
+     </colgroup>
+     <tbody>
+      <tr>
+       <td class="CellValue">Type</td>
+       <td class="CellData">Character</td>
+      </tr>
+      <tr>
+       <td class="CellValue">Direction</td>
+       <td class="CellData">Input</td>
+      </tr>
+     </tbody>
+    </table>
+   </dd>
+   <dt class="dt_">
+    <a class="DIAMP_PDM_AB_Params_ParaName" id="_26715XQMT" name="_26715XQMT">
+     <span class="PDMEXPR PDMNor" ><span class='PDMVar'>lnFlag</span></span>
+
+    </a>
+   </dt>
+   <dd class="dd_">
+    <span class="Params_Short">
+     
+    </span>
+    <table class="Params_Info">
+     <colgroup>
+      <col class="ColumnValue" />
+      <col class="ColumnData" />
+     </colgroup>
+     <tbody>
+      <tr>
+       <td class="CellValue">Type</td>
+       <td class="CellData">Numeric</td>
+      </tr>
+      <tr>
+       <td class="CellValue">Direction</td>
+       <td class="CellData">Input</td>
+      </tr>
+     </tbody>
+    </table>
+    <span class="Params_Detail">
+
+<table class="listvalues">
+ <tr class="Head"><td>Value</td><td>Description</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>INTERNET_AUTODIAL_FORCE_ONLINE</span></span>
+</td><td>Forces an online Internet connection.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>INTERNET_AUTODIAL_FORCE_UNATTENDED</span></span>
+</td><td>Forces an unattended Internet dial-up.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>INTERNET_AUTODIAL_FAILIFSECURITYCHECK</span></span>
+</td><td>Causes InternetAutodial to fail if file and printer sharing is disabled for Windows 95 or later.</td></tr>
+</table>
+Assumed from <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/wininet/wininet/internetdial.asp">MSDN</a>.
+
+    </span>
+   </dd>
+  </dl>
+ </div><!-- Parameters End -->
+
+ <div class="DIAMP_PDM_AB_RetVal"><!-- Returns Begin -->
+  <div>
+   <span class="PDM_AB_Head">
+    <a id="_26715XQMR" name="_26715XQMR">
+     Return value
+    </a>
+   </span> <span class="RetVal_Ttype">Integer</span>
+  </div>
+  <div class="PDM_AB_Body">
+Connection handle number.  <span class="PDMEXPR PDMNor" ><span class='PDMLit'>0</span></span>
+ if API Call unsuccessful or <span class="PDMEXPR PDMNor" ><span class='PDMOper'>-</span><span class='PDMLit'>1</span></span>
+ if foxpro function failed.
+  </div>
+ </div><!-- Returns End -->
+
+ <div class="PDM_AB_Example"><!-- Example Begin -->
+  <span class="PDM_AB_Head">
+   Example
+  </span>
+  <div class="PDM_AB_Body">
+
+<!-- Code Begin -->
+<pre class="PDMCODE PDMNor" >
+<span class='PDMResK'>LOCAL</span> <span class='PDMVar'>loFTP</span><span class='PDMOper'>,</span> <span class='PDMVar'>liState</span><span class='PDMOper'>,</span><span class='PDMVar'>liCID</span>
+<span class='PDMResK'>SET</span> <span class='PDMResK'>PROCEDURE</span> <span class='PDMResK'>TO</span> <span class='PDMVar'>ftp</span><span class='PDMOper'>.</span><span class='PDMVar'>prg</span> <span class='PDMResK'>ADDITIVE</span> 
+<span class='PDMVar'>loFTP</span><span class='PDMOper'>=</span><span class='PDMResF'>CREATEOBJECT</span><span class='PDMOper'>(</span><span class='PDMStr'>'ftp_service'</span><span class='PDMOper'>)</span> 
+<span class='PDMVar'>liState</span><span class='PDMOper'>=</span><span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMVar'>GetConnectedState</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span> <span class='PDMCom'>&amp;&amp; Check Connected state</span>
+<span class='PDMResK'>IF</span> <span class='PDMVar'>liState</span><span class='PDMOper'>=</span><span class='PDMOper'>-</span><span class='PDMLit'>1</span>
+   <span class='PDMOper'>?</span><span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMVar'>GetExtendedErrorCode</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span><span class='PDMOper'>,</span><span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMVar'>GetExtendedErrorMsg</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span>
+   <span class='PDMResK'>RETURN</span>
+<span class='PDMResK'>ENDIF</span>
+
+<span class='PDMResK'>IF</span> <span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>liState</span><span class='PDMOper'>,</span><span class='PDMLit'>0</span><span class='PDMOper'>)</span> <span class='PDMCom'>&amp;&amp; Use Modem?</span>
+   <span class='PDMVar'>liCID</span><span class='PDMOper'>=</span><span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMVar'>DialInternet</span><span class='PDMOper'>(</span><span class='PDMStr'>"MACONNEXION"</span><span class='PDMOper'>,</span><span class='PDMLit'>1</span><span class='PDMOper'>)</span> 
+<span class='PDMResK'>ENDIF</span>
+
+<span class='PDMResK'>IF</span> <span class='PDMOper'>(</span><span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>liState</span><span class='PDMOper'>,</span><span class='PDMLit'>0</span><span class='PDMOper'>)</span> <span class='PDMOper'>AND</span> <span class='PDMVar'>liCID</span><span class='PDMOper'>&gt;</span><span class='PDMLit'>0</span> <span class='PDMOper'>OR</span> <span class='PDMOper'>!</span><span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>liState</span><span class='PDMOper'>,</span><span class='PDMLit'>0</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>AND</span> <span class='PDMOper'>;</span>
+   <span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMVar'>OpenInternet</span><span class='PDMOper'>(</span><span class='PDMStr'>"ABONNE"</span><span class='PDMOper'>,</span> <span class='PDMStr'>"PWD"</span><span class='PDMOper'>,</span> <span class='PDMStr'>"10.10.10.10"</span><span class='PDMOper'>,</span> <span class='PDMStr'>"21"</span><span class='PDMOper'>)</span> 
+<span class='PDMCom'>   * Try to get a handle into the Internet and Connect Briefly with the FTP Site </span>
+<span class='PDMCom'>   * Note: Insert your USER ID, PASSWORD, FTP ADDRESS, PORT # Here   </span>
+<span class='PDMCom'>   * Note: ("21" is the Default Port) </span>
+   <span class='PDMOper'>?</span><span class='PDMStr'>"Connection réussie"</span> 
+
+   <span class='PDMOper'>=</span><span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMVar'>CloseInternet</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span> 
+<span class='PDMResK'>ENDIF</span>
+<span class='PDMOper'>=</span><span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMVar'>DialHangUp</span><span class='PDMOper'>(</span><span class='PDMVar'>liCID</span><span class='PDMOper'>)</span> 
+<span class='PDMResK'>RELEASE</span> <span class='PDMResK'>PROCEDURE</span> <span class='PDMVar'>ftp</span><span class='PDMOper'>.</span><span class='PDMVar'>prg</span></pre>
+ <!-- Code End -->
+
+
+  </div>
+ </div><!-- Example End -->
+
+ <div class="PDM_AB_SeeAlso"><!-- SeeAlso Begin -->
+  <span class="PDM_AB_Head">
+   See also
+  </span>
+  <div class="PDM_AB_Body">
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.beforedialinternet.htm" title="Skip to method FTP_SERVICE::BeforeDialInternet()">FTP_SERVICE::BeforeDialInternet()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.afterdialinternet.htm" title="Skip to method FTP_SERVICE::AfterDialInternet()">FTP_SERVICE::AfterDialInternet()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.dialhangup.htm" title="Skip to method FTP_SERVICE::DialHangUp()">FTP_SERVICE::DialHangUp()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.beforedialhangup.htm" title="Skip to method FTP_SERVICE::BeforeDialHangUp()">FTP_SERVICE::BeforeDialHangUp()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.afterdialhangup.htm" title="Skip to method FTP_SERVICE::AfterDialHangUp()">FTP_SERVICE::AfterDialHangUp()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.loadapifuncs.htm" title="Skip to method FTP_SERVICE::LoadAPIFuncs()">FTP_SERVICE::LoadAPIFuncs()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.getextendederror.htm" title="Skip to method FTP_SERVICE::GetExtendedError()">FTP_SERVICE::GetExtendedError()</a>
+  </div><!-- Body End -->
+  <!--- "Applies to" need to be inserted here---->
+  <PlaceAppliesTo_Here />
+  <!--- /"Applies to" need to be inserted here---->
+ </div><!-- SeeAlso End -->
+
+
+<!-- /Created with _diamp_pdm_ab by Agnes Beste    03.09.2007 19:33 -->
+
+ <div class="SC">
+  <img onclick="ExpandSC('SP_1',-1);"class="imgEC" src="../../imgs/uptab.gif" alt="Expand/Collapse source code of procedure DialInternet" id="IMG_SP_1" />
+  <span ondblclick="ExpandSC('SP_1',-1);" class="SCCaption"><a name="FTP_SERVICE">Source Code</a></span>
+  <div ondblclick="ExpandSC('SP_1',-1);" class="SCE" id="TX_SP_1">
+<!-- Code Begin -->
+<pre class="PDMCODE PDMNor" >      <span class='PDMResK'>LPARAMETERS</span> <span class='PDMVar'>INP</span> <span class='PDMVar'>lcDialUpName</span><span class='PDMOper'>,</span> <span class='PDMVar'>INP</span> <span class='PDMVar'>lnFlag</span>
+      <span class='PDMResK'>LOCAL</span> <span class='PDMVar'>fResult</span><span class='PDMOper'>,</span> <span class='PDMVar'>lnConnectionID</span><span class='PDMOper'>,</span> <span class='PDMVar'>lnHWNDHandle</span>
+      <span class='PDMResK'>IF</span> <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>LoadAPIFuncs</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span> <span class='PDMOper'>!</span><span class='PDMOper'>=</span> <span class='PDMVar'>ERROR_SUCCESS</span>
+         <span class='PDMResK'>RETURN</span> <span class='PDMOper'>-</span><span class='PDMLit'>1</span>
+      <span class='PDMResK'>ENDIF</span>
+
+      <span class='PDMResK'>STORE</span> <span class='PDMLit'>0</span> <span class='PDMResK'>TO</span> <span class='PDMVar'>lnConnectionID</span><span class='PDMOper'>,</span><span class='PDMVar'>lnHWNDHandle</span>
+
+      <span class='PDMResK'>IF</span> <span class='PDMResF'>TYPE</span><span class='PDMOper'>(</span><span class='PDMStr'>"lcDialUpName"</span><span class='PDMOper'>)</span> <span class='PDMOper'>!</span><span class='PDMOper'>=</span> <span class='PDMStr'>"C"</span> <span class='PDMOper'>OR</span> <span class='PDMOper'>;</span>
+         <span class='PDMResF'>TYPE</span><span class='PDMOper'>(</span><span class='PDMStr'>"lnFlag"</span><span class='PDMOper'>)</span> <span class='PDMOper'>!</span><span class='PDMOper'>=</span> <span class='PDMStr'>"N"</span>
+         <span class='PDMResK'>RETURN</span> <span class='PDMOper'>-</span><span class='PDMLit'>1</span>
+      <span class='PDMResK'>ENDIF</span>
+
+      <span class='PDMResK'>IF</span> <span class='PDMResF'>LEN</span><span class='PDMOper'>(</span><span class='PDMResF'>ALLTRIM</span><span class='PDMOper'>(</span><span class='PDMVar'>lcDialUpName</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>=</span> <span class='PDMLit'>0</span> 
+         <span class='PDMResK'>RETURN</span> <span class='PDMOper'>-</span><span class='PDMLit'>1</span>
+      <span class='PDMResK'>ENDIF</span>
+
+      <span class='PDMVar'>lcDialUpName</span> <span class='PDMOper'>=</span> <span class='PDMVar'>lcDialUpName</span> <span class='PDMOper'>+</span> <span class='PDMVar'>cNULL</span>
+      <span class='PDMOper'>=</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>BeforeDialInternet</span><span class='PDMOper'>(</span><span class='PDMVar'>lcDialUpName</span><span class='PDMOper'>,</span> <span class='PDMVar'>lnFlag</span><span class='PDMOper'>)</span>
+      <span class='PDMVar'>fResult</span> <span class='PDMOper'>=</span> <span class='PDMVar'>InternetDial</span><span class='PDMOper'>(</span><span class='PDMVar'>lnHWNDHandle</span><span class='PDMOper'>,</span> <span class='PDMOper'>@</span><span class='PDMVar'>lcDialUpName</span><span class='PDMOper'>,</span> <span class='PDMVar'>lnFlag</span><span class='PDMOper'>,</span> <span class='PDMOper'>@</span><span class='PDMVar'>lnConnectionID</span><span class='PDMOper'>,</span> <span class='PDMLit'>0</span><span class='PDMOper'>)</span>
+      <span class='PDMOper'>=</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>GetExtendedError</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span>
+      <span class='PDMOper'>=</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>AfterDialInternet</span><span class='PDMOper'>(</span><span class='PDMOper'>@</span><span class='PDMVar'>lcDialUpName</span><span class='PDMOper'>,</span> <span class='PDMVar'>lnFlag</span><span class='PDMOper'>,</span><span class='PDMVar'>lnConnectionID</span><span class='PDMOper'>,</span><span class='PDMVar'>fResult</span><span class='PDMOper'>)</span>
+      <span class='PDMResK'>RETURN</span> <span class='PDMVar'>lnConnectionID</span></pre>
+ <!-- Code End -->
+  </div>
+ </div>
+</div>
+<div class="diaxp_mfoot"> <div class="PDM_AB_CopyRight"><!-- Footer Begin -->
+  <hr />
+  <div class="PDM_AB_Body">
+&copy; 2004-03-23 Robert Abram, &copy; 24.11.2005 Martina Jindr&uacute;
+  </div><!-- Body End -->
+ </div><!-- Footer End -->
+</div>
+<script language="JavaScript" type="text/javascript">
+lo=document.getElementById("TX_SP_1");
+lo.XType="SourceCode";
+lo.Dir="../../imgs/";
+
+
+</script>
+</body>
+</html>

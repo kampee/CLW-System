@@ -1,0 +1,424 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+<head>
+<title>Method GetFTPDirectoryArray of class FTP_SERVICE</title>
+<meta content="text/html; charset=windows-1250" http-equiv="Content-Type" />
+<meta name="Generator" content="Project Documenting Machine" />
+<meta name="Version" content="1.2.3" />
+<link rel="stylesheet" href="../../css/foxw.css" type="text/css" />
+<link rel="stylesheet" href="../../css/sc.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diamp_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab_notes.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diaf_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diap_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diac_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/ftp.css" type="text/css" />
+<script src="../../js/pdm.js" language="JavaScript" type="text/javascript"></script>
+<script src="../../repository/pdm_ab.js" language="JavaScript" type="text/javascript"></script>
+</head>
+<body>
+<div class="diaxp_mhead">GetFTPDirectoryArray Method</div>
+<div class="diaxp_mbody_class">
+
+<table class="clear_table">
+ <tbody>
+  <tr><td>Class: </td><td><a href="cls.ftp_service.htm" title="Skip to class ftp_service">FTP_SERVICE</a></td></tr>
+ </tbody>
+</table>
+</div>
+<div class="diaxp_mbody">
+<!-- Created with _diamp_pdm_ab by Agnes Beste    03.09.2007 19:34 -->
+ <div class="PDM_AB_Descr"><!-- Descr Begin -->
+This method retrieves a list of files from the current directory on the FTP Server.
+ The files are placed in an array with each row being a file and that file's information.
+ The array is created from a variable that is passed by reference to the function.
+ So when the function returns, the Files variable contains an array of files.
+ <p />
+ Not all the array elements may be filled in, depending on the type operating system the FTP Server is running on.
+ For example, if the FTP Server is running on NT Server, long file names are supported.
+
+ </div><!-- Descr End -->
+
+ <div class="DIAMP_PDM_AB_Syntax"><!-- Syntax Begin -->
+  <div class="SColor">
+   <div class="RetVal"><a href="#_26715Y3IA">RetVal</a>&nbsp;</div>   <div class="RetValEq">=</div>   <div class="PEM">
+    Object.GetFTPDirectoryArray
+   </div>
+   <div class="Para">
+    (@<a href="#_26715Y3IB">laDirectory</a>
+     <wbr />,<a href="#_26715Y3IC">lcMask</a>
+     <wbr />,<a href="#_26715Y3ID">lnFlag</a>)
+   </div>
+   <div style="clear: both"></div>
+  </div><!-- Colour End -->
+ </div><!-- Syntax End -->
+
+ <div class="DIAMP_PDM_AB_Params"><!-- Parameters Begin -->
+  <span class="PDM_AB_Head">
+   Parameter
+  </span>
+  <dl class="DIAMP_PDM_AB_Params_List">
+   <dt class="dt_">
+    <a class="DIAMP_PDM_AB_Params_ParaName" id="_26715Y3IB" name="_26715Y3IB">
+     <span class="PDMEXPR PDMNor" ><span class='PDMVar'>laDirectory</span></span>
+
+    </a>
+   </dt>
+   <dd class="dd_">
+    <span class="Params_Short">
+     Array of files
+    </span>
+    <table class="Params_Info">
+     <colgroup>
+      <col class="ColumnValue" />
+      <col class="ColumnData" />
+     </colgroup>
+     <tbody>
+      <tr>
+       <td class="CellValue">Type</td>
+       <td class="CellData">Array</td>
+      </tr>
+      <tr>
+       <td class="CellValue">By reference</td>
+       <td class="CellData">&nbsp;</td>
+      </tr>
+      <tr>
+       <td class="CellValue">Direction</td>
+       <td class="CellData">Output</td>
+      </tr>
+     </tbody>
+    </table>
+    <span class="Params_Detail">
+Holds an array of files after the function completes.<br />
+The Files array has the following structure:
+<table class="listvalues">
+ <tr class="Head"><td>Type</td><td>Position</td><td>Name</td><td>Description</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>C</span></span>
+</td><td>[x, 1]</td><td>File name</td><td>Long file name if available</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>C</span></span>
+</td><td>[x, 2]</td><td>Alternate File name</td><td>Short file name if available</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>N</span></span>
+</td><td>[x, 3]</td><td>File Size</td><td>Size of file in bytes</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>T</span></span>
+</td><td>[x, 4]</td><td>File Create Date</td><td>File create date and time</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>T</span></span>
+</td><td>[x, 5]</td><td>File Last Access Time</td><td>Last access date and time</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>T</span></span>
+</td><td>[x, 6]</td><td>File Last Write Time</td><td>Last write date and time</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>C</span></span>
+</td><td>[x, 7]</td><td>File Attributes</td><td>File attributes</td></tr>
+</table>
+<br/>
+The file Attributes array index is a string with the following characters concatenated together:
+<table class="listvalues">
+ <tr class="Head"><td>Value</td><td>Description</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMStr'>'R'</span></span>
+</td><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>FILE_ATTRIBUTE_READONLY</span></span>
+</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMStr'>'H'</span></span>
+</td><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>FILE_ATTRIBUTE_HIDDEN</span></span>
+</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMStr'>'S'</span></span>
+</td><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>FILE_ATTRIBUTE_SYSTEM</span></span>
+</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMStr'>'D'</span></span>
+</td><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>FILE_ATTRIBUTE_DIRECTORY</span></span>
+</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMStr'>'A'</span></span>
+</td><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>FILE_ATTRIBUTE_ARCHIVE</span></span>
+</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMStr'>'N'</span></span>
+</td><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>FILE_ATTRIBUTE_NORMAL</span></span>
+</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMStr'>'T'</span></span>
+</td><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>FILE_ATTRIBUTE_TEMPORARY</span></span>
+</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMStr'>'C'</span></span>
+</td><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>FILE_ATTRIBUTE_COMPRESSED</span></span>
+</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMStr'>'O'</span></span>
+</td><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>FILE_ATTRIBUTE_OFFLINE</span></span>
+</td></tr>
+</table>
+
+    </span>
+   </dd>
+   <dt class="dt_">
+    <a class="DIAMP_PDM_AB_Params_ParaName" id="_26715Y3IC" name="_26715Y3IC">
+     <span class="PDMEXPR PDMNor" ><span class='PDMVar'>lcMask</span></span>
+
+    </a>
+   </dt>
+   <dd class="dd_">
+    <span class="Params_Short">
+     Mask files
+    </span>
+    <table class="Params_Info">
+     <colgroup>
+      <col class="ColumnValue" />
+      <col class="ColumnData" />
+     </colgroup>
+     <tbody>
+      <tr>
+       <td class="CellValue">Type</td>
+       <td class="CellData">Character</td>
+      </tr>
+      <tr>
+       <td class="CellValue">Direction</td>
+       <td class="CellData">Input</td>
+      </tr>
+     </tbody>
+    </table>
+    <span class="Params_Detail">
+Specifies a file mask to filter files in the operation.
+    </span>
+   </dd>
+   <dt class="dt_">
+    <a class="DIAMP_PDM_AB_Params_ParaName" id="_26715Y3ID" name="_26715Y3ID">
+     <span class="PDMEXPR PDMNor" ><span class='PDMVar'>lnFlag</span></span>
+
+    </a>
+   </dt>
+   <dd class="dd_">
+    <span class="Params_Short">
+     The flags that indicate various options.
+    </span>
+    <table class="Params_Info">
+     <colgroup>
+      <col class="ColumnValue" />
+      <col class="ColumnData" />
+     </colgroup>
+     <tbody>
+      <tr>
+       <td class="CellValue">Type</td>
+       <td class="CellData">Numeric</td>
+      </tr>
+      <tr>
+       <td class="CellValue">Direction</td>
+       <td class="CellData">Input</td>
+      </tr>
+     </tbody>
+    </table>
+    <span class="Params_Detail">
+Value is combined with <span class="PDMEXPR PDMNor" ><span class='PDMVar'>INTERNET_FLAG_RELOAD</span></span>
+.
+Can be one of the following:
+<table class="listvalues">
+ <tr class="Head"><td>Value</td><td>Description</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>INTERNET_FLAG_HYPERLINK</span></span>
+</td><td>Forces a reload if there was no Expires time and no LastModified time returned from the server when determining whether to reload the item from the network.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>INTERNET_FLAG_NEED_FILE</span></span>
+</td><td>Identical to the preferred value, <span class="PDMEXPR PDMNor" ><span class='PDMVar'>INTERNET_FLAG_MUST_CAHCE_REQUEST</span></span>
+. Causes a temporary file to be created if the file cannot be cached.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>INTERNET_FLAG_NO_CACHE_WRITE</span></span>
+</td><td>Does not add the returned entity to the cache.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>INTERNET_FLAG_RELOAD</span></span>
+</td><td>Forces a download of the requested file, object, or directory listing from the origin server, not from the cache.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMVar'>INTERNET_FLAG_RESYNCHRONIZE</span></span>
+</td><td>Reloads HTTP resources if the resource has been modified since the last time it was downloaded. All FTP and Gopher resources are reloaded.</td></tr>
+</table>
+Assumed from <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/wininet/wininet/ftpfindfirstfile.asp">MSDN</a>.
+    </span>
+   </dd>
+  </dl>
+ </div><!-- Parameters End -->
+
+ <div class="DIAMP_PDM_AB_RetVal"><!-- Returns Begin -->
+  <div>
+   <span class="PDM_AB_Head">
+    <a id="_26715Y3IA" name="_26715Y3IA">
+     Return value
+    </a>
+   </span> <span class="RetVal_Ttype">Boolean</span>
+  </div>
+  <div class="PDM_AB_Body">
+Returns <span class="PDMEXPR PDMNor" ><span class='PDMLit'>.T.</span></span>
+ if the function successfully returned the current directory on the FTP Server.
+ Returns <span class="PDMEXPR PDMNor" ><span class='PDMLit'>.F.</span></span>
+ if the function could not get the current directory.
+
+  </div>
+ </div><!-- Returns End -->
+
+ <div class="PDM_AB_Remarks"><!-- Remarks Begin -->
+  <span class="PDM_AB_Head">
+   Remarks
+  </span>
+  <div class="PDM_AB_Body">
+
+
+    <!-- Note -->
+
+   <div class="PDM_AB_Note">
+    <div class="Block_Picture" title="">
+     Note
+    </div>
+    <div class="Block_Text">
+ After the function returns, doing an <span class="PDMEXPR PDMNor" ><span class='PDMResF'>EMPTY</span><span class='PDMOper'>(</span><span class='PDMVar'>laDirectory</span><span class='PDMOper'>)</span></span>
+ will return <span class="PDMEXPR PDMNor" ><span class='PDMLit'>.T.</span></span>
+ if no files were found in the directory on the FTP Server.
+    </div><!-- end of note text -->
+    <div style="clear: both"></div>
+   </div><!-- end of note -->
+
+    <!-- Note -->
+
+   <div class="PDM_AB_Note">
+    <div class="Block_Picture" title="">
+     Note
+    </div>
+    <div class="Block_Text">
+ This method doesn't support  multioperations - <a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.lmultioperations.htm" title="Skip to property FTP_SERVICE::lMultiOperations">FTP_SERVICE::lMultiOperations</a>.
+    </div><!-- end of note text -->
+    <div style="clear: both"></div>
+   </div><!-- end of note -->
+
+
+  </div>
+ </div><!-- Remarks End -->
+
+ <div class="PDM_AB_Example"><!-- Example Begin -->
+  <span class="PDM_AB_Head">
+   Example
+  </span>
+  <div class="PDM_AB_Body">
+
+<!-- Code Begin -->
+<pre class="PDMCODE PDMNor" >
+<span class='PDMResK'>LOCAL</span> <span class='PDMVar'>loFTP</span><span class='PDMOper'>,</span><span class='PDMVar'>lii</span>
+<span class='PDMResK'>LOCAL</span> <span class='PDMResK'>ARRAY</span> <span class='PDMVar'>laFolders</span><span class='PDMOper'>(</span><span class='PDMLit'>1</span><span class='PDMOper'>)</span>
+<span class='PDMOper'>#</span><span class='PDMResK'>INCLUDE</span> <span class='PDMStr'>"ftp.h"</span>
+<span class='PDMResK'>SET</span> <span class='PDMResK'>PROCEDURE</span> <span class='PDMResK'>TO</span> <span class='PDMVar'>ftp</span><span class='PDMOper'>.</span><span class='PDMVar'>prg</span> <span class='PDMResK'>ADDITIVE</span> 
+<span class='PDMVar'>loFTP</span><span class='PDMOper'>=</span><span class='PDMResF'>CREATEOBJECT</span><span class='PDMOper'>(</span><span class='PDMStr'>'ftp_service'</span><span class='PDMOper'>)</span> 
+
+<span class='PDMResK'>IF</span> <span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMVar'>OpenInternet</span><span class='PDMOper'>(</span><span class='PDMStr'>"ABONNE"</span><span class='PDMOper'>,</span> <span class='PDMStr'>"PWD"</span><span class='PDMOper'>,</span> <span class='PDMStr'>"10.10.10.10"</span><span class='PDMOper'>,</span> <span class='PDMStr'>"21"</span><span class='PDMOper'>)</span>
+
+   <span class='PDMResK'>IF</span> <span class='PDMOper'>!</span><span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMVar'>GetFTPDirectoryArray</span><span class='PDMOper'>(</span><span class='PDMOper'>@</span><span class='PDMVar'>laFolders</span><span class='PDMOper'>,</span><span class='PDMStr'>"*.txt"</span><span class='PDMOper'>)</span>
+      <span class='PDMOper'>?</span><span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMVar'>GetExtendedErrorCode</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span><span class='PDMOper'>,</span><span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMVar'>GetExtendedErrorMsg</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span>
+   <span class='PDMResK'>ELSE</span>
+
+      <span class='PDMResK'>FOR</span> <span class='PDMVar'>lii</span><span class='PDMOper'>=</span><span class='PDMLit'>1</span> <span class='PDMResK'>TO</span> <span class='PDMResF'>ALEN</span><span class='PDMOper'>(</span><span class='PDMVar'>laFolders</span><span class='PDMOper'>,</span><span class='PDMLit'>1</span><span class='PDMOper'>)</span>
+          <span class='PDMOper'>?</span><span class='PDMVar'>laFolders</span><span class='PDMOper'>[</span><span class='PDMVar'>lii</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>]</span>  <span class='PDMCom'>&amp;&amp; File name</span>
+          <span class='PDMOper'>?</span><span class='PDMResF'>CHR</span><span class='PDMOper'>(</span><span class='PDMLit'>9</span><span class='PDMOper'>)</span><span class='PDMOper'>+</span><span class='PDMStr'>"Alternate File name: "</span><span class='PDMOper'>+</span><span class='PDMVar'>laFolders</span><span class='PDMOper'>[</span><span class='PDMVar'>lii</span><span class='PDMOper'>,</span> <span class='PDMLit'>2</span><span class='PDMOper'>]</span>
+          <span class='PDMOper'>?</span><span class='PDMResF'>CHR</span><span class='PDMOper'>(</span><span class='PDMLit'>9</span><span class='PDMOper'>)</span><span class='PDMOper'>+</span><span class='PDMStr'>"File Size: "</span><span class='PDMOper'>+</span><span class='PDMResF'>STR</span><span class='PDMOper'>(</span><span class='PDMVar'>laFolders</span><span class='PDMOper'>[</span><span class='PDMVar'>lii</span><span class='PDMOper'>,</span> <span class='PDMLit'>3</span><span class='PDMOper'>]</span><span class='PDMOper'>,</span><span class='PDMLit'>11</span><span class='PDMOper'>)</span>
+          <span class='PDMOper'>?</span><span class='PDMResF'>CHR</span><span class='PDMOper'>(</span><span class='PDMLit'>9</span><span class='PDMOper'>)</span><span class='PDMOper'>+</span><span class='PDMStr'>"File Create Date: "</span><span class='PDMOper'>+</span><span class='PDMResF'>TTOC</span><span class='PDMOper'>(</span><span class='PDMVar'>laFolders</span><span class='PDMOper'>[</span><span class='PDMVar'>lii</span><span class='PDMOper'>,</span> <span class='PDMLit'>4</span><span class='PDMOper'>]</span><span class='PDMOper'>)</span>
+          <span class='PDMOper'>?</span><span class='PDMResF'>CHR</span><span class='PDMOper'>(</span><span class='PDMLit'>9</span><span class='PDMOper'>)</span><span class='PDMOper'>+</span><span class='PDMStr'>"File Last Access Time: "</span><span class='PDMOper'>+</span><span class='PDMResF'>TTOC</span><span class='PDMOper'>(</span><span class='PDMVar'>laFolders</span><span class='PDMOper'>[</span><span class='PDMVar'>lii</span><span class='PDMOper'>,</span> <span class='PDMLit'>5</span><span class='PDMOper'>]</span><span class='PDMOper'>)</span>
+          <span class='PDMOper'>?</span><span class='PDMResF'>CHR</span><span class='PDMOper'>(</span><span class='PDMLit'>9</span><span class='PDMOper'>)</span><span class='PDMOper'>+</span><span class='PDMStr'>"File Last Write Time: "</span><span class='PDMOper'>+</span><span class='PDMResF'>TTOC</span><span class='PDMOper'>(</span><span class='PDMVar'>laFolders</span><span class='PDMOper'>[</span><span class='PDMVar'>lii</span><span class='PDMOper'>,</span> <span class='PDMLit'>6</span><span class='PDMOper'>]</span><span class='PDMOper'>)</span>
+          <span class='PDMOper'>?</span><span class='PDMResF'>CHR</span><span class='PDMOper'>(</span><span class='PDMLit'>9</span><span class='PDMOper'>)</span><span class='PDMOper'>+</span><span class='PDMStr'>"File Attributes: "</span><span class='PDMOper'>+</span><span class='PDMVar'>laFolders</span><span class='PDMOper'>[</span><span class='PDMVar'>lii</span><span class='PDMOper'>,</span> <span class='PDMLit'>7</span><span class='PDMOper'>]</span>
+      <span class='PDMResK'>NEXT</span>
+   <span class='PDMResK'>ENDIF</span>
+   <span class='PDMOper'>=</span><span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMVar'>CloseInternet</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span> 
+<span class='PDMResK'>ENDIF</span>
+<span class='PDMResK'>RELEASE</span> <span class='PDMResK'>PROCEDURE</span> <span class='PDMVar'>ftp</span><span class='PDMOper'>.</span><span class='PDMVar'>prg</span></pre>
+ <!-- Code End -->
+
+
+  </div>
+ </div><!-- Example End -->
+
+ <div class="PDM_AB_SeeAlso"><!-- SeeAlso Begin -->
+  <span class="PDM_AB_Head">
+   See also
+  </span>
+  <div class="PDM_AB_Body">
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.beforegetftpdirectoryarray.htm" title="Skip to method FTP_SERVICE::BeforeGetFTPDirectoryArray()">FTP_SERVICE::BeforeGetFTPDirectoryArray()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.aftergetftpdirectoryarray.htm" title="Skip to method FTP_SERVICE::AfterGetFTPDirectoryArray()">FTP_SERVICE::AfterGetFTPDirectoryArray()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.crackfile.htm" title="Skip to method FTP_SERVICE::CrackFile()">FTP_SERVICE::CrackFile()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.getftpfile.htm" title="Skip to method FTP_SERVICE::GetFTPFile()">FTP_SERVICE::GetFTPFile()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.readftpfile.htm" title="Skip to method FTP_SERVICE::ReadFTPFile()">FTP_SERVICE::ReadFTPFile()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.putftpfile.htm" title="Skip to method FTP_SERVICE::PutFTPFile()">FTP_SERVICE::PutFTPFile()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.writeftpfile.htm" title="Skip to method FTP_SERVICE::WriteFTPFile()">FTP_SERVICE::WriteFTPFile()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.ftpcommand.htm" title="Skip to method FTP_SERVICE::FTPCommand()">FTP_SERVICE::FTPCommand()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.deleteftpfile.htm" title="Skip to method FTP_SERVICE::DeleteFTPFile()">FTP_SERVICE::DeleteFTPFile()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.renameftpfile.htm" title="Skip to method FTP_SERVICE::RenameFTPFile()">FTP_SERVICE::RenameFTPFile()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.createftpdirectory.htm" title="Skip to method FTP_SERVICE::CreateFTPDirectory()">FTP_SERVICE::CreateFTPDirectory()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.removeftpdirectory.htm" title="Skip to method FTP_SERVICE::RemoveFTPDirectory()">FTP_SERVICE::RemoveFTPDirectory()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.changeftpdirectory.htm" title="Skip to method FTP_SERVICE::ChangeFTPDirectory()">FTP_SERVICE::ChangeFTPDirectory()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.getftpdirectory.htm" title="Skip to method FTP_SERVICE::GetFTPDirectory()">FTP_SERVICE::GetFTPDirectory()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.lmultioperations.htm" title="Skip to property FTP_SERVICE::lMultiOperations">FTP_SERVICE::lMultiOperations</a>
+  </div><!-- Body End -->
+  <!--- "Applies to" need to be inserted here---->
+  <PlaceAppliesTo_Here />
+  <!--- /"Applies to" need to be inserted here---->
+ </div><!-- SeeAlso End -->
+
+
+<!-- /Created with _diamp_pdm_ab by Agnes Beste    03.09.2007 19:34 -->
+
+ <div class="SC">
+  <img onclick="ExpandSC('SP_1',-1);"class="imgEC" src="../../imgs/uptab.gif" alt="Expand/Collapse source code of procedure GetFTPDirectoryArray" id="IMG_SP_1" />
+  <span ondblclick="ExpandSC('SP_1',-1);" class="SCCaption"><a name="FTP_SERVICE">Source Code</a></span>
+  <div ondblclick="ExpandSC('SP_1',-1);" class="SCE" id="TX_SP_1">
+<!-- Code Begin -->
+<pre class="PDMCODE PDMNor" >      <span class='PDMResK'>LPARAMETERS</span> <span class='PDMVar'>OUTREF</span> <span class='PDMVar'>laDirectory</span><span class='PDMOper'>,</span> <span class='PDMVar'>INP</span> <span class='PDMVar'>lcMask</span><span class='PDMOper'>,</span><span class='PDMVar'>OPT_INP</span> <span class='PDMVar'>lnFlag</span>
+      <span class='PDMResK'>LOCAL</span> <span class='PDMVar'>cStruct</span><span class='PDMOper'>,</span> <span class='PDMVar'>liResult</span><span class='PDMOper'>,</span> <span class='PDMVar'>lnCount</span><span class='PDMOper'>,</span> <span class='PDMVar'>fResult</span><span class='PDMOper'>,</span> <span class='PDMVar'>lffHandle</span>
+      <span class='PDMResK'>IF</span> <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>OpenFTPConnection</span><span class='PDMOper'>(</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>cCurrentDir</span><span class='PDMOper'>)</span>     <span class='PDMCom'>&amp;&amp; Open an FTP Handle</span>
+         <span class='PDMVar'>lcMask</span> <span class='PDMOper'>=</span> <span class='PDMVar'>lcMask</span> <span class='PDMOper'>+</span> <span class='PDMVar'>cNULL</span>
+
+<span class='PDMCom'>         * Dimension the array to store the directory</span>
+<span class='PDMCom'>         * [x, 1] = FileName</span>
+<span class='PDMCom'>         * [x, 2] = Alternate FileName</span>
+<span class='PDMCom'>         * [x, 3] = File Size</span>
+<span class='PDMCom'>         * [x, 4] = File Create Date</span>
+<span class='PDMCom'>         * [x, 5] = File Last Access Time</span>
+<span class='PDMCom'>         * [x, 6] = File Last Write Time</span>
+<span class='PDMCom'>         * [x, 7] = File Attributes</span>
+         <span class='PDMResK'>DIMENSION</span> <span class='PDMVar'>laDirectory</span> <span class='PDMOper'>[</span><span class='PDMLit'>1</span><span class='PDMOper'>,</span> <span class='PDMLit'>7</span><span class='PDMOper'>]</span>
+         <span class='PDMVar'>laDirectory</span> <span class='PDMOper'>[</span><span class='PDMLit'>1</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>]</span> <span class='PDMOper'>=</span> <span class='PDMLit'>.F.</span>
+         <span class='PDMVar'>lnFlag</span><span class='PDMOper'>=</span><span class='PDMResF'>BITOR</span><span class='PDMOper'>(</span><span class='PDMVar'>INTERNET_FLAG_RELOAD</span><span class='PDMOper'>,</span><span class='PDMResF'>IIF</span><span class='PDMOper'>(</span><span class='PDMResF'>PCOUNT</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span><span class='PDMOper'>&lt;</span><span class='PDMLit'>3</span><span class='PDMOper'>,</span><span class='PDMLit'>0</span><span class='PDMOper'>,</span><span class='PDMVar'>lnFlag</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span>
+
+<span class='PDMCom'>         * This is for a FoxPro Quirk.</span>
+         <span class='PDMVar'>lcStruct</span> <span class='PDMOper'>=</span> <span class='PDMResF'>REPL</span><span class='PDMOper'>(</span><span class='PDMResF'>CHR</span><span class='PDMOper'>(</span><span class='PDMLit'>0</span><span class='PDMOper'>)</span><span class='PDMOper'>,</span><span class='PDMLit'>319</span><span class='PDMOper'>)</span><span class='PDMOper'>+</span><span class='PDMResF'>CHR</span><span class='PDMOper'>(</span><span class='PDMLit'>0</span><span class='PDMOper'>)</span>   <span class='PDMCom'>&amp;&amp; Allocate space for the returned structure</span>
+
+         <span class='PDMOper'>=</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>BeforeGetFTPDirectoryArray</span><span class='PDMOper'>(</span><span class='PDMOper'>@</span><span class='PDMVar'>laDirectory</span><span class='PDMOper'>,</span> <span class='PDMOper'>@</span><span class='PDMVar'>lcMask</span><span class='PDMOper'>,</span><span class='PDMVar'>lnFlag</span><span class='PDMOper'>)</span>
+<span class='PDMCom'>         * Get the first file or find out if </span>
+         <span class='PDMVar'>lffHandle</span> <span class='PDMOper'>=</span> <span class='PDMVar'>FtpFindFirstFile</span><span class='PDMOper'>(</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>nConnect_Handle</span><span class='PDMOper'>,</span> <span class='PDMOper'>@</span><span class='PDMVar'>lcMask</span><span class='PDMOper'>,</span> <span class='PDMOper'>@</span><span class='PDMVar'>lcStruct</span><span class='PDMOper'>,</span> <span class='PDMVar'>lnFlag</span><span class='PDMOper'>,</span> <span class='PDMLit'>0</span><span class='PDMOper'>)</span>
+         <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>GetExtendedError</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span>
+
+         <span class='PDMResK'>IF</span> <span class='PDMVar'>lffHandle</span> <span class='PDMOper'>=</span> <span class='PDMLit'>0</span> <span class='PDMOper'>OR</span> <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>nResult_Code</span> <span class='PDMOper'>=</span> <span class='PDMVar'>ERROR_NO_MORE_FILES</span>
+            <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>CloseFTPConnection</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span>   <span class='PDMCom'>&amp;&amp; Close FTP Handle</span>
+            <span class='PDMResK'>RETURN</span> <span class='PDMLit'>.F.</span>
+         <span class='PDMResK'>ENDIF</span>
+
+<span class='PDMCom'>         * Parse out First File Information</span>
+         <span class='PDMOper'>=</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>CrackFile</span><span class='PDMOper'>(</span><span class='PDMVar'>lcStruct</span><span class='PDMOper'>,</span> <span class='PDMOper'>@</span><span class='PDMVar'>laDirectory</span><span class='PDMOper'>)</span>
+
+         <span class='PDMVar'>llResult</span> <span class='PDMOper'>=</span> <span class='PDMLit'>1</span>
+         <span class='PDMResK'>DO</span> <span class='PDMResK'>WHILE</span> <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>nResult_Code</span> <span class='PDMOper'>!</span><span class='PDMOper'>=</span> <span class='PDMVar'>ERROR_NO_MORE_FILES</span> <span class='PDMOper'>AND</span> <span class='PDMVar'>llResult</span> <span class='PDMOper'>!</span><span class='PDMOper'>=</span> <span class='PDMLit'>0</span>
+            <span class='PDMVar'>lcStruct</span> <span class='PDMOper'>=</span> <span class='PDMResF'>SPACE</span><span class='PDMOper'>(</span><span class='PDMLit'>319</span><span class='PDMOper'>)</span>
+<span class='PDMCom'>            * Get next files</span>
+            <span class='PDMVar'>liResult</span> <span class='PDMOper'>=</span> <span class='PDMVar'>InternetFindNextFile</span><span class='PDMOper'>(</span><span class='PDMVar'>lffHandle</span><span class='PDMOper'>,</span> <span class='PDMOper'>@</span><span class='PDMVar'>lcStruct</span><span class='PDMOper'>)</span>
+            <span class='PDMOper'>=</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>GetExtendedError</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span>
+
+<span class='PDMCom'>            * If we got good information, go ahead and parse it</span>
+            <span class='PDMResK'>IF</span> <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>nResult_Code</span> <span class='PDMOper'>!</span><span class='PDMOper'>=</span> <span class='PDMVar'>ERROR_NO_MORE_FILES</span> <span class='PDMOper'>AND</span> <span class='PDMVar'>llResult</span> <span class='PDMOper'>!</span><span class='PDMOper'>=</span> <span class='PDMLit'>0</span>
+               <span class='PDMOper'>=</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>CrackFile</span><span class='PDMOper'>(</span><span class='PDMVar'>lcStruct</span><span class='PDMOper'>,</span> <span class='PDMOper'>@</span><span class='PDMVar'>laDirectory</span><span class='PDMOper'>)</span>
+            <span class='PDMResK'>ENDIF</span>
+         <span class='PDMResK'>ENDDO</span>
+         <span class='PDMOper'>=</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>AfterGetFTPDirectoryArray</span><span class='PDMOper'>(</span><span class='PDMOper'>@</span><span class='PDMVar'>laDirectory</span><span class='PDMOper'>,</span> <span class='PDMOper'>@</span><span class='PDMVar'>lcMask</span><span class='PDMOper'>,</span> <span class='PDMVar'>lnFlag</span><span class='PDMOper'>,</span><span class='PDMVar'>liResult</span><span class='PDMOper'>)</span>
+         <span class='PDMOper'>=</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>CloseFTPConnection</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span>   <span class='PDMCom'>&amp;&amp; Close FTP Handle</span>
+      <span class='PDMResK'>ELSE</span>
+         <span class='PDMResK'>RETURN</span> <span class='PDMLit'>.F.</span>     <span class='PDMCom'>&amp;&amp; Unable to get FTP Connection    </span>
+      <span class='PDMResK'>ENDIF</span>
+      <span class='PDMResK'>RETURN</span> <span class='PDMLit'>.T.</span></pre>
+ <!-- Code End -->
+  </div>
+ </div>
+</div>
+<div class="diaxp_mfoot"> <div class="PDM_AB_CopyRight"><!-- Footer Begin -->
+  <hr />
+  <div class="PDM_AB_Body">
+&copy; 2004-03-23 Robert Abram, &copy; 24.11.2005 Martina Jindr&uacute;
+  </div><!-- Body End -->
+ </div><!-- Footer End -->
+</div>
+<script language="JavaScript" type="text/javascript">
+lo=document.getElementById("TX_SP_1");
+lo.XType="SourceCode";
+lo.Dir="../../imgs/";
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+<head>
+<title>Method IsGlobalOffline of class FTP_SERVICE</title>
+<meta content="text/html; charset=windows-1250" http-equiv="Content-Type" />
+<meta name="Generator" content="Project Documenting Machine" />
+<meta name="Version" content="1.2.3" />
+<link rel="stylesheet" href="../../css/foxw.css" type="text/css" />
+<link rel="stylesheet" href="../../css/sc.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diamp_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab_notes.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diaf_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diap_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diac_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/ftp.css" type="text/css" />
+<script src="../../js/pdm.js" language="JavaScript" type="text/javascript"></script>
+<script src="../../repository/pdm_ab.js" language="JavaScript" type="text/javascript"></script>
+</head>
+<body>
+<div class="diaxp_mhead">IsGlobalOffline Method</div>
+<div class="diaxp_mbody_class">
+
+<table class="clear_table">
+ <tbody>
+  <tr><td>Class: </td><td><a href="cls.ftp_service.htm" title="Skip to class ftp_service">FTP_SERVICE</a></td></tr>
+ </tbody>
+</table>
+</div>
+<div class="diaxp_mbody">
+<!-- Created with _diamp_pdm_ab by Agnes Beste    03.09.2007 19:33 -->
+ <div class="PDM_AB_Descr"><!-- Descr Begin -->
+This method return if is internet offline.
+   <!-- Note -->
+
+   <div class="PDM_AB_Note">
+    <div class="Block_Picture" title="">
+     Note
+    </div>
+    <div class="Block_Text">
+Assumed from <a href="http://msdn.microsoft.com/library/default.asp?url=/workshop/components/offline/offline.asp">MSDN</a>.
+    </div><!-- end of note text -->
+    <div style="clear: both"></div>
+   </div><!-- end of note -->
+
+
+ </div><!-- Descr End -->
+
+ <div class="DIAMP_PDM_AB_Syntax"><!-- Syntax Begin -->
+  <div class="SColor">
+   <div class="RetVal"><a href="#_26715XPHB">RetVal</a>&nbsp;</div>   <div class="RetValEq">=</div>   <div class="PEM">
+    Object.IsGlobalOffline
+   </div>
+   <div class="Para">
+    ()
+   </div>
+   <div style="clear: both"></div>
+  </div><!-- Colour End -->
+ </div><!-- Syntax End -->
+
+ <div class="DIAMP_PDM_AB_RetVal"><!-- Returns Begin -->
+  <div>
+   <span class="PDM_AB_Head">
+    <a id="_26715XPHB" name="_26715XPHB">
+     Return value
+    </a>
+   </span> <span class="RetVal_Ttype">Numeric</span>
+  </div>
+  <div class="PDM_AB_Body">
+
+<table class="listvalues">
+ <tr class="Head"><td>Value</td><td>Description</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMOper'>-</span><span class='PDMLit'>1</span></span>
+</td><td>Unknown Error.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMLit'>0</span></span>
+</td><td>Internet is connected.</td></tr>
+ <tr><td><span class="PDMEXPR PDMNor" ><span class='PDMLit'>1</span></span>
+</td><td>Internet is disconnected.</td></tr>
+</table>
+
+  </div>
+ </div><!-- Returns End -->
+
+ <div class="PDM_AB_Example"><!-- Example Begin -->
+  <span class="PDM_AB_Head">
+   Example
+  </span>
+  <div class="PDM_AB_Body">
+
+<!-- Code Begin -->
+<pre class="PDMCODE PDMNor" >
+<span class='PDMResK'>LOCAL</span> <span class='PDMVar'>loFTP</span><span class='PDMOper'>,</span> <span class='PDMVar'>liState</span>
+<span class='PDMResK'>SET</span> <span class='PDMResK'>PROCEDURE</span> <span class='PDMResK'>TO</span> <span class='PDMVar'>ftp</span><span class='PDMOper'>.</span><span class='PDMVar'>prg</span> <span class='PDMResK'>ADDITIVE</span> 
+<span class='PDMVar'>loFTP</span><span class='PDMOper'>=</span><span class='PDMResF'>CREATEOBJECT</span><span class='PDMOper'>(</span><span class='PDMStr'>'ftp_service'</span><span class='PDMOper'>)</span> 
+<span class='PDMVar'>liState</span><span class='PDMOper'>=</span><span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMVar'>IsglobalOffline</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span>
+<span class='PDMResK'>DO</span> <span class='PDMResK'>CASE</span>
+   <span class='PDMResK'>CASE</span> <span class='PDMVar'>liState</span><span class='PDMOper'>=</span><span class='PDMOper'>-</span><span class='PDMLit'>1</span>
+        <span class='PDMOper'>?</span><span class='PDMStr'>"Unknown error"</span>
+
+   <span class='PDMResK'>CASE</span> <span class='PDMVar'>liState</span><span class='PDMOper'>=</span><span class='PDMLit'>0</span>
+        <span class='PDMOper'>?</span><span class='PDMStr'>"Internet is connected"</span>
+
+   <span class='PDMResK'>CASE</span> <span class='PDMVar'>liState</span><span class='PDMOper'>=</span><span class='PDMLit'>1</span>
+        <span class='PDMOper'>?</span><span class='PDMStr'>"Internet is disconnected"</span>
+
+<span class='PDMResK'>ENDCASE</span>
+<span class='PDMResK'>RELEASE</span> <span class='PDMResK'>PROCEDURE</span> <span class='PDMVar'>ftp</span><span class='PDMOper'>.</span><span class='PDMVar'>prg</span></pre>
+ <!-- Code End -->
+
+
+  </div>
+ </div><!-- Example End -->
+
+ <div class="PDM_AB_SeeAlso"><!-- SeeAlso Begin -->
+  <span class="PDM_AB_Head">
+   See also
+  </span>
+  <div class="PDM_AB_Body">
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.goonline.htm" title="Skip to method FTP_SERVICE::GoOnline()">FTP_SERVICE::GoOnline()</a>
+  </div><!-- Body End -->
+  <!--- "Applies to" need to be inserted here---->
+  <PlaceAppliesTo_Here />
+  <!--- /"Applies to" need to be inserted here---->
+ </div><!-- SeeAlso End -->
+
+
+<!-- /Created with _diamp_pdm_ab by Agnes Beste    03.09.2007 19:33 -->
+
+ <div class="SC">
+  <img onclick="ExpandSC('SP_1',-1);"class="imgEC" src="../../imgs/uptab.gif" alt="Expand/Collapse source code of procedure IsGlobalOffline" id="IMG_SP_1" />
+  <span ondblclick="ExpandSC('SP_1',-1);" class="SCCaption"><a name="FTP_SERVICE">Source Code</a></span>
+  <div ondblclick="ExpandSC('SP_1',-1);" class="SCE" id="TX_SP_1">
+<!-- Code Begin -->
+<pre class="PDMCODE PDMNor" >      <span class='PDMResK'>LOCAL</span> <span class='PDMVar'>liState</span>
+      <span class='PDMVar'>liState</span> <span class='PDMOper'>=</span> <span class='PDMLit'>0</span>
+      <span class='PDMVar'>lnState</span> <span class='PDMOper'>=</span> <span class='PDMLit'>4</span>
+
+      <span class='PDMResK'>IF</span> <span class='PDMVar'>InternetQueryOption</span><span class='PDMOper'>(</span><span class='PDMLit'>0</span><span class='PDMOper'>,</span> <span class='PDMVar'>INTERNET_OPTION_CONNECTED_STATE</span><span class='PDMOper'>,</span> <span class='PDMOper'>@</span><span class='PDMVar'>liState</span><span class='PDMOper'>,</span> <span class='PDMOper'>@</span><span class='PDMVar'>lnSize</span><span class='PDMOper'>)</span>
+         <span class='PDMResK'>RETURN</span> <span class='PDMResF'>IIF</span><span class='PDMOper'>(</span><span class='PDMResF'>BITTEST</span><span class='PDMOper'>(</span><span class='PDMVar'>liState</span><span class='PDMOper'>,</span><span class='PDMLit'>4</span><span class='PDMOper'>)</span><span class='PDMOper'>=</span><span class='PDMLit'>1</span><span class='PDMOper'>,</span><span class='PDMLit'>0</span><span class='PDMOper'>,</span><span class='PDMLit'>1</span><span class='PDMOper'>)</span>
+      <span class='PDMResK'>ENDIF</span>
+      <span class='PDMResK'>RETURN</span>  <span class='PDMOper'>-</span><span class='PDMLit'>1</span></pre>
+ <!-- Code End -->
+  </div>
+ </div>
+</div>
+<div class="diaxp_mfoot"> <div class="PDM_AB_CopyRight"><!-- Footer Begin -->
+  <hr />
+  <div class="PDM_AB_Body">
+&copy; 01.12.2005 Martina Jindr&uacute;
+  </div><!-- Body End -->
+ </div><!-- Footer End -->
+</div>
+<script language="JavaScript" type="text/javascript">
+lo=document.getElementById("TX_SP_1");
+lo.XType="SourceCode";
+lo.Dir="../../imgs/";
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+mnum = '220025343688'
+Error in line 83: Statement is not in a procedure.
+?ChkD(mnum) 
+Error in line 85: Statement is not in a procedure.

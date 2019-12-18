@@ -1,0 +1,477 @@
+
+*:      Tree Diagram
+
+*:      Kasem Kamolchaipisit
+*:      thai_vfp@hotmail.com
+*:      http://members.xoom.com/thai_vfp
+*:      
+*:      
+*:      
+*:      
+*:      
+*:      
+*:      
+*:      
+*:      
+*:      
+
+MAIN
+ÃÄÄÄerrhand
+ÃÄÄÄRESIZE
+ÀÄÄÄMENU
+
+BC2BE
+
+BE2BC
+
+BEEP
+
+CHKSKIP
+
+CHKSKIP
+
+DECRYPT_IT
+
+ENCRYPT_IT
+
+ENCRYPT_IT
+
+ENCRYPT_IT
+
+FINDFILE
+
+FINFOLDER
+
+GBACKGND
+
+GBACKGND
+
+GETSYSDIR
+
+GETTEMPDIR
+
+GETUSER
+
+GETVOL
+
+INVTOTAL
+
+MYMENU
+
+NUM2ENG
+
+NUM2ENG
+
+NUM2ENG
+
+INVTOTAL
+
+INVTOTAL
+
+INVTOTAL
+
+PROGRAM1
+
+PROGRAM2
+
+PROGRAM3
+
+__RI_DELETE_inv_head
+
+__RI_DELETE_customer
+
+__RI_DELETE_customer
+
+__RI_DELETE_customer
+
+__RI_DELETE_customer
+
+__RI_UPDATE_customer
+
+shortcut
+
+SHUT_DOWN
+
+SHUT_DOWN
+
+SHUT_DOWN
+
+TCDOW
+
+TCDOW
+
+TCDOW
+
+TESTPRN
+
+THERMO
+
+TOPWINDOW
+
+TOPWINDOW
+
+TSCDOW
+
+TSCDOW
+
+TSCDOW
+
+UTILITY
+
+WINEXIT
+
+_1cn0qg0ff
+
+__RI_DELETE_customer
+
+__RI_DELETE_inv_head
+
+__RI_DELETE_product
+
+__RI_DELETE_salesman
+
+__RI_UPDATE_customer
+
+__RI_UPDATE_inv_head
+
+__RI_UPDATE_product
+
+__RI_UPDATE_salesman
+
+
+******************************
+Class Hierarchy
+checkbox                                
+ÀÄÄÄCheck1                                    PRO_FP.SCX
+
+combobox                                
+ÀÄÄÄmycombobox                                MYCLASS.VCX
+    ÃÄÄÄMycombobox1                           CUSTOMER.SCX
+    ÃÄÄÄcFromCust_id                          CUSTOMER1.SCX
+    ÃÄÄÄcToCust_id                            CUSTOMER1.SCX
+    ÃÄÄÄcFromCust_id                          CUSTRPT.SCX
+    ÃÄÄÄcToCust_id                            CUSTRPT.SCX
+    ÃÄÄÄcmbCust_Id                            INVOICE.SCX
+    ÃÄÄÄMycombobox1                           INVOICE.SCX
+    ÃÄÄÄProd_idCmbItem                        INVOICE.SCX
+    ÃÄÄÄcFromProd_id                          PRODUCT1.SCX
+    ÃÄÄÄcToProd_id                            PRODUCT1.SCX
+    ÃÄÄÄcFromSales_id                         SALESMAN1.SCX
+    ÀÄÄÄcToSales_id                           SALESMAN1.SCX
+
+commandbutton                           
+ÃÄÄÄmycommandbutton                           MYCLASS.VCX
+³   ÃÄÄÄCmdCancel                             CUSTOMER1.SCX
+³   ÃÄÄÄcmdPrint                              CUSTOMER1.SCX
+³   ÃÄÄÄCmdCancel                             CUSTRPT.SCX
+³   ÃÄÄÄcmdPrint                              CUSTRPT.SCX
+³   ÃÄÄÄMycommandbutton2                      LOGIN.SCX
+³   ÃÄÄÄMycommandbutton1                      LOGIN.SCX
+³   ÃÄÄÄCmdCancel                             PRODUCT1.SCX
+³   ÃÄÄÄcmdPrint                              PRODUCT1.SCX
+³   ÃÄÄÄCmdCancel                             SALESMAN1.SCX
+³   ÀÄÄÄcmdPrint                              SALESMAN1.SCX
+ÃÄÄÄCommand1                                  PRO_FP.SCX
+ÃÄÄÄCommand2                                  PRO_FP.SCX
+ÃÄÄÄCommand1                                  REP_INV.SCX
+ÃÄÄÄCommand2                                  REP_INV.SCX
+ÃÄÄÄCommand1                                  SALEINV.SCX
+ÃÄÄÄcmds                                      SALEINV.SCX
+ÃÄÄÄCmdSave                                   SALEINV.SCX
+ÃÄÄÄCmdCancel                                 SALEINV.SCX
+ÃÄÄÄfind                                      SALEINV.SCX
+ÃÄÄÄCommand1                                  THERMOMETER.SCX
+ÀÄÄÄCommand2                                  THERMOMETER.SCX
+
+commandgroup                            
+ÀÄÄÄmynavbutton                               MYCLASS.VCX
+    ÃÄÄÄMynavbutton1                          CUSTOMER.SCX
+    ÃÄÄÄMynavbutton1                          INVOICE.SCX
+    ÃÄÄÄMynavbutton1                          PRODUCT.SCX
+    ÀÄÄÄMynavbutton1                          SALESMAN.SCX
+
+container                               
+ÃÄÄÄmyclock                                   MYCLASS.VCX
+ÃÄÄÄContainer1                                SALEINV.SCX
+ÀÄÄÄcontainer2                                SALEINV.SCX
+
+cursor                                  
+ÃÄÄÄCursor1                                   CUSTINQ.SCX
+ÃÄÄÄCursor1                                   CUSTOMER.SCX
+ÃÄÄÄCursor2                                   CUSTOMER.SCX
+ÃÄÄÄCursor1                                   FIND_PRO.SCX
+ÃÄÄÄCursor1                                   INVINQ.SCX
+ÃÄÄÄCursor2                                   INVINQ.SCX
+ÃÄÄÄCursor1                                   INVOICE.SCX
+ÃÄÄÄCursor2                                   INVOICE.SCX
+ÃÄÄÄCursor3                                   INVOICE.SCX
+ÃÄÄÄCursor4                                   INVOICE.SCX
+ÃÄÄÄCursor1                                   LOGIN.SCX
+ÃÄÄÄCursor1                                   PRO_FP.SCX
+ÃÄÄÄCursor1                                   PRODINQ.SCX
+ÃÄÄÄCursor1                                   PRODUCT.SCX
+ÃÄÄÄCursor1                                   REP_INV.SCX
+ÃÄÄÄCursor2                                   REP_INV.SCX
+ÃÄÄÄCursor3                                   REP_INV.SCX
+ÃÄÄÄCursor4                                   REP_INV.SCX
+ÃÄÄÄCursor1                                   SALEINV.SCX
+ÃÄÄÄCursor2                                   SALEINV.SCX
+ÃÄÄÄCursor3                                   SALEINV.SCX
+ÃÄÄÄCursor4                                   SALEINV.SCX
+ÃÄÄÄCursor5                                   SALEINV.SCX
+ÃÄÄÄCursor1                                   SALESINQ.SCX
+ÀÄÄÄCursor1                                   SALESMAN.SCX
+
+editbox                                 
+ÀÄÄÄmyeditbox                                 MYCLASS.VCX
+    ÃÄÄÄedtNote                               CUSTOMER.SCX
+    ÀÄÄÄedtNote                               SALESMAN.SCX
+
+form                                    
+ÃÄÄÄproductinq                                FIND_PRO.SCX
+ÃÄÄÄLOGO                                      LOGO.SCX
+ÃÄÄÄmyform                                    MYCLASS.VCX
+³   ÃÄÄÄCustomerInquiry                       CUSTINQ.SCX
+³   ÃÄÄÄCUSTOMER                              CUSTOMER.SCX
+³   ÃÄÄÄCUSTOMER1                             CUSTOMER1.SCX
+³   ÃÄÄÄcustrpt                               CUSTRPT.SCX
+³   ÃÄÄÄInvoiceInquiry                        INVINQ.SCX
+³   ÃÄÄÄinvoice                               INVOICE.SCX
+³   ÃÄÄÄLOGIN                                 LOGIN.SCX
+³   ÃÄÄÄMYPREVIEW                             MYPREVIEW.SCX
+³   ÃÄÄÄSalesmanInquiry                       PRODINQ.SCX
+³   ÃÄÄÄsalesman                              PRODUCT.SCX
+³   ÃÄÄÄPRODUCT1                              PRODUCT1.SCX
+³   ÃÄÄÄsaleinv                               SALEINV.SCX
+³   ÃÄÄÄSalesmanInquiry                       SALESINQ.SCX
+³   ÃÄÄÄsalesman                              SALESMAN.SCX
+³   ÀÄÄÄSALESMAN1                             SALESMAN1.SCX
+ÃÄÄÄBARCODE                                   PRO_FP.SCX
+ÃÄÄÄTestform                                  PROGRAM1.PRG
+ÃÄÄÄTestform                                  PROGRAM2.PRG
+ÃÄÄÄDisplayColor                              PROGRAM2.PRG
+ÃÄÄÄTestform                                  PROGRAM3.PRG
+ÃÄÄÄForm1                                     REP_INV.SCX
+ÀÄÄÄTHERMO                                    THERMOMETER.SCX
+
+grid                                    
+ÃÄÄÄgrdCustomer                               CUSTINQ.SCX
+ÃÄÄÄgrdProduct                                FIND_PRO.SCX
+ÃÄÄÄgrdInvoice                                INVINQ.SCX
+ÃÄÄÄgrdInv_dtl                                INVOICE.SCX
+ÃÄÄÄGrid1                                     PRO_FP.SCX
+ÃÄÄÄgrdProduct                                PRODINQ.SCX
+ÃÄÄÄGrid1                                     SALEINV.SCX
+ÀÄÄÄgrdSalesman                               SALESINQ.SCX
+
+header                                  
+ÃÄÄÄHeader1                                   CUSTINQ.SCX
+ÃÄÄÄHeader1                                   CUSTINQ.SCX
+ÃÄÄÄHeader1                                   CUSTINQ.SCX
+ÃÄÄÄHeader1                                   FIND_PRO.SCX
+ÃÄÄÄHeader1                                   FIND_PRO.SCX
+ÃÄÄÄHeader1                                   INVINQ.SCX
+ÃÄÄÄHeader1                                   INVINQ.SCX
+ÃÄÄÄHeader1                                   INVOICE.SCX
+ÃÄÄÄHeader1                                   INVOICE.SCX
+ÃÄÄÄHeader1                                   INVOICE.SCX
+ÃÄÄÄHeader1                                   INVOICE.SCX
+ÃÄÄÄHeader1                                   INVOICE.SCX
+ÃÄÄÄHeader1                                   INVOICE.SCX
+ÃÄÄÄHeader1                                   PRO_FP.SCX
+ÃÄÄÄHeader1                                   PRO_FP.SCX
+ÃÄÄÄHeader1                                   PRO_FP.SCX
+ÃÄÄÄHeader1                                   PRODINQ.SCX
+ÃÄÄÄHeader1                                   PRODINQ.SCX
+ÃÄÄÄHeader1                                   SALEINV.SCX
+ÃÄÄÄHeader1                                   SALEINV.SCX
+ÃÄÄÄHeader1                                   SALEINV.SCX
+ÃÄÄÄHeader1                                   SALEINV.SCX
+ÃÄÄÄHeader1                                   SALEINV.SCX
+ÃÄÄÄHeader1                                   SALEINV.SCX
+ÃÄÄÄHeader1                                   SALEINV.SCX
+ÃÄÄÄHeader1                                   SALEINV.SCX
+ÃÄÄÄHeader1                                   SALESINQ.SCX
+ÀÄÄÄHeader1                                   SALESINQ.SCX
+
+label                                   
+ÃÄÄÄLabel1                                    FIND_PRO.SCX
+ÃÄÄÄmylabel                                   MYCLASS.VCX
+³   ÃÄÄÄlblCust_id                            CUSTOMER.SCX
+³   ÃÄÄÄlblCompany                            CUSTOMER.SCX
+³   ÃÄÄÄlblContact                            CUSTOMER.SCX
+³   ÃÄÄÄlblAddress1                           CUSTOMER.SCX
+³   ÃÄÄÄlblAddress2                           CUSTOMER.SCX
+³   ÃÄÄÄlblTelphone                           CUSTOMER.SCX
+³   ÃÄÄÄlblCreditlmt                          CUSTOMER.SCX
+³   ÃÄÄÄlblTerm_day                           CUSTOMER.SCX
+³   ÃÄÄÄlblSales_id                           CUSTOMER.SCX
+³   ÃÄÄÄlblNote                               CUSTOMER.SCX
+³   ÃÄÄÄMylabel1                              CUSTOMER1.SCX
+³   ÃÄÄÄMylabel2                              CUSTOMER1.SCX
+³   ÃÄÄÄMylabel3                              CUSTOMER1.SCX
+³   ÃÄÄÄMylabel4                              CUSTOMER1.SCX
+³   ÃÄÄÄMylabel1                              CUSTRPT.SCX
+³   ÃÄÄÄMylabel2                              CUSTRPT.SCX
+³   ÃÄÄÄMylabel3                              CUSTRPT.SCX
+³   ÃÄÄÄMylabel4                              CUSTRPT.SCX
+³   ÃÄÄÄlblInv_no                             INVOICE.SCX
+³   ÃÄÄÄlblInv_date                           INVOICE.SCX
+³   ÃÄÄÄlblCust_id                            INVOICE.SCX
+³   ÃÄÄÄlblTerm_day                           INVOICE.SCX
+³   ÃÄÄÄlblCompany                            INVOICE.SCX
+³   ÃÄÄÄMylabel1                              INVOICE.SCX
+³   ÃÄÄÄMylabel2                              INVOICE.SCX
+³   ÃÄÄÄMylabel3                              INVOICE.SCX
+³   ÃÄÄÄMylabel4                              INVOICE.SCX
+³   ÃÄÄÄMylabel1                              LOGIN.SCX
+³   ÃÄÄÄMylabel2                              LOGIN.SCX
+³   ÃÄÄÄMylabel3                              LOGIN.SCX
+³   ÃÄÄÄMylabel4                              LOGIN.SCX
+³   ÃÄÄÄMylabel1                              LOGO.SCX
+³   ÃÄÄÄMylabel2                              LOGO.SCX
+³   ÃÄÄÄMylabel3                              LOGO.SCX
+³   ÃÄÄÄMylabel4                              LOGO.SCX
+³   ÃÄÄÄlblProd_id                            PRODUCT.SCX
+³   ÃÄÄÄlblProd_name                          PRODUCT.SCX
+³   ÃÄÄÄlblUm                                 PRODUCT.SCX
+³   ÃÄÄÄlblUnitprice                          PRODUCT.SCX
+³   ÃÄÄÄMylabel1                              PRODUCT1.SCX
+³   ÃÄÄÄMylabel2                              PRODUCT1.SCX
+³   ÃÄÄÄMylabel3                              PRODUCT1.SCX
+³   ÃÄÄÄMylabel4                              PRODUCT1.SCX
+³   ÃÄÄÄlblSales_id                           SALESMAN.SCX
+³   ÃÄÄÄlblName                               SALESMAN.SCX
+³   ÃÄÄÄlblAddress1                           SALESMAN.SCX
+³   ÃÄÄÄlblAddress2                           SALESMAN.SCX
+³   ÃÄÄÄlblTelphone                           SALESMAN.SCX
+³   ÃÄÄÄlblCommrate                           SALESMAN.SCX
+³   ÃÄÄÄlblNote                               SALESMAN.SCX
+³   ÃÄÄÄMylabel1                              SALESMAN1.SCX
+³   ÃÄÄÄMylabel2                              SALESMAN1.SCX
+³   ÃÄÄÄMylabel3                              SALESMAN1.SCX
+³   ÀÄÄÄMylabel4                              SALESMAN1.SCX
+ÃÄÄÄLabel1                                    MYCLASS.VCX
+ÃÄÄÄLabel1                                    PRO_FP.SCX
+ÃÄÄÄLabel1                                    REP_INV.SCX
+ÃÄÄÄlblRun_no                                 SALEINV.SCX
+ÃÄÄÄlblInv_date                               SALEINV.SCX
+ÃÄÄÄlblCust_id                                SALEINV.SCX
+ÃÄÄÄLabel1                                    SALEINV.SCX
+ÃÄÄÄLabel2                                    SALEINV.SCX
+ÃÄÄÄLabel3                                    SALEINV.SCX
+ÃÄÄÄLabel4                                    SALEINV.SCX
+ÃÄÄÄLabel5                                    SALEINV.SCX
+ÃÄÄÄLabel6                                    SALEINV.SCX
+ÃÄÄÄLabel7                                    SALEINV.SCX
+ÃÄÄÄLabel1                                    THERMOMETER.SCX
+ÀÄÄÄLabel2                                    THERMOMETER.SCX
+
+line                                    
+ÀÄÄÄLine1                                     LOGO.SCX
+
+textbox                                 
+ÃÄÄÄText1                                     CUSTINQ.SCX
+ÃÄÄÄText1                                     CUSTINQ.SCX
+ÃÄÄÄText1                                     CUSTINQ.SCX
+ÃÄÄÄText1                                     FIND_PRO.SCX
+ÃÄÄÄText1                                     FIND_PRO.SCX
+ÃÄÄÄText1                                     FIND_PRO.SCX
+ÃÄÄÄText1                                     INVINQ.SCX
+ÃÄÄÄText1                                     INVINQ.SCX
+ÃÄÄÄText1                                     INVOICE.SCX
+ÃÄÄÄText1                                     INVOICE.SCX
+ÃÄÄÄText1                                     INVOICE.SCX
+ÃÄÄÄText1                                     INVOICE.SCX
+ÃÄÄÄText1                                     INVOICE.SCX
+ÃÄÄÄmytextbox                                 MYCLASS.VCX
+³   ÃÄÄÄMytextbox1                            CUSTINQ.SCX
+³   ÃÄÄÄtxtCust_id                            CUSTOMER.SCX
+³   ÃÄÄÄtxtCompany                            CUSTOMER.SCX
+³   ÃÄÄÄtxtContact                            CUSTOMER.SCX
+³   ÃÄÄÄtxtAddress1                           CUSTOMER.SCX
+³   ÃÄÄÄtxtAddress2                           CUSTOMER.SCX
+³   ÃÄÄÄtxtTelphone                           CUSTOMER.SCX
+³   ÃÄÄÄtxtCreditlmt                          CUSTOMER.SCX
+³   ÃÄÄÄtxtTerm_day                           CUSTOMER.SCX
+³   ÃÄÄÄtxtSales_id                           CUSTOMER.SCX
+³   ÃÄÄÄcFileName                             CUSTOMER1.SCX
+³   ÃÄÄÄcFileName                             CUSTRPT.SCX
+³   ÃÄÄÄMytextbox1                            INVINQ.SCX
+³   ÃÄÄÄtxtInv_no                             INVOICE.SCX
+³   ÃÄÄÄtxtInv_date                           INVOICE.SCX
+³   ÃÄÄÄtxtCust_id                            INVOICE.SCX
+³   ÃÄÄÄtxtTerm_day                           INVOICE.SCX
+³   ÃÄÄÄtxtCompany                            INVOICE.SCX
+³   ÃÄÄÄtxtDueDate                            INVOICE.SCX
+³   ÃÄÄÄProd_IdItem                           INVOICE.SCX
+³   ÃÄÄÄProd_NameItem                         INVOICE.SCX
+³   ÃÄÄÄQuantityItem                          INVOICE.SCX
+³   ÃÄÄÄUnitPriceItem                         INVOICE.SCX
+³   ÃÄÄÄtxtTotalAmount                        INVOICE.SCX
+³   ÃÄÄÄtxtTotalRec                           INVOICE.SCX
+³   ÃÄÄÄMytextbox1                            LOGIN.SCX
+³   ÃÄÄÄMytextbox2                            LOGIN.SCX
+³   ÃÄÄÄMytextbox1                            PRODINQ.SCX
+³   ÃÄÄÄtxtProd_id                            PRODUCT.SCX
+³   ÃÄÄÄtxtProd_Name                          PRODUCT.SCX
+³   ÃÄÄÄtxtUm                                 PRODUCT.SCX
+³   ÃÄÄÄtxtUnitprice                          PRODUCT.SCX
+³   ÃÄÄÄcFileName                             PRODUCT1.SCX
+³   ÃÄÄÄMytextbox1                            SALESINQ.SCX
+³   ÃÄÄÄtxtSales_id                           SALESMAN.SCX
+³   ÃÄÄÄtxtName                               SALESMAN.SCX
+³   ÃÄÄÄtxtAddress1                           SALESMAN.SCX
+³   ÃÄÄÄtxtAddress2                           SALESMAN.SCX
+³   ÃÄÄÄtxtTelphone                           SALESMAN.SCX
+³   ÃÄÄÄtxtCommrate                           SALESMAN.SCX
+³   ÀÄÄÄcFileName                             SALESMAN1.SCX
+ÃÄÄÄText1                                     PRO_FP.SCX
+ÃÄÄÄText1                                     PRO_FP.SCX
+ÃÄÄÄText1                                     PRO_FP.SCX
+ÃÄÄÄText1                                     PRODINQ.SCX
+ÃÄÄÄText1                                     PRODINQ.SCX
+ÃÄÄÄText1                                     REP_INV.SCX
+ÃÄÄÄtxtRun_no                                 SALEINV.SCX
+ÃÄÄÄtxtInv_date                               SALEINV.SCX
+ÃÄÄÄtxtCust_id                                SALEINV.SCX
+ÃÄÄÄText1                                     SALEINV.SCX
+ÃÄÄÄText1                                     SALEINV.SCX
+ÃÄÄÄText1                                     SALEINV.SCX
+ÃÄÄÄText1                                     SALEINV.SCX
+ÃÄÄÄText1                                     SALEINV.SCX
+ÃÄÄÄText1                                     SALEINV.SCX
+ÃÄÄÄText1                                     SALEINV.SCX
+ÃÄÄÄText1                                     SALEINV.SCX
+ÃÄÄÄText1                                     SALEINV.SCX
+ÃÄÄÄtext2                                     SALEINV.SCX
+ÃÄÄÄtext3                                     SALEINV.SCX
+ÃÄÄÄtext4                                     SALEINV.SCX
+ÃÄÄÄtext5                                     SALEINV.SCX
+ÃÄÄÄtext6                                     SALEINV.SCX
+ÃÄÄÄtext7                                     SALEINV.SCX
+ÃÄÄÄText1                                     SALESINQ.SCX
+ÀÄÄÄText1                                     SALESINQ.SCX
+
+optiongroup                             
+ÃÄÄÄoptGroup                                  CUSTOMER1.SCX
+ÃÄÄÄoptGroup                                  CUSTRPT.SCX
+ÃÄÄÄoptGroup                                  PRODUCT1.SCX
+ÃÄÄÄoptiongroup1                              REP_INV.SCX
+ÀÄÄÄoptGroup                                  SALESMAN1.SCX
+
+relation                                
+ÃÄÄÄRelation1                                 INVINQ.SCX
+ÃÄÄÄRelation1                                 INVOICE.SCX
+ÃÄÄÄRelation2                                 INVOICE.SCX
+ÀÄÄÄRelation3                                 INVOICE.SCX
+
+shape                                   
+ÃÄÄÄshape1                                    THERMOMETER.SCX
+ÀÄÄÄShape2                                    THERMOMETER.SCX
+
+spinner                                 
+ÀÄÄÄSPinner1                                  PRO_FP.SCX
+
+timer                                   
+ÀÄÄÄTimer1                                    MYCLASS.VCX

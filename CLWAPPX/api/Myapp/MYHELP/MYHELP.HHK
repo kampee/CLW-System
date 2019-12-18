@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+<param name="Font" value=",8,222">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ขอต้อนรับ">
+		<param name="Name" value="Welcome to Visual FoxPro">
+		<param name="Local" value="chapter1.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="บทนำ">
+		<param name="Name" value="บทนำ">
+		<param name="Local" value="Article.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="บทที่ๅ">
+		<param name="Name" value="เริ่มต้นกับ Visual FoxPro">
+		<param name="Local" value="Welcome.htm">
+		</OBJECT>
+</UL>
+</BODY></HTML>

@@ -1,0 +1,34 @@
+
+=unzap(50)
+
+************************************************************
+*                         UNZAP                           *
+************************************************************
+FUNCTION UNZAP
+* use test.db 
+* zap 
+* =unzap(50)
+PARAMETER Y
+   IF Y>0 .AND. USED()
+      IF RECCOUNT()=0
+         FILENAME=DBF()
+         USE
+         HANDLE=FOPEN(FILENAME,2)
+         IF HANDLE>0
+            BYTE=FREAD(HANDLE,32)
+            BKUP_BYTE=BYTE
+            FIELD_SIZE=ASC(SUBSTR(BYTE,11,1))+(ASC(SUBSTR(BYTE,12,1))*256)
+            FILE_SIZE=FSEEK(HANDLE,0,2)
+            BYTE8=CHR(INT(Y/(256*256*256)))
+            BYTE7=CHR(INT(Y/(256*256)))                        
+            BYTE6=CHR(INT(Y/256)-IIF(Y/256>256,(INT(INT(Y/256)/256)*256),0))
+            BYTE5=CHR(MOD(Y,256))
+            BYTE=SUBSTR(BYTE,1,4)+BYTE5+BYTE6+BYTE7+BYTE8+SUBSTR(BYTE,9)
+            =FSEEK(HANDLE,0)
+            =FWRITE(HANDLE,BYTE)
+            =FCHSIZE(HANDLE,FILE_SIZE+(FIELD_SIZE*Y))
+            =FCLOSE(HANDLE)
+         ENDIF
+         USE &FILENAME
+      ENDIF
+   ENDIF

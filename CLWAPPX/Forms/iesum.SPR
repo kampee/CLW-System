@@ -1,0 +1,3 @@
+EXTERNAL PROC iesum.scx
+
+DO FORM "iesum.scx" NAME _2GL06ROZG LINKED 

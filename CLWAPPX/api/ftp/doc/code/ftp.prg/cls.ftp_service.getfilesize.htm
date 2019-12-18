@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+<head>
+<title>Method GetFileSize of class FTP_SERVICE</title>
+<meta content="text/html; charset=windows-1250" http-equiv="Content-Type" />
+<meta name="Generator" content="Project Documenting Machine" />
+<meta name="Version" content="1.2.3" />
+<link rel="stylesheet" href="../../css/foxw.css" type="text/css" />
+<link rel="stylesheet" href="../../css/sc.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diamp_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab_notes.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diaf_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diap_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diac_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/ftp.css" type="text/css" />
+<script src="../../js/pdm.js" language="JavaScript" type="text/javascript"></script>
+<script src="../../repository/pdm_ab.js" language="JavaScript" type="text/javascript"></script>
+</head>
+<body>
+<div class="diaxp_mhead">GetFileSize Method</div>
+<div class="diaxp_mbody_class">
+
+<table class="clear_table">
+ <tbody>
+  <tr><td>Class: </td><td><a href="cls.ftp_service.htm" title="Skip to class ftp_service">FTP_SERVICE</a></td></tr>
+ </tbody>
+</table>
+</div>
+<div class="diaxp_mbody">
+<!-- Created with _diamp_pdm_ab by Agnes Beste    03.09.2007 19:34 -->
+ <div class="PDM_AB_Descr"><!-- Descr Begin -->
+Get file size.
+ </div><!-- Descr End -->
+
+ <div class="DIAMP_PDM_AB_Syntax"><!-- Syntax Begin -->
+  <div class="SColor">
+   <div class="RetVal"><a href="#_26715Y16H">RetVal</a>&nbsp;</div>   <div class="RetValEq">=</div>   <div class="PEM">
+    Object.GetFileSize
+   </div>
+   <div class="Para">
+    (<a href="#_26715Y16I">lcFile</a>
+     <wbr />,@<a href="#_26715Y16J">lnSize</a>)
+   </div>
+   <div style="clear: both"></div>
+  </div><!-- Colour End -->
+ </div><!-- Syntax End -->
+
+ <div class="DIAMP_PDM_AB_Params"><!-- Parameters Begin -->
+  <span class="PDM_AB_Head">
+   Parameter
+  </span>
+  <dl class="DIAMP_PDM_AB_Params_List">
+   <dt class="dt_">
+    <a class="DIAMP_PDM_AB_Params_ParaName" id="_26715Y16I" name="_26715Y16I">
+     <span class="PDMEXPR PDMNor" ><span class='PDMVar'>lcFile</span></span>
+
+    </a>
+   </dt>
+   <dd class="dd_">
+    <span class="Params_Short">
+     Remote file name
+    </span>
+    <table class="Params_Info">
+     <colgroup>
+      <col class="ColumnValue" />
+      <col class="ColumnData" />
+     </colgroup>
+     <tbody>
+      <tr>
+       <td class="CellValue">Type</td>
+       <td class="CellData">Character</td>
+      </tr>
+      <tr>
+       <td class="CellValue">Direction</td>
+       <td class="CellData">Input</td>
+      </tr>
+     </tbody>
+    </table>
+   </dd>
+   <dt class="dt_">
+    <a class="DIAMP_PDM_AB_Params_ParaName" id="_26715Y16J" name="_26715Y16J">
+     <span class="PDMEXPR PDMNor" ><span class='PDMVar'>lnSize</span></span>
+
+    </a>
+   </dt>
+   <dd class="dd_">
+    <span class="Params_Short">
+     File size
+    </span>
+    <table class="Params_Info">
+     <colgroup>
+      <col class="ColumnValue" />
+      <col class="ColumnData" />
+     </colgroup>
+     <tbody>
+      <tr>
+       <td class="CellValue">Type</td>
+       <td class="CellData">Number</td>
+      </tr>
+      <tr>
+       <td class="CellValue">By reference</td>
+       <td class="CellData">&nbsp;</td>
+      </tr>
+      <tr>
+       <td class="CellValue">Direction</td>
+       <td class="CellData">Input</td>
+      </tr>
+     </tbody>
+    </table>
+   </dd>
+  </dl>
+ </div><!-- Parameters End -->
+
+ <div class="DIAMP_PDM_AB_RetVal"><!-- Returns Begin -->
+  <div>
+   <span class="PDM_AB_Head">
+    <a id="_26715Y16H" name="_26715Y16H">
+     Return value
+    </a>
+   </span> <span class="RetVal_Ttype">Boolean</span>
+  </div>
+  <div class="PDM_AB_Body">
+The return value is <span class="PDMEXPR PDMNor" ><span class='PDMLit'>.T.</span></span>
+ if getting file size or <span class="PDMEXPR PDMNor" ><span class='PDMLit'>.F.</span></span>
+ is not.
+  </div>
+ </div><!-- Returns End -->
+
+ <div class="PDM_AB_Example"><!-- Example Begin -->
+  <span class="PDM_AB_Head">
+   Example
+  </span>
+  <div class="PDM_AB_Body">
+
+<!-- Code Begin -->
+<pre class="PDMCODE PDMNor" >
+<span class='PDMResK'>LOCAL</span> <span class='PDMVar'>lnFileSize</span><span class='PDMOper'>,</span><span class='PDMVar'>lcPath</span><span class='PDMOper'>,</span><span class='PDMVar'>loFTP</span>
+<span class='PDMOper'>#</span><span class='PDMResK'>INCLUDE</span> <span class='PDMStr'>"ftp.h"</span>
+<span class='PDMResK'>SET</span> <span class='PDMResK'>PROCEDURE</span> <span class='PDMResK'>TO</span> <span class='PDMVar'>ftp</span><span class='PDMOper'>.</span><span class='PDMVar'>prg</span> <span class='PDMResK'>ADDITIVE</span> 
+<span class='PDMVar'>loFTP</span><span class='PDMOper'>=</span><span class='PDMResF'>CREATEOBJECT</span><span class='PDMOper'>(</span><span class='PDMStr'>'_myftp'</span><span class='PDMOper'>)</span> 
+
+<span class='PDMResK'>IF</span> <span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMVar'>OpenInternet</span><span class='PDMOper'>(</span><span class='PDMStr'>"anonymous"</span><span class='PDMOper'>,</span> <span class='PDMStr'>"gorila@gorila.cz"</span><span class='PDMOper'>,</span><span class='PDMStr'>"192.168.2.21"</span><span class='PDMOper'>,</span> <span class='PDMStr'>"21"</span><span class='PDMOper'>)</span>
+
+    <span class='PDMOper'>=</span><span class='PDMVar'>loFTp</span><span class='PDMOper'>.</span><span class='PDMVar'>ChangeFTPDirectory</span><span class='PDMOper'>(</span><span class='PDMStr'>"Kubuntu704"</span><span class='PDMOper'>)</span>
+    <span class='PDMResK'>IF</span> <span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMVar'>GetFileSize</span><span class='PDMOper'>(</span><span class='PDMStr'>"test.rar"</span><span class='PDMOper'>,</span><span class='PDMOper'>@</span><span class='PDMVar'>lnFileSize</span><span class='PDMOper'>)</span>
+       <span class='PDMOper'>?</span><span class='PDMVar'>lnFileSize</span>
+    <span class='PDMResK'>ENDIF</span>
+
+   <span class='PDMOper'>=</span><span class='PDMVar'>loFTP</span><span class='PDMOper'>.</span><span class='PDMVar'>CloseInternet</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span> 
+<span class='PDMResK'>ENDIF</span>
+<span class='PDMResK'>RELEASE</span> <span class='PDMResK'>PROCEDURE</span> <span class='PDMVar'>ftp</span><span class='PDMOper'>.</span><span class='PDMVar'>prg</span>
+
+<span class='PDMResK'>DEFINE</span> <span class='PDMResK'>CLASS</span> <span class='PDMVar'>_myFTP</span> <span class='PDMResK'>AS</span> <span class='PDMVar'>FTP_SERVICE</span>
+   <span class='PDMResK'>PROCEDURE</span> <span class='PDMVar'>BeforeGetFileSize</span><span class='PDMOper'>(</span><span class='PDMVar'>lcFile</span><span class='PDMOper'>,</span><span class='PDMVar'>lnSize</span><span class='PDMOper'>)</span>
+      <span class='PDMOper'>?</span><span class='PDMResF'>PROGRAM</span><span class='PDMOper'>(</span><span class='PDMLit'>16</span><span class='PDMOper'>)</span>
+      <span class='PDMOper'>?</span><span class='PDMResF'>CHR</span><span class='PDMOper'>(</span><span class='PDMLit'>9</span><span class='PDMOper'>)</span><span class='PDMOper'>,</span><span class='PDMVar'>lcFile</span><span class='PDMOper'>,</span><span class='PDMVar'>lnSize</span>
+   <span class='PDMResK'>ENDPROC</span>
+
+   <span class='PDMResK'>PROCEDURE</span> <span class='PDMVar'>AfterGetFileSize</span><span class='PDMOper'>(</span><span class='PDMVar'>lcFile</span><span class='PDMOper'>,</span><span class='PDMVar'>lnSize</span><span class='PDMOper'>,</span><span class='PDMVar'>llRet</span><span class='PDMOper'>)</span>
+      <span class='PDMOper'>?</span><span class='PDMResF'>PROGRAM</span><span class='PDMOper'>(</span><span class='PDMLit'>16</span><span class='PDMOper'>)</span>
+      <span class='PDMOper'>?</span><span class='PDMResF'>CHR</span><span class='PDMOper'>(</span><span class='PDMLit'>9</span><span class='PDMOper'>)</span><span class='PDMOper'>,</span><span class='PDMVar'>lcFile</span><span class='PDMOper'>,</span><span class='PDMVar'>lnSize</span><span class='PDMOper'>,</span><span class='PDMVar'>llRet</span>
+   <span class='PDMResK'>ENDPROC</span>
+
+<span class='PDMResK'>ENDDEFINE</span> </pre>
+ <!-- Code End -->
+
+
+  </div>
+ </div><!-- Example End -->
+
+ <div class="PDM_AB_SeeAlso"><!-- SeeAlso Begin -->
+  <span class="PDM_AB_Head">
+   See also
+  </span>
+  <div class="PDM_AB_Body">
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.beforegetfilesize.htm" title="Skip to method FTP_SERVICE::BeforeGetFileSize()">FTP_SERVICE::BeforeGetFileSize()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.aftergetfilesize.htm" title="Skip to method FTP_SERVICE::AfterGetFileSize()">FTP_SERVICE::AfterGetFileSize()</a>
+  </div><!-- Body End -->
+  <!--- "Applies to" need to be inserted here---->
+  <PlaceAppliesTo_Here />
+  <!--- /"Applies to" need to be inserted here---->
+ </div><!-- SeeAlso End -->
+
+
+<!-- /Created with _diamp_pdm_ab by Agnes Beste    03.09.2007 19:34 -->
+
+ <div class="SC">
+  <img onclick="ExpandSC('SP_1',-1);"class="imgEC" src="../../imgs/uptab.gif" alt="Expand/Collapse source code of procedure GetFileSize" id="IMG_SP_1" />
+  <span ondblclick="ExpandSC('SP_1',-1);" class="SCCaption"><a name="FTP_SERVICE">Source Code</a></span>
+  <div ondblclick="ExpandSC('SP_1',-1);" class="SCE" id="TX_SP_1">
+<!-- Code Begin -->
+<pre class="PDMCODE PDMNor" >      <span class='PDMResK'>LPARAMETERS</span> <span class='PDMVar'>INP</span> <span class='PDMVar'>lcFile</span><span class='PDMOper'>,</span> <span class='PDMVar'>CHNGREF</span> <span class='PDMVar'>lnSize</span>
+      <span class='PDMResK'>LOCAL</span> <span class='PDMVar'>lcPom</span><span class='PDMOper'>,</span><span class='PDMVar'>llRet</span>
+      <span class='PDMResK'>IF</span> <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>OpenFTPConnection</span><span class='PDMOper'>(</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>cCurrentDir</span><span class='PDMOper'>)</span>     <span class='PDMCom'>&amp;&amp; Open an FTP Handle</span>
+         <span class='PDMVar'>lcFile</span> <span class='PDMOper'>=</span> <span class='PDMResF'>ALLTRIM</span><span class='PDMOper'>(</span><span class='PDMVar'>lcFile</span><span class='PDMOper'>)</span><span class='PDMOper'>+</span><span class='PDMVar'>cNULL</span>
+
+         <span class='PDMOper'>=</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>BeforeGetFileSize</span><span class='PDMOper'>(</span><span class='PDMOper'>@</span><span class='PDMVar'>lcFile</span><span class='PDMOper'>,</span> <span class='PDMVar'>lnSize</span><span class='PDMOper'>)</span>
+<span class='PDMCom'>         *!* FtpGetFileSize does not work as expected for files greater then 4Gb (dwFileSizeHigh always NULL)</span>
+<span class='PDMCom'>         *!* http://groups.google.com.ar/group/microsoft.public.windows.inetexplorer.ie5.programming.wininet/browse_thread/thread/3c118ed4c7c32269/791a868311e60a00?lnk=st&amp;q=ftpfindfirstfile+and+large+files&amp;rnum=2&amp;hl=es#791a868311e60a00</span>
+
+         <span class='PDMVar'>llRet</span><span class='PDMOper'>=</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>FTPCommand</span><span class='PDMOper'>(</span><span class='PDMStr'>"SIZE "</span><span class='PDMOper'>+</span><span class='PDMVar'>lcFile</span><span class='PDMOper'>,</span><span class='PDMLit'>0</span><span class='PDMOper'>,</span><span class='PDMLit'>0</span><span class='PDMOper'>,</span><span class='PDMOper'>.</span><span class='PDMResK'>NULL</span><span class='PDMOper'>.</span><span class='PDMOper'>)</span>
+         <span class='PDMResK'>IF</span> <span class='PDMVar'>llRet</span>
+            <span class='PDMVar'>lcPom</span><span class='PDMOper'>=</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>GetExtendedErrorMsg</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span>
+            <span class='PDMVar'>lnSize</span><span class='PDMOper'>=</span><span class='PDMResF'>VAL</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcPom</span><span class='PDMOper'>,</span><span class='PDMResF'>AT</span><span class='PDMOper'>(</span><span class='PDMStr'>" "</span><span class='PDMOper'>,</span><span class='PDMVar'>lcPom</span><span class='PDMOper'>)</span><span class='PDMOper'>+</span><span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span>
+         <span class='PDMResK'>ENDIF</span>
+
+         <span class='PDMOper'>=</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>AfterGetFileSize</span><span class='PDMOper'>(</span><span class='PDMOper'>@</span><span class='PDMVar'>lcFile</span><span class='PDMOper'>,</span><span class='PDMVar'>lnSize</span><span class='PDMOper'>,</span><span class='PDMVar'>llRet</span><span class='PDMOper'>)</span>
+         <span class='PDMOper'>=</span><span class='PDMResF'>IIF</span><span class='PDMOper'>(</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>lMultiOperations</span><span class='PDMOper'>,</span><span class='PDMLit'>.T.</span><span class='PDMOper'>,</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>CloseFTPConnection</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span>   <span class='PDMCom'>&amp;&amp; Close FTP Handle</span>
+         <span class='PDMResK'>RETURN</span> <span class='PDMVar'>llRet</span>
+      <span class='PDMResK'>ENDIF</span>
+      <span class='PDMResK'>RETURN</span> <span class='PDMLit'>.F.</span>                    </pre>
+ <!-- Code End -->
+  </div>
+ </div>
+</div>
+<div class="diaxp_mfoot"> <div class="PDM_AB_CopyRight"><!-- Footer Begin -->
+  <hr />
+  <div class="PDM_AB_Body">
+&copy; 2007-01-09 Martina Jindr&uacute;
+  </div><!-- Body End -->
+ </div><!-- Footer End -->
+</div>
+<script language="JavaScript" type="text/javascript">
+lo=document.getElementById("TX_SP_1");
+lo.XType="SourceCode";
+lo.Dir="../../imgs/";
+
+
+</script>
+</body>
+</html>

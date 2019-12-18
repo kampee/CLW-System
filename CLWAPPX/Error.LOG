@@ -1,0 +1,7 @@
+
+Fatal Error in Converter: 
+Error: File 'foreign.prg' does not exist.
+Error Number: 1
+Method: init
+Offending Code: SET PROCEDURE TO "foreign" ADDITIVE		&& This has the subclasses for converting non-FoxPro files
+File being processed: Not recorded

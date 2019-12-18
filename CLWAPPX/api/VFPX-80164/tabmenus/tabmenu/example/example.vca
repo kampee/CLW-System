@@ -1,0 +1,301 @@
+SCCTEXT Version 4.0.0.2
+PLATFORM C(8,0),UNIQUEID C(10,0),TIMESTAMP N(10,0),CLASS M(4,0),CLASSLOC M(4,0),BASECLASS M(4,0),OBJNAME M(4,0),PARENT M(4,0),PROPERTIES M(4,0),PROTECTED M(4,0),METHODS M(4,0),OBJCODE M(4,0),OLE M(4,0),OLE2 M(4,0),RESERVED1 M(4,0),RESERVED2 M(4,0),RESERVED3 M(4,0),RESERVED4 M(4,0),RESERVED5 M(4,0),RESERVED6 M(4,0),RESERVED7 M(4,0),RESERVED8 M(4,0),USER M(4,0)
+1252
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] Class     
+[START RESERVED1]
+VERSION =   3.00[END RESERVED1]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _20K1BG13N
+[CLASS] frmstartmenu
+[CLASSLOC] ..\tabmenu.vcx
+[BASECLASS] form
+[OBJNAME] frmexamplestart
+[START PROPERTIES]
+DoCreate = .T.
+Name = "frmexamplestart"
+cmdCancel.Name = "cmdCancel"
+shpBackground.Name = "shpBackground"
+shpLeft.Name = "shpLeft"
+shpBottom.Name = "shpBottom"
+cmdExit.Name = "cmdExit"
+cntMenuItems.cntRecentItems.LBLCAPTION.Name = "LBLCAPTION"
+cntMenuItems.cntRecentItems.shpBackGround.Name = "shpBackGround"
+cntMenuItems.cntRecentItems.linBackGround.Name = "linBackGround"
+cntMenuItems.cntRecentItems.imgtipwin.Height = 14
+cntMenuItems.cntRecentItems.imgtipwin.Width = 15
+cntMenuItems.cntRecentItems.imgtipwin.Name = "imgtipwin"
+cntMenuItems.cntRecentItems.tmrTipWin.Name = "tmrTipWin"
+cntMenuItems.cntRecentItems.Name = "cntRecentItems"
+cntMenuItems.cntQuickMenu.LBLCAPTION.Name = "LBLCAPTION"
+cntMenuItems.cntQuickMenu.shpBackGround.Name = "shpBackGround"
+cntMenuItems.cntQuickMenu.linBackGround.Name = "linBackGround"
+cntMenuItems.cntQuickMenu.imgtipwin.Height = 14
+cntMenuItems.cntQuickMenu.imgtipwin.Width = 15
+cntMenuItems.cntQuickMenu.imgtipwin.Name = "imgtipwin"
+cntMenuItems.cntQuickMenu.tmrTipWin.Name = "tmrTipWin"
+cntMenuItems.cntQuickMenu.Name = "cntQuickMenu"
+cntMenuItems.shpShadow.Name = "shpShadow"
+cntMenuItems.cntSubMenu.lblCaption.Name = "lblCaption"
+cntMenuItems.cntSubMenu.shpBackGround.Name = "shpBackGround"
+cntMenuItems.cntSubMenu.linBackGround.Name = "linBackGround"
+cntMenuItems.cntSubMenu.imgtipwin.Height = 14
+cntMenuItems.cntSubMenu.imgtipwin.Width = 15
+cntMenuItems.cntSubMenu.imgtipwin.Name = "imgtipwin"
+cntMenuItems.cntSubMenu.tmrTipWin.Name = "tmrTipWin"
+cntMenuItems.cntSubMenu.Name = "cntSubMenu"
+cntMenuItems.Name = "cntMenuItems"
+imgbottom.Name = "imgbottom"
+IMGRIGHT.Name = "IMGRIGHT"
+imgtr.Height = 9
+imgtr.Width = 9
+imgtr.Name = "imgtr"
+IMGLEFT.Height = 38
+IMGLEFT.Width = 38
+IMGLEFT.Name = "IMGLEFT"
+imgbr.Height = 6
+imgbr.Width = 6
+imgbr.Name = "imgbr"
+imgbl.Height = 4
+imgbl.Width = 8
+imgbl.Name = "imgbl"
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Init
+LPARAMETERS voTabMenu, vlShowHotKeys
+
+IF DODEFAULT(voTabMenu, vlShowHotKeys)
+  LOCAL loItem
+
+  loItem = thisform.cntMenuItems.cntRecentItems.Addpopupitem("Recent Item 1", "NORM", "1")
+  loItem.lShowPin = .t.
+  loItem = thisform.cntMenuItems.cntRecentItems.Addpopupitem("Recent Item 2", "NORM", "2")
+  loItem.lShowPin = .t.
+  loItem = thisform.cntMenuItems.cntRecentItems.Addpopupitem("Recent Item 3", "NORM", "3")
+  loItem.lShowPin = .t.
+  loItem = thisform.cntMenuItems.cntRecentItems.Addpopupitem("Recent Item 4", "NORM", "4")
+  loItem.lShowPin = .t.
+  loItem = thisform.cntMenuItems.cntRecentItems.Addpopupitem("Recent Item 5", "NORM", "5")
+  loItem.lShowPin = .t.
+
+  loItem = thisform.cntMenuItems.cntQuickMenu.Addpopupitem("Quick Menu 1", "LARGE", "A")
+  BINDEVENT(loItem, "activate", thisform, "hidesubmenu")
+
+  loItem = thisform.cntMenuItems.cntQuickMenu.Addpopupitem("Separator", "SEP")
+
+  loItem = thisform.cntMenuItems.cntQuickMenu.Addpopupitem("Quick Menu 2", "LARGE", "B")
+  loItem.nShowSubmenu = 2
+  loItem.cItemKey = "MENU.OPTION.2"
+  BINDEVENT(loItem, "submenu", thisform, "showsubmenu")
+  BINDEVENT(loItem, "activate", thisform, "showsubmenu")
+
+  loItem = thisform.cntMenuItems.cntQuickMenu.Addpopupitem("Quick Menu 3", "LARGE", "C")
+  loItem.nShowSubmenu = 1
+  loItem.cItemKey = "MENU.OPTION.3"
+  BINDEVENT(loItem, "activate", thisform, "showsubmenu")
+  BINDEVENT(loItem, "execute", thisform, "showsubmenu")
+
+  loItem = thisform.cntMenuItems.cntQuickMenu.Addpopupitem("Quick Menu 4", "LARGE", "D")
+  BINDEVENT(loItem, "activate", thisform, "hidesubmenu")
+
+ELSE
+  RETURN .f.
+ENDIF
+
+ENDPROC
+PROCEDURE showsubmenu
+LOCAL loItem
+
+PRIVATE paSource
+
+AEVENTS(paSource, 0)
+
+thisform.hidesubmenu()
+thisform.oActiveItem = paSource[1]
+thisform.oActiveItem.lselected = .t.
+
+DO CASE
+  CASE paSource[1].cItemKey = "MENU.OPTION.2"
+    thisform.cntMenuItems.cntsubMenu.Caption = "Submenu for option 2"
+
+    loItem = thisform.cntMenuItems.cntsubMenu.Addpopupitem("Submenu Item 1", "LARGE", "1")
+    loItem.cDescription = "Some text to describe what this first item is"
+
+    loItem = thisform.cntMenuItems.cntsubMenu.Addpopupitem("Submenu Item 2", "LARGE", "2")
+    loItem.cDescription = "Some text to describe what this second item is"
+
+    loItem = thisform.cntMenuItems.cntsubMenu.Addpopupitem("Submenu Item 3", "LARGE", "3")
+    loItem.cDescription = "Some text to describe what this third item is"
+
+  CASE paSource[1].cItemKey = "MENU.OPTION.3"
+    thisform.cntMenuItems.cntsubMenu.Caption = "Submenu for option 3"
+
+    loItem = thisform.cntMenuItems.cntsubMenu.Addpopupitem("Submenu Item 1", "NORM", "1")
+
+ENDCASE
+
+thisform.cntMenuItems.cntsubMenu.Visible = .t.
+thisform.cntMenuItems.shpShadow.Visible = .t.
+
+ENDPROC
+[END METHODS]
+[START RESERVED1]
+Class[END RESERVED1]
+[START RESERVED2]
+2[END RESERVED2]
+[START RESERVED6]
+Pixels[END RESERVED6]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _21I0U8DED
+[CLASS] image
+[BASECLASS] image
+[OBJNAME] imgVFPX
+[PARENT] frmexamplestart
+[START PROPERTIES]
+Picture = vfpxpoweredby.gif
+Height = 16
+Left = 7
+Top = 222
+Width = 76
+Name = "imgVFPX"
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[OBJNAME] frmexamplestart
+[START PROPERTIES]
+Segoe UI, 0, 9, 6, 15, 12, 22, 3, 0
+Arial, 0, 9, 5, 15, 12, 32, 3, 0
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2230KV3G7
+[CLASS] container
+[BASECLASS] container
+[OBJNAME] cntactiontip
+[START PROPERTIES]
+Width = 319
+Height = 165
+BackStyle = 0
+BorderColor = 118,118,118
+Name = "cntactiontip"
+[END PROPERTIES]
+[START RESERVED1]
+Class[END RESERVED1]
+[START RESERVED2]
+3[END RESERVED2]
+[START RESERVED6]
+Pixels[END RESERVED6]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2230KVYNF
+[CLASS] label
+[BASECLASS] label
+[OBJNAME] lblTipText
+[PARENT] cntactiontip
+[START PROPERTIES]
+AutoSize = .T.
+FontName = "Segoe UI"
+WordWrap = .T.
+BackStyle = 0
+Caption = "This is a sample popup action Tip, the text displayed here doesn't really achieve any purpose beyond giving an example of the functionality"
+Height = 77
+Left = 129
+Top = 44
+Width = 159
+ForeColor = 40,40,40
+Name = "lblTipText"
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2230UME4R
+[CLASS] image
+[BASECLASS] image
+[OBJNAME] imgTipImage
+[PARENT] cntactiontip
+[START PROPERTIES]
+Picture = tipimage.bmp
+Height = 130
+Left = 17
+Top = 17
+Width = 86
+Name = "imgTipImage"
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[OBJNAME] cntactiontip
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2230KV3G7
+[CLASS] container
+[BASECLASS] container
+[OBJNAME] cntstarttip
+[START PROPERTIES]
+Width = 388
+Height = 165
+BackStyle = 0
+BorderColor = 118,118,118
+Name = "cntstarttip"
+[END PROPERTIES]
+[START RESERVED1]
+Class[END RESERVED1]
+[START RESERVED2]
+3[END RESERVED2]
+[START RESERVED6]
+Pixels[END RESERVED6]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2230KVYNF
+[CLASS] label
+[BASECLASS] label
+[OBJNAME] lblTipText
+[PARENT] cntstarttip
+[START PROPERTIES]
+AutoSize = .T.
+FontName = "Segoe UI"
+WordWrap = .T.
+BackStyle = 0
+Caption = "This is a sample start item action Tip, the text displayed here doesn't really achieve any purpose beyond giving an example of the functionality"
+Height = 107
+Left = 241
+Top = 24
+Width = 115
+ForeColor = 40,40,40
+Name = "lblTipText"
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2230UME4R
+[CLASS] image
+[BASECLASS] image
+[OBJNAME] imgTipImage
+[PARENT] cntstarttip
+[START PROPERTIES]
+Picture = starttip.bmp
+Height = 130
+Left = 17
+Top = 17
+Width = 196
+Name = "imgTipImage"
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[OBJNAME] cntstarttip
+[EOF]

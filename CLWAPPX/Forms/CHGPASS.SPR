@@ -1,0 +1,3 @@
+EXTERNAL PROC chgpass.scx
+
+DO FORM "chgpass.scx" NAME _33B0G89K8 LINKED 

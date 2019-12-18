@@ -1,0 +1,12 @@
+* Project Configuration parameters:
+
+default = d:\vfp\abtier
+path   	= data,forms,reports,progs,libs,include,menus,graphics,help
+resource = foxuser.dbf
+codepage = auto
+date	= dmy
+deleted = on
+talk	= off
+confirm = on
+hours	= 24
+seconds = off

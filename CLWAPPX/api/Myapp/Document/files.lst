@@ -1,0 +1,1236 @@
+
+*:      File List
+
+*:      Kasem Kamolchaipisit
+*:      thai_vfp@hotmail.com
+*:      http://members.xoom.com/thai_vfp
+*:      
+*:      
+*:      
+*:      
+*:      
+*:      
+*:      
+*:      
+*:      
+*:      
+
+  FILE                                                                                                                                                             
+  MAIN.PRG                                                                                                                                                         
+  BEEP.PRG                                                                                                                                                         
+  BMPS\WZBACK.BMP                                                                                                                                                  
+  BMPS\WZCLOSE.BMP                                                                                                                                                 
+  BMPS\WZCLOSE.BMP                                                                                                                                                 
+  BMPS\WZDELETE.BMP                                                                                                                                                
+  BMPS\WZDELETE.BMP                                                                                                                                                
+  BMPS\WZEDIT.BMP                                                                                                                                                  
+  BMPS\WZEDIT.BMP                                                                                                                                                  
+  BMPS\WZEND.BMP                                                                                                                                                   
+  BMPS\WZLOCATE.BMP                                                                                                                                                
+  BMPS\WZLOCATE.BMP                                                                                                                                                
+  BMPS\WZNEW.BMP                                                                                                                                                   
+  BMPS\WZNEW.BMP                                                                                                                                                   
+  BMPS\WZNEXT.BMP                                                                                                                                                  
+  BMPS\WZPRINT.BMP                                                                                                                                                 
+  BMPS\WZPRINT.BMP                                                                                                                                                 
+  BMPS\WZSAVE.BMP                                                                                                                                                  
+  BMPS\WZSAVE.BMP                                                                                                                                                  
+  BMPS\WZTOP.BMP                                                                                                                                                   
+  BMPS\WZUNDO.BMP                                                                                                                                                  
+  CHKSKIP.PRG                                                                                                                                                      
+  CUSTINQ.SCX                                                                                                                                                      
+  CUSTOMER.FRX                                                                                                                                                     
+  CUSTOMER.SCX                                                                                                                                                     
+  CUSTOMER1.SCX                                                                                                                                                    
+  CUSTRPT.FRX                                                                                                                                                      
+  CUSTRPT.SCX                                                                                                                                                      
+  DECRYPT_IT.PRG                                                                                                                                                   
+  ENCRYPT_IT.PRG                                                                                                                                                   
+  ERRHAND.PRG                                                                                                                                                      
+  FIND_PRO.SCX                                                                                                                                                     
+  FINDFILE.PRG                                                                                                                                                     
+  FINFOLDER.PRG                                                                                                                                                    
+  GBACKGND.PRG                                                                                                                                                     
+  GETSYSDIR.PRG                                                                                                                                                    
+  GETTEMPDIR.PRG                                                                                                                                                   
+  GETUSER.PRG                                                                                                                                                      
+  GETVOL.PRG                                                                                                                                                       
+  INVINQ.SCX                                                                                                                                                       
+  INVOICE.FRX                                                                                                                                                      
+  INVOICE.SCX                                                                                                                                                      
+  INVTOTAL.PRG                                                                                                                                                     
+  LOGIN.SCX                                                                                                                                                        
+  LOGO.SCX                                                                                                                                                         
+  MENU.MNX                                                                                                                                                         
+  MENU.MPR                                                                                                                                                         
+  MYCLASS.VCX                                                                                                                                                      
+  MYDATABASE.DBC                                                                                                                                                   
+  MYMENU.MNX                                                                                                                                                       
+  MYMENU.MPR                                                                                                                                                       
+  MYPREVIEW.SCX                                                                                                                                                    
+  NUM2ENG.PRG                                                                                                                                                      
+  NUM2THI.PRG                                                                                                                                                      
+  PRO_FP.FRX                                                                                                                                                       
+  PRO_FP.SCX                                                                                                                                                       
+  PRODINQ.SCX                                                                                                                                                      
+  PRODUCT.FRX                                                                                                                                                      
+  PRODUCT.SCX                                                                                                                                                      
+  PRODUCT1.SCX                                                                                                                                                     
+  PROGRAM1.PRG                                                                                                                                                     
+  PROGRAM2.PRG                                                                                                                                                     
+  PROGRAM3.PRG                                                                                                                                                     
+  REP_INV.FRX                                                                                                                                                      
+  REP_INV.SCX                                                                                                                                                      
+  RESIZE.PRG                                                                                                                                                       
+  SALEINV.SCX                                                                                                                                                      
+  SALESINQ.SCX                                                                                                                                                     
+  SALESMAN.FRX                                                                                                                                                     
+  SALESMAN.SCX                                                                                                                                                     
+  SALESMAN1.SCX                                                                                                                                                    
+  SHORTCUT.MNX                                                                                                                                                     
+  SHORTCUT.MPR                                                                                                                                                     
+  SHUT_DOWN.PRG                                                                                                                                                    
+  TCDOW.PRG                                                                                                                                                        
+  TESTPRN.PRG                                                                                                                                                      
+  THERMO.PRG                                                                                                                                                       
+  THERMOMETER.SCX                                                                                                                                                  
+  TOPWINDOW.PRG                                                                                                                                                    
+  TSCDOW.PRG                                                                                                                                                       
+  UTILITY.PRG                                                                                                                                                      
+  WINEXIT.PRG                                                                                                                                                      
+
+  Database Database                         
+                              Version         10         
+  Database TransactionLog                   
+  Database StoredProceduresSource           
+  Database StoredProceduresObject           
+  Database StoredProceduresDependencies     
+  Table    customer                         
+                              Path            customer.dbf
+                              PrimaryKey      cust_id
+                              DeleteTrigger   __ri_delete_customer()
+                              UpdateTrigger   __ri_update_customer()
+    Field    cust_id                        CUST_ID     C         5         0
+                              Caption         รหัสลูกค้า
+                                              XXXXX
+    Field    company                        COMPANY     C        60         0
+                              Caption         ชื่อบริษัท
+    Field    contact                        CONTACT     C        60         0
+                              Caption         ผู้ติดต่อ
+    Field    address1                       ADDRESS1    C        60         0
+                              Caption         ที่อยู่ 1
+    Field    address2                       ADDRESS2    C        60         0
+                              Caption         ที่อยู่ 2
+    Field    telphone                       TELPHONE    C        10         0
+                              Caption         โทรศัพท์
+                                              (XXX)XXX-XXXX
+                                              R
+    Field    creditlmt                      CREDITLMT   N        12         2
+                              Caption         วงเงินสินเชื่อ
+                                              999,999,999.99
+                                              
+    Field    term_day                       TERM_DAY    N         3         0
+                              Caption         วันให้สินเชื่อ
+                                              999
+                                              
+    Field    sales_id                       SALES_ID    C         5         0
+                              Caption         รหัสพนักงานขาย
+                                              XXXXX
+    Field    note                           NOTE        M         4         0
+                              Caption         หมายเหตุ
+    Index    cust_id                        
+                              Unique          1          
+    Index    company                        
+                              Unique          0          
+    Index    sales_id                       
+                              Unique          0          
+    Relation Relation 1                     
+                              RelatedChild    sales_id
+                              RelatedTable    salesman
+                              RelatedTag      sales_id
+    Index    cust_id1                       
+                              Unique          0          
+  Table    salesman                         
+                              Path            salesman.dbf
+                              PrimaryKey      sales_id
+                              UpdateTrigger   __ri_update_salesman()
+                              DeleteTrigger   __ri_delete_salesman()
+    Field    sales_id                       SALES_ID    C         5         0
+                              Caption         รหัสพนักงานขาย
+                                              XXXXX
+    Field    name                           NAME        C        60         0
+                              Caption         ชื่อพนักงานขาย
+    Field    address1                       ADDRESS1    C        60         0
+                              Caption         ที่อยู่ 1
+    Field    address2                       ADDRESS2    C        60         0
+                              Caption         ที่อยู่ 2
+    Field    telphone                       TELPHONE    C        10         0
+                              Caption         โทรศัพท์
+                                              (XXX)XXX-XXXX
+                                              R
+    Field    commrate                       COMMRATE    N         6         2
+                              Caption         อัตราค่าคอมมิชั่น
+                                              999.99
+                                              
+    Field    note                           NOTE        M         4         0
+                              Caption         หมายเหตุ
+    Index    sales_id                       
+                              Unique          1          
+    Index    name                           
+                              Unique          0          
+    Index    sales_id1                      
+                              Unique          0          
+  Table    product                          
+                              Path            product.dbf
+                              PrimaryKey      prod_id
+                              DeleteTrigger   __ri_delete_product()
+                              UpdateTrigger   __ri_update_product()
+    Field    prod_id                        PROD_ID     C         5         0
+                              Caption         รหัสสินค้า
+                                              XXXXX
+    Field    prod_name                      PROD_NAME   C        60         0
+                              Caption         ชื่อสินค้า
+    Field    um                             UM          C        10         0
+                              Caption         หน่วยนับ
+    Field    unitprice                      UNITPRICE   N        12         2
+                              Caption         ราคาต่อหน่วย
+                                              999,999,999.99
+                                              
+    Index    prod_id                        
+                              Unique          1          
+    Index    prod_name                      
+                              Unique          0          
+    Index    prod_id1                       
+                              Unique          0          
+  Table    inv_head                         
+                              Path            inv_head.dbf
+                              PrimaryKey      inv_no
+                              DeleteTrigger   __ri_delete_inv_head()
+                              UpdateTrigger   __ri_update_inv_head()
+    Field    inv_no                         INV_NO      N         5         0
+                              Caption         เลขที่ใบส่งสินค้า
+    Field    inv_date                       INV_DATE    D         8         0
+                              Caption         วันที่ส่งสินค้า
+                                              E
+    Field    term_day                       TERM_DAY    N         3         0
+                              Caption         จำนวนวันสินเชื่อ
+                                              999
+                                              
+    Field    cust_id                        CUST_ID     C         5         0
+                              Caption         รหัสลูกค้า
+                                              XXXXX
+    Index    inv_no                         
+                              Unique          1          
+    Index    cust_id                        
+                              Unique          0          
+    Relation Relation 1                     
+                              RelatedChild    cust_id
+                              RelatedTable    customer
+                              RelatedTag      cust_id
+    Index    inv_no1                        
+                              Unique          0          
+  Table    inv_dtl                          
+                              Path            inv_dtl.dbf
+    Index    prod_id                        
+                              Unique          0          
+    Relation Relation 2                     
+                              RelatedChild    prod_id
+                              RelatedTable    product
+                              RelatedTag      prod_id
+    Index    inv_no                         
+                              Unique          0          
+    Field    inv_no                         INV_NO      N         5         0
+                              Caption         เลขที่ใบส่งสินค้า
+    Field    prod_id                        PROD_ID     C         5         0
+                              Caption         รหัสสินค้า
+                                              XXXXX
+    Field    quantity                       QUANTITY    N         9         0
+                              Caption         จำนวน
+                                              999,999,999
+                                              
+    Field    unitprice                      UNITPRICE   N        12         2
+                              Caption         ราคาต่อหน่วย
+                                              999,999,999.99
+                                              
+    Relation Relation 1                     
+                              RelatedChild    inv_no
+                              RelatedTable    inv_head
+                              RelatedTag      inv_no
+    Index    inv_no1                        
+                              Unique          0          
+  Table    userpwd                          
+                              Path            userpwd.dbf
+                              PrimaryKey      username
+    Field    username                       USERNAME    C        10         0
+    Field    password                       PASSWORD    C        10         0
+    Index    username                       
+                              Unique          1          
+  Table    runno                            
+                              Path            runno.dbf
+    Field    run_no                         RUN_NO      N        10         0
+** Stored Procedures
+
+**__RI_HEADER!@ Do NOT REMOVE or MODIFY this 
+line!!!! @!__RI_HEADER**
+procedure RIDELETE
+local llRetVal
+llRetVal=.t.
+ IF (ISRLOCKED() and !deleted()) OR !RLOCK()
+    llRetVal=.F.
+  ELSE
+    IF !deleted()
+      DELETE
+      IF CURSORGETPROP('BUFFERING') > 1
+        =TABLEUPDATE()
+      ENDIF
+      llRetVal=pnerror=0
+    ENDIF not already deleted
+  ENDIF
+  UNLOCK RECORD (RECNO())
+RETURN llRetVal
+
+procedure RIUPDATE
+lparameters tcFieldName,tcNewValue,tcCascadeParent
+local llRetVal
+llRetVal=.t.
+ IF ISRLOCKED() OR !RLOCK()
+    llRetVal=.F.
+  ELSE
+    IF EVAL(tcFieldName)<>tcNewValue
+      PRIVATE pcCascadeParent
+      
+pcCascadeParent=upper(iif(type("tcCascadeParent")<
+>"C","",tcCascadeParent))
+      REPLACE (tcFieldName) WITH tcNewValue
+      IF CURSORGETPROP('BUFFERING') > 1
+        =TABLEUPDATE()
+      ENDIF
+      llRetVal=pnerror=0
+    ENDIF values don't already match
+  ENDIF it's locked already, or I was able to lock
+ it
+  UNLOCK RECORD (RECNO())
+return llRetVal
+
+procedure rierror
+parameters tnErrNo,tcMessage,tcCode,tcProgram
+local lnErrorRows,lnXX
+lnErrorRows=alen(gaErrors,1)
+if type('gaErrors[lnErrorRows,1]')<>"L"
+  dimension 
+gaErrors[lnErrorRows+1,alen(gaErrors,2)]
+  lnErrorRows=lnErrorRows+1
+endif
+gaErrors[lnErrorRows,1]=tnErrNo
+gaErrors[lnErrorRows,2]=tcMessage
+gaErrors[lnErrorRows,3]=tcCode
+gaErrors[lnErrorRows,4]=""
+lnXX=1
+do while !empty(program(lnXX))
+  
+gaErrors[lnErrorRows,4]=gaErrors[lnErrorRows,4]+",
+"+;
+  program(lnXX)
+  lnXX=lnXX+1
+enddo
+gaErrors[lnErrorRows,5]=pcParentDBF
+gaErrors[lnErrorRows,6]=pnParentRec
+gaErrors[lnErrorRows,7]=pcParentID
+gaErrors[lnErrorRows,8]=pcParentExpr
+gaErrors[lnErrorRows,9]=pcChildDBF
+gaErrors[lnErrorRows,10]=pnChildRec
+gaErrors[lnErrorRows,11]=pcChildID
+gaErrors[lnErrorRows,12]=pcChildExpr
+return tnErrNo
+
+
+PROCEDURE riopen
+PARAMETERS tcTable,tcOrder
+local lcCurWkArea,lcNewWkArea,lnInUseSpot
+lnInUseSpot=atc(tcTable+"*",pcRIcursors)
+IF lnInUseSpot=0
+  lcCurWkArea=select()
+  SELECT 0
+  lcNewWkArea=select()
+  IF NOT EMPTY(tcOrder)
+    USE (tcTable) AGAIN ORDER (tcOrder) ;
+      ALIAS ("__ri"+LTRIM(STR(SELECT()))) share
+  ELSE
+    USE (tcTable) AGAIN ALIAS 
+("__ri"+LTRIM(STR(SELECT()))) share
+  ENDIF
+  if pnerror=0
+    
+pcRIcursors=pcRIcursors+upper(tcTable)+"?"+STR(SEL
+ECT(),5)
+  else
+    lcNewWkArea=0
+  endif something bad happened while attempting to
+ open the file
+ELSE
+  
+lcNewWkArea=val(substr(pcRIcursors,lnInUseSpot+len
+(tcTable)+1,5))
+  pcRIcursors = 
+strtran(pcRIcursors,upper(tcTable)+"*"+str(lcNewWk
+Area,5),;
+    upper(tcTable)+"?"+str(lcNewWkArea,5))
+  IF NOT EMPTY(tcOrder)
+    SET ORDER TO (tcOrder) IN (lcNewWkArea)
+  ENDIF sent an order
+  if pnerror<>0
+    lcNewWkArea=0
+  endif something bad happened while setting order
+ENDIF
+RETURN (lcNewWkArea)
+
+
+PROCEDURE riend
+PARAMETERS tlSuccess
+local lnXX,lnSpot,lcWorkArea
+IF tlSuccess
+  END TRANSACTION
+ELSE
+  SET DELETED OFF
+  ROLLBACK
+  SET DELETED ON
+ENDIF
+IF EMPTY(pcRIolderror)
+  ON ERROR
+ELSE
+  ON ERROR &pcRIolderror.
+ENDIF
+FOR lnXX=1 TO occurs("*",pcRIcursors)
+  lnSpot=atc("*",pcRIcursors,lnXX)+1
+  USE IN (VAL(substr(pcRIcursors,lnSpot,5)))
+ENDFOR
+IF pcOldCompat = "ON"
+        SET COMPATIBLE ON
+ENDIF
+IF pcOldDele="OFF"
+  SET DELETED OFF
+ENDIF
+IF pcOldExact="ON"
+  SET EXACT ON
+ENDIF
+IF pcOldTalk="ON"
+  SET TALK ON
+ENDIF
+do case
+  case empty(pcOldDBC)
+    set data to
+  case pcOldDBC<>DBC()
+    set data to (pcOldDBC)
+endcase
+RETURN .T.
+
+
+PROCEDURE rireuse
+* rireuse.prg
+PARAMETERS tcTableName,tcWkArea
+pcRIcursors = 
+strtran(pcRIcursors,upper(tcTableName)+"?"+str(tcW
+kArea,5),;
+  upper(tcTableName)+"*"+str(tcWkArea,5))
+RETURN .t.
+
+**************************************************
+******************************
+** "Referential integrity delete trigger for" 
+customer
+PROCEDURE __RI_DELETE_customer
+LOCAL llRetVal
+llRetVal = .t.
+PRIVATE 
+pcParentDBF,pnParentRec,pcChildDBF,pnChildRec,pcPa
+rentID,pcChildID
+PRIVATE pcParentExpr,pcChildExpr
+STORE "" TO 
+pcParentDBF,pcChildDBF,pcParentID,pcChildID,pcPare
+ntExpr,pcChildExpr
+STORE 0 TO pnParentRec,pnChildRec
+IF _triggerlevel=1
+  BEGIN TRANSACTION
+  PRIVATE 
+pcRIcursors,pcRIwkareas,pcRIolderror,pnerror,;
+  
+pcOldDele,pcOldExact,pcOldTalk,pcOldCompat,PcOldDB
+C
+  pcOldTalk=SET("TALK")
+  SET TALK OFF
+  pcOldDele=SET("DELETED")
+  pcOldExact=SET("EXACT")
+  pcOldCompat=SET("COMPATIBLE")
+  SET COMPATIBLE OFF
+  SET DELETED ON
+  SET EXACT OFF
+  pcRIcursors=""
+  pcRIwkareas=""
+  pcRIolderror=ON("error")
+  pnerror=0
+  ON ERROR 
+pnerror=rierror(ERROR(),message(),message(1),progr
+am())
+  IF TYPE('gaErrors(1)')<>"U"
+    release gaErrors
+  ENDIF
+  PUBLIC gaErrors(1,12)
+  pcOldDBC=DBC()
+  SET DATA TO ("MYDATABASE")
+ENDIF first trigger
+LOCAL lcParentID && parent's value to be sought in
+ child
+LOCAL lcChildWkArea && child work area handle 
+returned by riopen
+LOCAL lcParentWkArea
+LOCAL llDelHeaderarea
+LOCAL lcStartArea
+lcStartArea=select()
+llRetVal=.t.
+lcParentWkArea=select()
+SELECT (lcParentWkArea)
+pcParentDBF=dbf()
+pnParentRec=recno()
+STORE CUST_ID TO lcParentID,pcParentID
+pcParentExpr="CUST_ID"
+lcChildWkArea=riopen("inv_head","cust_id")
+IF lcChildWkArea<=0
+  IF _triggerlevel=1
+    DO riend WITH .F.
+  ENDIF at the end of the highest trigger level
+  RETURN .F.
+ENDIF not able to open the child work area
+pcChildDBF=dbf(lcChildWkArea)
+llRetVal=!SEEK(lcParentID,lcChildWkArea)
+SELECT (lcChildWkArea)
+pnChildRec=recno()
+pcChildID=CUST_ID
+pcChildExpr="CUST_ID"
+IF !llRetVal
+  DO rierror with -1,"Delete restrict rule 
+violated.","",""
+ENDIF
+=rireuse("inv_head",lcChildWkArea)
+IF NOT llRetVal
+  IF _triggerlevel=1
+    DO riend WITH llRetVal
+  ENDIF at the end of the highest trigger level
+  SELECT (lcStartArea)
+  RETURN llRetVal
+ENDIF
+IF _triggerlevel=1
+  do riend with llRetVal
+ENDIF at the end of the highest trigger level
+SELECT (lcStartArea)
+RETURN llRetVal
+** "End of Referential integrity Delete trigger 
+for" customer
+**************************************************
+******************************
+
+**************************************************
+******************************
+procedure __RI_UPDATE_customer
+** "Referential integrity update trigger for" 
+customer
+LOCAL llRetVal
+llRetVal = .t.
+PRIVATE 
+pcParentDBF,pnParentRec,pcChildDBF,pnChildRec,pcPa
+rentID,pcChildID
+PRIVATE pcParentExpr,pcChildExpr
+STORE "" TO 
+pcParentDBF,pcChildDBF,pcParentID,pcChildID,pcPare
+ntExpr,pcChildExpr
+STORE 0 TO pnParentRec,pnChildRec
+IF _triggerlevel=1
+  BEGIN TRANSACTION
+  PRIVATE 
+pcRIcursors,pcRIwkareas,pcRIolderror,pnerror,;
+  
+pcOldDele,pcOldExact,pcOldTalk,pcOldCompat,PcOldDB
+C
+  pcOldTalk=SET("TALK")
+  SET TALK OFF
+  pcOldDele=SET("DELETED")
+  pcOldExact=SET("EXACT")
+  pcOldCompat=SET("COMPATIBLE")
+  SET COMPATIBLE OFF
+  SET DELETED ON
+  SET EXACT OFF
+  pcRIcursors=""
+  pcRIwkareas=""
+  pcRIolderror=ON("error")
+  pnerror=0
+  ON ERROR 
+pnerror=rierror(ERROR(),message(),message(1),progr
+am())
+  IF TYPE('gaErrors(1)')<>"U"
+    release gaErrors
+  ENDIF
+  PUBLIC gaErrors(1,12)
+  pcOldDBC=DBC()
+  SET DATA TO ("MYDATABASE")
+ENDIF first trigger
+LOCAL lcParentID && parent's value to be sought in
+ child
+LOCAL lcOldParentID && previous parent id value
+LOCAL lcChildWkArea && child work area handle 
+returned by riopen
+LOCAL lcChildID && child's value to be sought in 
+parent
+LOCAL lcOldChildID && old child id value
+LOCAL lcParentWkArea && parentwork area handle 
+returned by riopen
+LOCAL lcStartArea
+lcStartArea=select()
+llRetVal=.t.
+lcParentWkArea=select()
+SELECT (lcParentWkArea)
+pcParentDBF=dbf()
+pnParentRec=recno()
+lcOldParentID=OLDVAL("CUST_ID")
+pcParentID=lcOldParentID
+pcParentExpr="CUST_ID"
+lcParentID=CUST_ID
+IF lcParentID<>lcOldParentID
+  lcChildWkArea=riopen("inv_head")
+  IF lcChildWkArea<=0
+    IF _triggerlevel=1
+      DO riend WITH .F.
+    ENDIF at the end of the highest trigger level
+    SELECT (lcStartArea)
+    RETURN .F.
+  ENDIF not able to open the child work area
+  pcChildDBF=dbf(lcChildWkArea)
+  SELECT (lcChildWkArea)
+  SCAN FOR CUST_ID=lcOldParentID
+    pnChildRec=recno()
+    pcChildID=CUST_ID
+    pcChildExpr="CUST_ID"
+    IF NOT llRetVal
+      EXIT
+    ENDIF && not llretval
+    
+llRetVal=riupdate("CUST_ID",lcParentID,"CUSTOMER")
+  ENDSCAN get all of the inv_head records
+  =rireuse("inv_head",lcChildWkArea)
+  IF NOT llRetVal
+    IF _triggerlevel=1
+      DO riend WITH llRetVal
+    ENDIF at the end of the highest trigger level
+    SELECT (lcStartArea)
+    RETURN llRetVal
+  ENDIF
+ENDIF this parent id changed
+IF _triggerlevel=1
+  do riend with llRetVal
+ENDIF at the end of the highest trigger level
+SELECT (lcStartArea)
+RETURN llRetVal
+** "End of Referential integrity Update trigger 
+for" customer
+**************************************************
+******************************
+
+**************************************************
+******************************
+** "Referential integrity delete trigger for" 
+inv_head
+PROCEDURE __RI_DELETE_inv_head
+LOCAL llRetVal
+llRetVal = .t.
+PRIVATE 
+pcParentDBF,pnParentRec,pcChildDBF,pnChildRec,pcPa
+rentID,pcChildID
+PRIVATE pcParentExpr,pcChildExpr
+STORE "" TO 
+pcParentDBF,pcChildDBF,pcParentID,pcChildID,pcPare
+ntExpr,pcChildExpr
+STORE 0 TO pnParentRec,pnChildRec
+IF _triggerlevel=1
+  BEGIN TRANSACTION
+  PRIVATE 
+pcRIcursors,pcRIwkareas,pcRIolderror,pnerror,;
+  
+pcOldDele,pcOldExact,pcOldTalk,pcOldCompat,PcOldDB
+C
+  pcOldTalk=SET("TALK")
+  SET TALK OFF
+  pcOldDele=SET("DELETED")
+  pcOldExact=SET("EXACT")
+  pcOldCompat=SET("COMPATIBLE")
+  SET COMPATIBLE OFF
+  SET DELETED ON
+  SET EXACT OFF
+  pcRIcursors=""
+  pcRIwkareas=""
+  pcRIolderror=ON("error")
+  pnerror=0
+  ON ERROR 
+pnerror=rierror(ERROR(),message(),message(1),progr
+am())
+  IF TYPE('gaErrors(1)')<>"U"
+    release gaErrors
+  ENDIF
+  PUBLIC gaErrors(1,12)
+  pcOldDBC=DBC()
+  SET DATA TO ("MYDATABASE")
+ENDIF first trigger
+LOCAL lcParentID && parent's value to be sought in
+ child
+LOCAL lcChildWkArea && child work area handle 
+returned by riopen
+LOCAL lcParentWkArea
+LOCAL llDelHeaderarea
+LOCAL lcStartArea
+lcStartArea=select()
+llRetVal=.t.
+lcParentWkArea=select()
+SELECT (lcParentWkArea)
+pcParentDBF=dbf()
+pnParentRec=recno()
+STORE INV_NO TO lcParentID,pcParentID
+pcParentExpr="INV_NO"
+lcChildWkArea=riopen("inv_dtl","inv_no")
+IF lcChildWkArea<=0
+  IF _triggerlevel=1
+    DO riend WITH .F.
+  ENDIF at the end of the highest trigger level
+  RETURN .F.
+ENDIF not able to open the child work area
+pcChildDBF=dbf(lcChildWkArea)
+SELECT (lcChildWkArea)
+SEEK lcParentID
+SCAN WHILE INV_NO=lcParentID AND llRetVal
+  pnChildRec=recno()
+  pcChildID=INV_NO
+  pcChildExpr="INV_NO"
+  llRetVal=ridelete()
+ENDSCAN get all of the inv_dtl records
+=rireuse("inv_dtl",lcChildWkArea)
+IF NOT llRetVal
+  IF _triggerlevel=1
+    DO riend WITH llRetVal
+  ENDIF at the end of the highest trigger level
+  SELECT (lcStartArea)
+  RETURN llRetVal
+ENDIF
+IF _triggerlevel=1
+  do riend with llRetVal
+ENDIF at the end of the highest trigger level
+SELECT (lcStartArea)
+RETURN llRetVal
+** "End of Referential integrity Delete trigger 
+for" inv_head
+**************************************************
+******************************
+
+**************************************************
+******************************
+procedure __RI_UPDATE_inv_head
+** "Referential integrity update trigger for" 
+inv_head
+LOCAL llRetVal
+llRetVal = .t.
+PRIVATE 
+pcParentDBF,pnParentRec,pcChildDBF,pnChildRec,pcPa
+rentID,pcChildID
+PRIVATE pcParentExpr,pcChildExpr
+STORE "" TO 
+pcParentDBF,pcChildDBF,pcParentID,pcChildID,pcPare
+ntExpr,pcChildExpr
+STORE 0 TO pnParentRec,pnChildRec
+IF _triggerlevel=1
+  BEGIN TRANSACTION
+  PRIVATE 
+pcRIcursors,pcRIwkareas,pcRIolderror,pnerror,;
+  
+pcOldDele,pcOldExact,pcOldTalk,pcOldCompat,PcOldDB
+C
+  pcOldTalk=SET("TALK")
+  SET TALK OFF
+  pcOldDele=SET("DELETED")
+  pcOldExact=SET("EXACT")
+  pcOldCompat=SET("COMPATIBLE")
+  SET COMPATIBLE OFF
+  SET DELETED ON
+  SET EXACT OFF
+  pcRIcursors=""
+  pcRIwkareas=""
+  pcRIolderror=ON("error")
+  pnerror=0
+  ON ERROR 
+pnerror=rierror(ERROR(),message(),message(1),progr
+am())
+  IF TYPE('gaErrors(1)')<>"U"
+    release gaErrors
+  ENDIF
+  PUBLIC gaErrors(1,12)
+  pcOldDBC=DBC()
+  SET DATA TO ("MYDATABASE")
+ENDIF first trigger
+LOCAL lcParentID && parent's value to be sought in
+ child
+LOCAL lcOldParentID && previous parent id value
+LOCAL lcChildWkArea && child work area handle 
+returned by riopen
+LOCAL lcChildID && child's value to be sought in 
+parent
+LOCAL lcOldChildID && old child id value
+LOCAL lcParentWkArea && parentwork area handle 
+returned by riopen
+LOCAL lcStartArea
+lcStartArea=select()
+llRetVal=.t.
+lcParentWkArea=select()
+SELECT (lcParentWkArea)
+pcParentDBF=dbf()
+pnParentRec=recno()
+lcOldParentID=OLDVAL("INV_NO")
+pcParentID=lcOldParentID
+pcParentExpr="INV_NO"
+lcParentID=INV_NO
+IF lcParentID<>lcOldParentID
+  lcChildWkArea=riopen("inv_dtl")
+  IF lcChildWkArea<=0
+    IF _triggerlevel=1
+      DO riend WITH .F.
+    ENDIF at the end of the highest trigger level
+    SELECT (lcStartArea)
+    RETURN .F.
+  ENDIF not able to open the child work area
+  pcChildDBF=dbf(lcChildWkArea)
+  SELECT (lcChildWkArea)
+  SCAN FOR INV_NO=lcOldParentID
+    pnChildRec=recno()
+    pcChildID=INV_NO
+    pcChildExpr="INV_NO"
+    IF NOT llRetVal
+      EXIT
+    ENDIF && not llretval
+    
+llRetVal=riupdate("INV_NO",lcParentID,"INV_HEAD")
+  ENDSCAN get all of the inv_dtl records
+  =rireuse("inv_dtl",lcChildWkArea)
+  IF NOT llRetVal
+    IF _triggerlevel=1
+      DO riend WITH llRetVal
+    ENDIF at the end of the highest trigger level
+    SELECT (lcStartArea)
+    RETURN llRetVal
+  ENDIF
+ENDIF this parent id changed
+IF _triggerlevel=1
+  do riend with llRetVal
+ENDIF at the end of the highest trigger level
+SELECT (lcStartArea)
+RETURN llRetVal
+** "End of Referential integrity Update trigger 
+for" inv_head
+**************************************************
+******************************
+
+**************************************************
+******************************
+** "Referential integrity delete trigger for" 
+product
+PROCEDURE __RI_DELETE_product
+LOCAL llRetVal
+llRetVal = .t.
+PRIVATE 
+pcParentDBF,pnParentRec,pcChildDBF,pnChildRec,pcPa
+rentID,pcChildID
+PRIVATE pcParentExpr,pcChildExpr
+STORE "" TO 
+pcParentDBF,pcChildDBF,pcParentID,pcChildID,pcPare
+ntExpr,pcChildExpr
+STORE 0 TO pnParentRec,pnChildRec
+IF _triggerlevel=1
+  BEGIN TRANSACTION
+  PRIVATE 
+pcRIcursors,pcRIwkareas,pcRIolderror,pnerror,;
+  
+pcOldDele,pcOldExact,pcOldTalk,pcOldCompat,PcOldDB
+C
+  pcOldTalk=SET("TALK")
+  SET TALK OFF
+  pcOldDele=SET("DELETED")
+  pcOldExact=SET("EXACT")
+  pcOldCompat=SET("COMPATIBLE")
+  SET COMPATIBLE OFF
+  SET DELETED ON
+  SET EXACT OFF
+  pcRIcursors=""
+  pcRIwkareas=""
+  pcRIolderror=ON("error")
+  pnerror=0
+  ON ERROR 
+pnerror=rierror(ERROR(),message(),message(1),progr
+am())
+  IF TYPE('gaErrors(1)')<>"U"
+    release gaErrors
+  ENDIF
+  PUBLIC gaErrors(1,12)
+  pcOldDBC=DBC()
+  SET DATA TO ("MYDATABASE")
+ENDIF first trigger
+LOCAL lcParentID && parent's value to be sought in
+ child
+LOCAL lcChildWkArea && child work area handle 
+returned by riopen
+LOCAL lcParentWkArea
+LOCAL llDelHeaderarea
+LOCAL lcStartArea
+lcStartArea=select()
+llRetVal=.t.
+lcParentWkArea=select()
+SELECT (lcParentWkArea)
+pcParentDBF=dbf()
+pnParentRec=recno()
+STORE PROD_ID TO lcParentID,pcParentID
+pcParentExpr="PROD_ID"
+lcChildWkArea=riopen("inv_dtl","prod_id")
+IF lcChildWkArea<=0
+  IF _triggerlevel=1
+    DO riend WITH .F.
+  ENDIF at the end of the highest trigger level
+  RETURN .F.
+ENDIF not able to open the child work area
+pcChildDBF=dbf(lcChildWkArea)
+llRetVal=!SEEK(lcParentID,lcChildWkArea)
+SELECT (lcChildWkArea)
+pnChildRec=recno()
+pcChildID=PROD_ID
+pcChildExpr="PROD_ID"
+IF !llRetVal
+  DO rierror with -1,"Delete restrict rule 
+violated.","",""
+ENDIF
+=rireuse("inv_dtl",lcChildWkArea)
+IF NOT llRetVal
+  IF _triggerlevel=1
+    DO riend WITH llRetVal
+  ENDIF at the end of the highest trigger level
+  SELECT (lcStartArea)
+  RETURN llRetVal
+ENDIF
+IF _triggerlevel=1
+  do riend with llRetVal
+ENDIF at the end of the highest trigger level
+SELECT (lcStartArea)
+RETURN llRetVal
+** "End of Referential integrity Delete trigger 
+for" product
+**************************************************
+******************************
+
+**************************************************
+******************************
+procedure __RI_UPDATE_product
+** "Referential integrity update trigger for" 
+product
+LOCAL llRetVal
+llRetVal = .t.
+PRIVATE 
+pcParentDBF,pnParentRec,pcChildDBF,pnChildRec,pcPa
+rentID,pcChildID
+PRIVATE pcParentExpr,pcChildExpr
+STORE "" TO 
+pcParentDBF,pcChildDBF,pcParentID,pcChildID,pcPare
+ntExpr,pcChildExpr
+STORE 0 TO pnParentRec,pnChildRec
+IF _triggerlevel=1
+  BEGIN TRANSACTION
+  PRIVATE 
+pcRIcursors,pcRIwkareas,pcRIolderror,pnerror,;
+  
+pcOldDele,pcOldExact,pcOldTalk,pcOldCompat,PcOldDB
+C
+  pcOldTalk=SET("TALK")
+  SET TALK OFF
+  pcOldDele=SET("DELETED")
+  pcOldExact=SET("EXACT")
+  pcOldCompat=SET("COMPATIBLE")
+  SET COMPATIBLE OFF
+  SET DELETED ON
+  SET EXACT OFF
+  pcRIcursors=""
+  pcRIwkareas=""
+  pcRIolderror=ON("error")
+  pnerror=0
+  ON ERROR 
+pnerror=rierror(ERROR(),message(),message(1),progr
+am())
+  IF TYPE('gaErrors(1)')<>"U"
+    release gaErrors
+  ENDIF
+  PUBLIC gaErrors(1,12)
+  pcOldDBC=DBC()
+  SET DATA TO ("MYDATABASE")
+ENDIF first trigger
+LOCAL lcParentID && parent's value to be sought in
+ child
+LOCAL lcOldParentID && previous parent id value
+LOCAL lcChildWkArea && child work area handle 
+returned by riopen
+LOCAL lcChildID && child's value to be sought in 
+parent
+LOCAL lcOldChildID && old child id value
+LOCAL lcParentWkArea && parentwork area handle 
+returned by riopen
+LOCAL lcStartArea
+lcStartArea=select()
+llRetVal=.t.
+lcParentWkArea=select()
+SELECT (lcParentWkArea)
+pcParentDBF=dbf()
+pnParentRec=recno()
+lcOldParentID=OLDVAL("PROD_ID")
+pcParentID=lcOldParentID
+pcParentExpr="PROD_ID"
+lcParentID=PROD_ID
+IF lcParentID<>lcOldParentID
+  lcChildWkArea=riopen("inv_dtl")
+  IF lcChildWkArea<=0
+    IF _triggerlevel=1
+      DO riend WITH .F.
+    ENDIF at the end of the highest trigger level
+    SELECT (lcStartArea)
+    RETURN .F.
+  ENDIF not able to open the child work area
+  pcChildDBF=dbf(lcChildWkArea)
+  SELECT (lcChildWkArea)
+  SCAN FOR PROD_ID=lcOldParentID
+    pnChildRec=recno()
+    pcChildID=PROD_ID
+    pcChildExpr="PROD_ID"
+    IF NOT llRetVal
+      EXIT
+    ENDIF && not llretval
+    
+llRetVal=riupdate("PROD_ID",lcParentID,"PRODUCT")
+  ENDSCAN get all of the inv_dtl records
+  =rireuse("inv_dtl",lcChildWkArea)
+  IF NOT llRetVal
+    IF _triggerlevel=1
+      DO riend WITH llRetVal
+    ENDIF at the end of the highest trigger level
+    SELECT (lcStartArea)
+    RETURN llRetVal
+  ENDIF
+ENDIF this parent id changed
+IF _triggerlevel=1
+  do riend with llRetVal
+ENDIF at the end of the highest trigger level
+SELECT (lcStartArea)
+RETURN llRetVal
+** "End of Referential integrity Update trigger 
+for" product
+**************************************************
+******************************
+
+**************************************************
+******************************
+** "Referential integrity delete trigger for" 
+salesman
+PROCEDURE __RI_DELETE_salesman
+LOCAL llRetVal
+llRetVal = .t.
+PRIVATE 
+pcParentDBF,pnParentRec,pcChildDBF,pnChildRec,pcPa
+rentID,pcChildID
+PRIVATE pcParentExpr,pcChildExpr
+STORE "" TO 
+pcParentDBF,pcChildDBF,pcParentID,pcChildID,pcPare
+ntExpr,pcChildExpr
+STORE 0 TO pnParentRec,pnChildRec
+IF _triggerlevel=1
+  BEGIN TRANSACTION
+  PRIVATE 
+pcRIcursors,pcRIwkareas,pcRIolderror,pnerror,;
+  
+pcOldDele,pcOldExact,pcOldTalk,pcOldCompat,PcOldDB
+C
+  pcOldTalk=SET("TALK")
+  SET TALK OFF
+  pcOldDele=SET("DELETED")
+  pcOldExact=SET("EXACT")
+  pcOldCompat=SET("COMPATIBLE")
+  SET COMPATIBLE OFF
+  SET DELETED ON
+  SET EXACT OFF
+  pcRIcursors=""
+  pcRIwkareas=""
+  pcRIolderror=ON("error")
+  pnerror=0
+  ON ERROR 
+pnerror=rierror(ERROR(),message(),message(1),progr
+am())
+  IF TYPE('gaErrors(1)')<>"U"
+    release gaErrors
+  ENDIF
+  PUBLIC gaErrors(1,12)
+  pcOldDBC=DBC()
+  SET DATA TO ("MYDATABASE")
+ENDIF first trigger
+LOCAL lcParentID && parent's value to be sought in
+ child
+LOCAL lcChildWkArea && child work area handle 
+returned by riopen
+LOCAL lcParentWkArea
+LOCAL llDelHeaderarea
+LOCAL lcStartArea
+lcStartArea=select()
+llRetVal=.t.
+lcParentWkArea=select()
+SELECT (lcParentWkArea)
+pcParentDBF=dbf()
+pnParentRec=recno()
+STORE SALES_ID TO lcParentID,pcParentID
+pcParentExpr="SALES_ID"
+lcChildWkArea=riopen("customer","sales_id")
+IF lcChildWkArea<=0
+  IF _triggerlevel=1
+    DO riend WITH .F.
+  ENDIF at the end of the highest trigger level
+  RETURN .F.
+ENDIF not able to open the child work area
+pcChildDBF=dbf(lcChildWkArea)
+llRetVal=!SEEK(lcParentID,lcChildWkArea)
+SELECT (lcChildWkArea)
+pnChildRec=recno()
+pcChildID=SALES_ID
+pcChildExpr="SALES_ID"
+IF !llRetVal
+  DO rierror with -1,"Delete restrict rule 
+violated.","",""
+ENDIF
+=rireuse("customer",lcChildWkArea)
+IF NOT llRetVal
+  IF _triggerlevel=1
+    DO riend WITH llRetVal
+  ENDIF at the end of the highest trigger level
+  SELECT (lcStartArea)
+  RETURN llRetVal
+ENDIF
+IF _triggerlevel=1
+  do riend with llRetVal
+ENDIF at the end of the highest trigger level
+SELECT (lcStartArea)
+RETURN llRetVal
+** "End of Referential integrity Delete trigger 
+for" salesman
+**************************************************
+******************************
+
+**************************************************
+******************************
+procedure __RI_UPDATE_salesman
+** "Referential integrity update trigger for" 
+salesman
+LOCAL llRetVal
+llRetVal = .t.
+PRIVATE 
+pcParentDBF,pnParentRec,pcChildDBF,pnChildRec,pcPa
+rentID,pcChildID
+PRIVATE pcParentExpr,pcChildExpr
+STORE "" TO 
+pcParentDBF,pcChildDBF,pcParentID,pcChildID,pcPare
+ntExpr,pcChildExpr
+STORE 0 TO pnParentRec,pnChildRec
+IF _triggerlevel=1
+  BEGIN TRANSACTION
+  PRIVATE 
+pcRIcursors,pcRIwkareas,pcRIolderror,pnerror,;
+  
+pcOldDele,pcOldExact,pcOldTalk,pcOldCompat,PcOldDB
+C
+  pcOldTalk=SET("TALK")
+  SET TALK OFF
+  pcOldDele=SET("DELETED")
+  pcOldExact=SET("EXACT")
+  pcOldCompat=SET("COMPATIBLE")
+  SET COMPATIBLE OFF
+  SET DELETED ON
+  SET EXACT OFF
+  pcRIcursors=""
+  pcRIwkareas=""
+  pcRIolderror=ON("error")
+  pnerror=0
+  ON ERROR 
+pnerror=rierror(ERROR(),message(),message(1),progr
+am())
+  IF TYPE('gaErrors(1)')<>"U"
+    release gaErrors
+  ENDIF
+  PUBLIC gaErrors(1,12)
+  pcOldDBC=DBC()
+  SET DATA TO ("MYDATABASE")
+ENDIF first trigger
+LOCAL lcParentID && parent's value to be sought in
+ child
+LOCAL lcOldParentID && previous parent id value
+LOCAL lcChildWkArea && child work area handle 
+returned by riopen
+LOCAL lcChildID && child's value to be sought in 
+parent
+LOCAL lcOldChildID && old child id value
+LOCAL lcParentWkArea && parentwork area handle 
+returned by riopen
+LOCAL lcStartArea
+lcStartArea=select()
+llRetVal=.t.
+lcParentWkArea=select()
+SELECT (lcParentWkArea)
+pcParentDBF=dbf()
+pnParentRec=recno()
+lcOldParentID=OLDVAL("SALES_ID")
+pcParentID=lcOldParentID
+pcParentExpr="SALES_ID"
+lcParentID=SALES_ID
+IF lcParentID<>lcOldParentID
+  lcChildWkArea=riopen("customer")
+  IF lcChildWkArea<=0
+    IF _triggerlevel=1
+      DO riend WITH .F.
+    ENDIF at the end of the highest trigger level
+    SELECT (lcStartArea)
+    RETURN .F.
+  ENDIF not able to open the child work area
+  pcChildDBF=dbf(lcChildWkArea)
+  SELECT (lcChildWkArea)
+  SCAN FOR SALES_ID=lcOldParentID
+    pnChildRec=recno()
+    pcChildID=SALES_ID
+    pcChildExpr="SALES_ID"
+    IF NOT llRetVal
+      EXIT
+    ENDIF && not llretval
+    
+llRetVal=riupdate("SALES_ID",lcParentID,"SALESMAN"
+)
+  ENDSCAN get all of the customer records
+  =rireuse("customer",lcChildWkArea)
+  IF NOT llRetVal
+    IF _triggerlevel=1
+      DO riend WITH llRetVal
+    ENDIF at the end of the highest trigger level
+    SELECT (lcStartArea)
+    RETURN llRetVal
+  ENDIF
+ENDIF this parent id changed
+IF _triggerlevel=1
+  do riend with llRetVal
+ENDIF at the end of the highest trigger level
+SELECT (lcStartArea)
+RETURN llRetVal
+** "End of Referential integrity Update trigger 
+for" salesman
+**************************************************
+******************************
+**__RI_FOOTER!@ Do NOT REMOVE or MODIFY this 
+line!!!! @!__RI_FOOTER**
+
+
+Total Code Lines Processed=    6526

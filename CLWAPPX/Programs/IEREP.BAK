@@ -1,0 +1,74 @@
+sele iedate,sum(ieinc) as income,sum(ieexp) as expense from ie where etcode<>'OP' group by iedate order by iedate into dbf tmp1
+close data 
+
+sele month(iedate) as month,year(iedate) as year,income,expense from tmp1 into dbf tmp2
+close data
+
+sele month,year,sum(income) as income,sum(expense) as expense from tmp2 group by month,year order by year,month into dbf tmp3
+
+
+
+sele *,0000000000.00 as balance,0000000000.00 as openning,0000000000.00 as opinc from tmp3 order by year,month into dbf tmp4
+
+Defi Wind Showwin From 5,20 To Srow()-5,Scol()-20 close panel ;
+	Font 'ms sans serif',8 Style 'n' ;
+	Title 'สรุปรายรับ รายจ่ายแต่ละเดือน' COLOR W/B*
+
+
+set talk off
+do thermo with 'S',recc(),'Computing Records,Press ESC to Exit'
+
+mbal=0
+do while not eof()
+	m.month=month
+	m.year=year
+	m.openning=openning
+	m.income=income
+	m.expense=expense
+	mbal=0
+	mop=0
+	mopinc=0
+	
+	sele sum(ieinc) from ie where etcode='OP' and m.month=month(iedate) and m.year=year(iedate) into array atmp
+	if _tally#0
+		mop=atmp(1,1)
+	endif
+
+	mbal=(mop+m.income)-m.expense
+	mopinc=mop+m.income
+	
+	sele tmp4
+	repl balance with mbal
+	repl openning with mop
+	repl opinc with mopinc
+		
+	if Inkey()=27
+		wait wind 'CANCELLED!!!' nowa		
+		exit
+	endif		
+	do thermo with 'U'
+	skip
+enddo
+
+do thermo with 'C',0,'RECORDS COMPUTED !'
+
+set talk on 
+
+Brow Wind Showwin fields ;
+	my=PADL(ALLTRIM(str(month)),2,'0')+'/'+ALLTRIM(str(year)) :h='เดือน ปี',;
+	openning :h='ยอดยกมา (บาท)' :P='9,999,999.99',;
+	income :h='รายได้ (บาท)' :P='9,999,999.99',;
+	opinc :h='รายได้ทั้งหมด (บาท)' :P='9,999,999.99',;
+	expense :h='รายจ่าย (บาท)' :P='9,999,999.99',;
+	balance :h='คงเหลือ (บาท)' :P='9,999,999.99' ;
+	noed noap node nome
+
+Clos Data 
+erase "tmp1.dbf"
+erase "tmp2.dbf"
+erase "tmp3.dbf"
+erase "tmp4.dbf"
+
+Rele Wind Showwin
+KEYB '{alt+M}'
+

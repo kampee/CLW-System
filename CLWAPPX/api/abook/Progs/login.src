@@ -1,0 +1,130 @@
+#INCLUDE "abook.h"
+
+**************************************************
+DEFINE CLASS capp AS Custom
+**************************************************
+	userid = .F.
+	seclev = .F.
+ENDDEFINE
+
+
+**************************************************
+DEFINE CLASS login AS form
+**************************************************
+
+	Height = 145
+	Width = 290
+	Desktop = .T.
+	AutoCenter = .T.
+	Caption = " login"
+	
+	* (+) New properties:
+	retval = .F.
+	usrnam = .F.
+	usrlev = .F.
+
+	ADD OBJECT txtUsrnam AS Textbox WITH ;
+		Height = 22, ;
+		Left = 100, ;
+		Top = 25, ;
+		Width = 165, ;
+		Format = "K"
+
+	ADD OBJECT txtUsrpwd AS Textbox WITH ;
+		Height = 22, ;
+		Left = 100, ;
+		Top = 60, ;
+		Width = 165, ;
+		Format = "K", ;
+		PasswordChar = "*"
+
+	ADD OBJECT lblUsrnam AS label WITH ;
+		Height = 15, ;
+		Left = 30, ;
+		Top = 30, ;
+		Width = 60, ;
+		Caption = "ชื่อผู้ใช้งาน", ;
+		BackStyle = 0
+
+	ADD OBJECT lblUsrpwd AS label WITH ;
+		Height = 15, ;
+		Left = 30, ;
+		Top = 65, ;
+		Width = 60, ;
+		Caption = "รหัสผ่าน", ;
+		BackStyle = 0
+
+	ADD OBJECT cmdOk AS CommandButton WITH ;
+		Top = 105, ;
+		Left = 50, ;
+		Height = 25, ;
+		Width = 75, ;
+		Caption = "ตกลง"
+
+	ADD OBJECT cmdcancel AS commandbutton WITH ;
+		Top = 105, ;
+		Left = 170, ;
+		Height = 25, ;
+		Width = 75, ;
+		Caption = "ยกเลิก", ;
+		Cancel = .T.
+
+
+	PROCEDURE Load
+		* Excluded encrypt
+		SET PROCEDURE TO encrypt.EXE ADDITIVE			  
+		IF !USED('usrpwd')
+			USE usrpwd IN 0 ORDER pkey
+		ELSE
+			SELECT usrpwd
+			SET ORDER TO pkey
+		ENDIF
+		=CAPSLOCK(.T.)
+	ENDPROC
+
+	PROCEDURE Init
+		WITH THIS
+			STORE .F. TO 	.ControlBox, .MaxButton, .MinButton
+			.SetAll("FontName", "MS Sans Serif")
+			.SetAll("FontBold", .T.)
+			.txtUsrnam.InputMask = REPLICATE("X",FSIZE('sname','usrpwd'))
+			.txtUsrpwd.InputMask = REPLICATE("X",FSIZE('pwd','usrpwd'))
+		ENDWITH		
+	ENDPROC
+
+	PROCEDURE Unload
+		RELEASE PROCEDURE encrypt.EXE	
+		IF USED('usrpwd')
+		  USE IN usrpwd
+		ENDIF		
+	ENDPROC
+
+	PROCEDURE cmdok.Click
+		LOCAL lcUserName
+
+		lcUserName = THISFORM.txtUsrnam.Value
+		DO CASE
+			CASE SEEK(lcUserName)
+				IF Encrypt(pwd)==THISFORM.txtUsrpwd.Value
+					WITH THISFORM
+						.Usrnam  = sname
+						.Usrlev = level
+						.RetVal = .T.
+		 				.Hide()
+		 			ENDWITH
+				ELSE
+		 			=MESSAGEBOX(THIS.PARENT.lblUsrPwd.Caption+MSG_INCORRECT, MB_ICONEXCLAMATION, THISFORM.Caption)
+		 			THIS.PARENT.txtUsrPwd.Value = ""
+		 			THIS.PARENT.txtUsrPwd.SetFocus()
+		 		ENDIF
+		 	OTHERWISE
+				=MESSAGEBOX(THIS.PARENT.lblUsrNam.Caption+MSG_INCORRECT, MB_ICONEXCLAMATION, THISFORM.Caption)
+				THIS.PARENT.txtUsrnam.SetFocus()  
+		ENDCASE
+	ENDPROC
+
+	PROCEDURE cmdcancel.Click		
+		THISFORM.Hide()
+	ENDPROC
+
+ENDDEFINE

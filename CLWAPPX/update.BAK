@@ -1,0 +1,11 @@
+WAIT WINDOW 'Copying file to Server' TIMEOUT 3 
+
+*BUILD APP clwx FROM clw
+
+BUILD APP clw FROM clw
+COPY FILE clwx.app TO f:\clwx.app 
+
+*COPY FILE clwx.app TO g:\clwx.app 
+
+*DO clw
+WAIT WINDOW 'Copy file to Server completed' NOWAIT

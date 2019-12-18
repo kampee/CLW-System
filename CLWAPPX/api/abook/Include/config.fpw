@@ -1,0 +1,6 @@
+* Project Configuration parameters:
+
+TITLE = . . .
+SCREEN = OFF
+SYSMENU = OFF
+RESOURCE = OFF

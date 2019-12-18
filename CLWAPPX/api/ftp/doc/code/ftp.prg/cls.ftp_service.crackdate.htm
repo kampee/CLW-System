@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+<head>
+<title>Method CrackDate of class FTP_SERVICE</title>
+<meta content="text/html; charset=windows-1250" http-equiv="Content-Type" />
+<meta name="Generator" content="Project Documenting Machine" />
+<meta name="Version" content="1.2.3" />
+<link rel="stylesheet" href="../../css/foxw.css" type="text/css" />
+<link rel="stylesheet" href="../../css/sc.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diamp_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab_notes.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diaf_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diap_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diac_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/ftp.css" type="text/css" />
+<script src="../../js/pdm.js" language="JavaScript" type="text/javascript"></script>
+<script src="../../repository/pdm_ab.js" language="JavaScript" type="text/javascript"></script>
+</head>
+<body>
+<div class="diaxp_mhead">CrackDate Method</div>
+<div class="diaxp_mbody_class">
+
+<table class="clear_table">
+ <tbody>
+  <tr><td>Class: </td><td><a href="cls.ftp_service.htm" title="Skip to class ftp_service">FTP_SERVICE</a></td></tr>
+ </tbody>
+</table>
+</div>
+<div class="diaxp_mbody">
+<!-- Created with _diamp_pdm_ab by Agnes Beste    03.09.2007 19:34 -->
+ <div class="PDM_AB_Descr"><!-- Descr Begin -->
+Internal method for converting file system structure to system date.
+ </div><!-- Descr End -->
+
+ <div class="DIAMP_PDM_AB_Syntax"><!-- Syntax Begin -->
+  <div class="SColor">
+   <div class="PEM">
+    Object.CrackDate
+   </div>
+   <div class="Para">
+    (<a href="#_26715Y88K">lcOutBuffer</a>)
+   </div>
+   <div style="clear: both"></div>
+  </div><!-- Colour End -->
+ </div><!-- Syntax End -->
+
+ <div class="DIAMP_PDM_AB_Params"><!-- Parameters Begin -->
+  <span class="PDM_AB_Head">
+   Parameter
+  </span>
+  <dl class="DIAMP_PDM_AB_Params_List">
+   <dt class="dt_">
+    <a class="DIAMP_PDM_AB_Params_ParaName" id="_26715Y88K" name="_26715Y88K">
+     <span class="PDMEXPR PDMNor" ><span class='PDMVar'>lcOutBuffer</span></span>
+
+    </a>
+   </dt>
+   <dd class="dd_">
+    <span class="Params_Short">
+     
+    </span>
+    <table class="Params_Info">
+     <colgroup>
+      <col class="ColumnValue" />
+      <col class="ColumnData" />
+     </colgroup>
+     <tbody>
+      <tr>
+       <td class="CellValue">Type</td>
+       <td class="CellData">Character</td>
+      </tr>
+      <tr>
+       <td class="CellValue">Direction</td>
+       <td class="CellData">Input</td>
+      </tr>
+     </tbody>
+    </table>
+   </dd>
+  </dl>
+ </div><!-- Parameters End -->
+
+ <div class="PDM_AB_Example"><!-- Example Begin -->
+  <span class="PDM_AB_Head">
+   Example
+  </span>
+  <div class="PDM_AB_Body">
+See source code of method <a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.crackfile.htm" title="Skip to method FTP_SERVICE::CrackFile()">FTP_SERVICE::CrackFile()</a>
+  </div>
+ </div><!-- Example End -->
+
+ <div class="PDM_AB_SeeAlso"><!-- SeeAlso Begin -->
+  <span class="PDM_AB_Head">
+   See also
+  </span>
+  <div class="PDM_AB_Body">
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.crackfile.htm" title="Skip to method FTP_SERVICE::CrackFile()">FTP_SERVICE::CrackFile()</a>
+  </div><!-- Body End -->
+  <!--- "Applies to" need to be inserted here---->
+  <PlaceAppliesTo_Here />
+  <!--- /"Applies to" need to be inserted here---->
+ </div><!-- SeeAlso End -->
+
+
+<!-- /Created with _diamp_pdm_ab by Agnes Beste    03.09.2007 19:34 -->
+
+ <div class="SC">
+  <img onclick="ExpandSC('SP_1',-1);"class="imgEC" src="../../imgs/uptab.gif" alt="Expand/Collapse source code of procedure CrackDate" id="IMG_SP_1" />
+  <span ondblclick="ExpandSC('SP_1',-1);" class="SCCaption"><a name="FTP_SERVICE">Source Code</a></span>
+  <div ondblclick="ExpandSC('SP_1',-1);" class="SCE" id="TX_SP_1">
+<!-- Code Begin -->
+<pre class="PDMCODE PDMNor" ><span class='PDMResK'>LPARAMETERS</span> <span class='PDMVar'>INP</span> <span class='PDMVar'>lcOutBuffer</span>
+      <span class='PDMResK'>LOCAL</span> <span class='PDMVar'>lcInBuffer</span><span class='PDMOper'>,</span> <span class='PDMVar'>fResult</span><span class='PDMOper'>,</span> <span class='PDMVar'>lcBuild</span><span class='PDMOper'>,</span> <span class='PDMOper'>;</span>
+            <span class='PDMVar'>lnDay</span><span class='PDMOper'>,</span> <span class='PDMVar'>lnMonth</span><span class='PDMOper'>,</span> <span class='PDMVar'>lnYear</span><span class='PDMOper'>,</span> <span class='PDMVar'>lnHour</span><span class='PDMOper'>,</span> <span class='PDMVar'>lnMinute</span><span class='PDMOper'>,</span> <span class='PDMVar'>lnSecond</span>
+
+      <span class='PDMVar'>lcInBuffer</span> <span class='PDMOper'>=</span> <span class='PDMResF'>SPACE</span><span class='PDMOper'>(</span><span class='PDMLit'>16</span><span class='PDMOper'>)</span>
+
+      <span class='PDMVar'>fResult</span> <span class='PDMOper'>=</span> <span class='PDMVar'>FileTimeToSystemTime</span><span class='PDMOper'>(</span><span class='PDMOper'>@</span><span class='PDMVar'>lcOutBuffer</span><span class='PDMOper'>,</span> <span class='PDMOper'>@</span><span class='PDMVar'>lcInBuffer</span><span class='PDMOper'>)</span>
+      <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>GetExtendedError</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span>
+
+      <span class='PDMResK'>IF</span> <span class='PDMVar'>fResult</span> <span class='PDMOper'>=</span> <span class='PDMLit'>0</span>   <span class='PDMCom'>&amp;&amp; Failed</span>
+         <span class='PDMResK'>RETURN</span> <span class='PDMLit'>{^1901/01/01 00:00:01}</span>
+      <span class='PDMResK'>ENDIF</span>
+
+      <span class='PDMVar'>lnYear</span> <span class='PDMOper'>=</span> <span class='PDMResF'>ASC</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcInBuffer</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>+</span> <span class='PDMOper'>(</span><span class='PDMResF'>ASC</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcInBuffer</span><span class='PDMOper'>,</span> <span class='PDMLit'>2</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>*</span> <span class='PDMVar'>BYTE_2</span><span class='PDMOper'>)</span>
+      <span class='PDMVar'>lnMonth</span> <span class='PDMOper'>=</span> <span class='PDMResF'>ASC</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcInBuffer</span><span class='PDMOper'>,</span> <span class='PDMLit'>3</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>+</span> <span class='PDMOper'>(</span><span class='PDMResF'>ASC</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcInBuffer</span><span class='PDMOper'>,</span> <span class='PDMLit'>4</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>*</span> <span class='PDMVar'>BYTE_2</span><span class='PDMOper'>)</span>
+      <span class='PDMVar'>lnDay</span> <span class='PDMOper'>=</span> <span class='PDMResF'>ASC</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcInBuffer</span><span class='PDMOper'>,</span> <span class='PDMLit'>7</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>+</span> <span class='PDMOper'>(</span><span class='PDMResF'>ASC</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcInBuffer</span><span class='PDMOper'>,</span> <span class='PDMLit'>8</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>*</span> <span class='PDMVar'>BYTE_2</span><span class='PDMOper'>)</span>
+      <span class='PDMVar'>lnHour</span> <span class='PDMOper'>=</span> <span class='PDMResF'>ASC</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcInBuffer</span><span class='PDMOper'>,</span> <span class='PDMLit'>9</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>+</span> <span class='PDMOper'>(</span><span class='PDMResF'>ASC</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcInBuffer</span><span class='PDMOper'>,</span> <span class='PDMLit'>10</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>*</span> <span class='PDMVar'>BYTE_2</span><span class='PDMOper'>)</span>
+      <span class='PDMVar'>lnMinute</span> <span class='PDMOper'>=</span> <span class='PDMResF'>ASC</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcInBuffer</span><span class='PDMOper'>,</span> <span class='PDMLit'>11</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>+</span> <span class='PDMOper'>(</span><span class='PDMResF'>ASC</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcInBuffer</span><span class='PDMOper'>,</span> <span class='PDMLit'>12</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>*</span> <span class='PDMVar'>BYTE_2</span><span class='PDMOper'>)</span>
+      <span class='PDMVar'>lnSecond</span> <span class='PDMOper'>=</span> <span class='PDMResF'>ASC</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcInBuffer</span><span class='PDMOper'>,</span> <span class='PDMLit'>13</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>+</span> <span class='PDMOper'>(</span><span class='PDMResF'>ASC</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcInBuffer</span><span class='PDMOper'>,</span> <span class='PDMLit'>13</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>*</span> <span class='PDMVar'>BYTE_2</span><span class='PDMOper'>)</span>
+
+      <span class='PDMVar'>lcBuild</span> <span class='PDMOper'>=</span> <span class='PDMStr'>"^"</span> <span class='PDMOper'>+</span> <span class='PDMResF'>ALLTRIM</span><span class='PDMOper'>(</span><span class='PDMResF'>STR</span><span class='PDMOper'>(</span><span class='PDMVar'>lnYear</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>+</span> <span class='PDMStr'>'-'</span> <span class='PDMOper'>+</span> <span class='PDMResF'>ALLTRIM</span><span class='PDMOper'>(</span><span class='PDMResF'>STR</span><span class='PDMOper'>(</span><span class='PDMVar'>lnMonth</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>+</span> <span class='PDMStr'>'-'</span> <span class='PDMOper'>+</span> <span class='PDMResF'>ALLTRIM</span><span class='PDMOper'>(</span><span class='PDMResF'>STR</span><span class='PDMOper'>(</span><span class='PDMVar'>lnDay</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>+</span> <span class='PDMStr'>' '</span> <span class='PDMOper'>+</span> <span class='PDMOper'>;</span>
+                <span class='PDMResF'>ALLTRIM</span><span class='PDMOper'>(</span><span class='PDMResF'>STR</span><span class='PDMOper'>(</span><span class='PDMVar'>lnHour</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>+</span> <span class='PDMStr'>':'</span> <span class='PDMOper'>+</span> <span class='PDMResF'>ALLTRIM</span><span class='PDMOper'>(</span><span class='PDMResF'>STR</span><span class='PDMOper'>(</span><span class='PDMVar'>lnMinute</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>+</span> <span class='PDMStr'>':'</span> <span class='PDMOper'>+</span> <span class='PDMResF'>ALLTRIM</span><span class='PDMOper'>(</span><span class='PDMResF'>STR</span><span class='PDMOper'>(</span><span class='PDMVar'>lnSecond</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span>
+
+      <span class='PDMResK'>RETURN</span> <span class='PDMResF'>CTOT</span><span class='PDMOper'>(</span><span class='PDMVar'>lcBuild</span><span class='PDMOper'>)</span></pre>
+ <!-- Code End -->
+  </div>
+ </div>
+</div>
+<div class="diaxp_mfoot"> <div class="PDM_AB_CopyRight"><!-- Footer Begin -->
+  <hr />
+  <div class="PDM_AB_Body">
+&copy; 2004-03-23 Robert Abram, &copy; 24.11.2005 Martina Jindr&uacute;
+  </div><!-- Body End -->
+ </div><!-- Footer End -->
+</div>
+<script language="JavaScript" type="text/javascript">
+lo=document.getElementById("TX_SP_1");
+lo.XType="SourceCode";
+lo.Dir="../../imgs/";
+
+
+</script>
+</body>
+</html>

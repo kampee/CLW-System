@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+<head>
+<title>Method OpenFTPConnection of class FTP_SERVICE</title>
+<meta content="text/html; charset=windows-1250" http-equiv="Content-Type" />
+<meta name="Generator" content="Project Documenting Machine" />
+<meta name="Version" content="1.2.3" />
+<link rel="stylesheet" href="../../css/foxw.css" type="text/css" />
+<link rel="stylesheet" href="../../css/sc.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diamp_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab_notes.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diaf_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diap_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diac_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/ftp.css" type="text/css" />
+<script src="../../js/pdm.js" language="JavaScript" type="text/javascript"></script>
+<script src="../../repository/pdm_ab.js" language="JavaScript" type="text/javascript"></script>
+</head>
+<body>
+<div class="diaxp_mhead">OpenFTPConnection Method</div>
+<div class="diaxp_mbody_class">
+
+<table class="clear_table">
+ <tbody>
+  <tr><td>Class: </td><td><a href="cls.ftp_service.htm" title="Skip to class ftp_service">FTP_SERVICE</a></td></tr>
+ </tbody>
+</table>
+</div>
+<div class="diaxp_mbody">
+<!-- Created with _diamp_pdm_ab by Agnes Beste    03.09.2007 19:34 -->
+ <div class="PDM_AB_Descr"><!-- Descr Begin -->
+This method is internal, is called from  <a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.openinternet.htm" title="Skip to method FTP_SERVICE::OpenInternet()">FTP_SERVICE::OpenInternet()</a> and do connect to FTP server.
+
+ </div><!-- Descr End -->
+
+ <div class="DIAMP_PDM_AB_Syntax"><!-- Syntax Begin -->
+  <div class="SColor">
+   <div class="RetVal"><a href="#_26715XTHF">RetVal</a>&nbsp;</div>   <div class="RetValEq">=</div>   <div class="PEM">
+    Object.OpenFTPConnection
+   </div>
+   <div class="Para">
+    (@<a href="#_26715XTHG">lcCurrentFolder</a>)
+   </div>
+   <div style="clear: both"></div>
+  </div><!-- Colour End -->
+ </div><!-- Syntax End -->
+
+ <div class="DIAMP_PDM_AB_Params"><!-- Parameters Begin -->
+  <span class="PDM_AB_Head">
+   Parameter
+  </span>
+  <dl class="DIAMP_PDM_AB_Params_List">
+   <dt class="dt_">
+    <a class="DIAMP_PDM_AB_Params_ParaName" id="_26715XTHG" name="_26715XTHG">
+     <span class="PDMEXPR PDMNor" ><span class='PDMVar'>lcCurrentFolder</span></span>
+
+    </a>
+   </dt>
+   <dd class="dd_">
+    <span class="Params_Short">
+     Current folder
+    </span>
+    <table class="Params_Info">
+     <colgroup>
+      <col class="ColumnValue" />
+      <col class="ColumnData" />
+     </colgroup>
+     <tbody>
+      <tr>
+       <td class="CellValue">Type</td>
+       <td class="CellData">Character</td>
+      </tr>
+      <tr>
+       <td class="CellValue">By reference</td>
+       <td class="CellData">&nbsp;</td>
+      </tr>
+      <tr>
+       <td class="CellValue">Direction</td>
+       <td class="CellData">Input</td>
+      </tr>
+     </tbody>
+    </table>
+    <span class="Params_Detail">
+The startup folder afater connecting to FTP server. If this parameter empty, then startup folder will be default  FTP server's current folder fro logiing user.
+    </span>
+   </dd>
+  </dl>
+ </div><!-- Parameters End -->
+
+ <div class="DIAMP_PDM_AB_RetVal"><!-- Returns Begin -->
+  <div>
+   <span class="PDM_AB_Head">
+    <a id="_26715XTHF" name="_26715XTHF">
+     Return value
+    </a>
+   </span> <span class="RetVal_Ttype">Boolean</span>
+  </div>
+  <div class="PDM_AB_Body">
+The return value is <span class="PDMEXPR PDMNor" ><span class='PDMLit'>.T.</span></span>
+ if is connected to ftp server or <span class="PDMEXPR PDMNor" ><span class='PDMLit'>.F.</span></span>
+ is not.
+  </div>
+ </div><!-- Returns End -->
+
+ <div class="PDM_AB_Example"><!-- Example Begin -->
+  <span class="PDM_AB_Head">
+   Example
+  </span>
+  <div class="PDM_AB_Body">
+See source code of method <a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.openinternet.htm" title="Skip to method FTP_SERVICE::OpenInternet()">FTP_SERVICE::OpenInternet()</a>
+  </div>
+ </div><!-- Example End -->
+
+ <div class="PDM_AB_SeeAlso"><!-- SeeAlso Begin -->
+  <span class="PDM_AB_Head">
+   See also
+  </span>
+  <div class="PDM_AB_Body">
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.getextendederror.htm" title="Skip to method FTP_SERVICE::GetExtendedError()">FTP_SERVICE::GetExtendedError()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.closeftpconnection.htm" title="Skip to method FTP_SERVICE::CloseFTPConnection()">FTP_SERVICE::CloseFTPConnection()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.closeinternet.htm" title="Skip to method FTP_SERVICE::CloseInternet()">FTP_SERVICE::CloseInternet()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.getftpfile.htm" title="Skip to method FTP_SERVICE::GetFTPFile()">FTP_SERVICE::GetFTPFile()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.readftpfile.htm" title="Skip to method FTP_SERVICE::ReadFTPFile()">FTP_SERVICE::ReadFTPFile()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.putftpfile.htm" title="Skip to method FTP_SERVICE::PutFTPFile()">FTP_SERVICE::PutFTPFile()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.writeftpfile.htm" title="Skip to method FTP_SERVICE::WriteFTPFile()">FTP_SERVICE::WriteFTPFile()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.ftpcommand.htm" title="Skip to method FTP_SERVICE::FTPCommand()">FTP_SERVICE::FTPCommand()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.deleteftpfile.htm" title="Skip to method FTP_SERVICE::DeleteFTPFile()">FTP_SERVICE::DeleteFTPFile()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.renameftpfile.htm" title="Skip to method FTP_SERVICE::RenameFTPFile()">FTP_SERVICE::RenameFTPFile()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.createftpdirectory.htm" title="Skip to method FTP_SERVICE::CreateFTPDirectory()">FTP_SERVICE::CreateFTPDirectory()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.removeftpdirectory.htm" title="Skip to method FTP_SERVICE::RemoveFTPDirectory()">FTP_SERVICE::RemoveFTPDirectory()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.changeftpdirectory.htm" title="Skip to method FTP_SERVICE::ChangeFTPDirectory()">FTP_SERVICE::ChangeFTPDirectory()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.getftpdirectory.htm" title="Skip to method FTP_SERVICE::GetFTPDirectory()">FTP_SERVICE::GetFTPDirectory()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.getftpdirectoryarray.htm" title="Skip to method FTP_SERVICE::GetFTPDirectoryArray()">FTP_SERVICE::GetFTPDirectoryArray()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.openinternet.htm" title="Skip to method FTP_SERVICE::OpenInternet()">FTP_SERVICE::OpenInternet()</a>
+  </div><!-- Body End -->
+  <!--- "Applies to" need to be inserted here---->
+  <PlaceAppliesTo_Here />
+  <!--- /"Applies to" need to be inserted here---->
+ </div><!-- SeeAlso End -->
+
+
+<!-- /Created with _diamp_pdm_ab by Agnes Beste    03.09.2007 19:34 -->
+
+ <div class="SC">
+  <img onclick="ExpandSC('SP_1',-1);"class="imgEC" src="../../imgs/uptab.gif" alt="Expand/Collapse source code of procedure OpenFTPConnection" id="IMG_SP_1" />
+  <span ondblclick="ExpandSC('SP_1',-1);" class="SCCaption"><a name="FTP_SERVICE">Source Code</a></span>
+  <div ondblclick="ExpandSC('SP_1',-1);" class="SCE" id="TX_SP_1">
+<!-- Code Begin -->
+<pre class="PDMCODE PDMNor" >      <span class='PDMResK'>LPARAMETERS</span> <span class='PDMVar'>OPT_INP</span> <span class='PDMVar'>lcCurrentFolder</span>
+      <span class='PDMResK'>LOCAL</span> <span class='PDMVar'>nHandle</span><span class='PDMOper'>,</span> <span class='PDMVar'>lnConnect_Handle</span>
+      <span class='PDMResK'>IF</span> <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>nConnect_Handle</span><span class='PDMOper'>&gt;</span><span class='PDMLit'>0</span> <span class='PDMOper'>AND</span> <span class='PDMLit'>.T.</span> <span class='PDMCom'>&amp;&amp; is Valid??</span>
+         <span class='PDMResK'>RETURN</span> <span class='PDMLit'>.T.</span>
+      <span class='PDMResK'>ENDIF</span>
+<span class='PDMCom'>      * Open FTP Site </span>
+      <span class='PDMVar'>lnConnect_Handle</span> <span class='PDMOper'>=</span> <span class='PDMVar'>InternetConnect</span><span class='PDMOper'>(</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>nInet_Handle</span><span class='PDMOper'>,</span> <span class='PDMOper'>(</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>cIPAddress</span><span class='PDMOper'>)</span><span class='PDMOper'>,</span> <span class='PDMResF'>VAL</span><span class='PDMOper'>(</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>cPort</span><span class='PDMOper'>)</span><span class='PDMOper'>,</span> <span class='PDMOper'>;</span>
+                        <span class='PDMOper'>(</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>cUserName</span><span class='PDMOper'>)</span><span class='PDMOper'>,</span> <span class='PDMOper'>(</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>cPassword</span><span class='PDMOper'>)</span><span class='PDMOper'>,</span> <span class='PDMVar'>INTERNET_SERVICE_FTP</span><span class='PDMOper'>,</span> <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>nFlags</span><span class='PDMOper'>,</span> <span class='PDMLit'>0</span><span class='PDMOper'>)</span>
+      <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>GetExtendedError</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span>
+      <span class='PDMResK'>IF</span> <span class='PDMVar'>lnConnect_Handle</span> <span class='PDMOper'>=</span> <span class='PDMLit'>0</span>
+         <span class='PDMResK'>RETURN</span> <span class='PDMLit'>.F.</span>
+      <span class='PDMResK'>ENDIF</span>
+
+      <span class='PDMResK'>IF</span> <span class='PDMResF'>PCOUNT</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span><span class='PDMOper'>=</span><span class='PDMLit'>0</span> <span class='PDMOper'>OR</span> <span class='PDMResF'>EMPTY</span><span class='PDMOper'>(</span><span class='PDMVar'>lcCurrentFolder</span><span class='PDMOper'>)</span>
+         <span class='PDMVar'>lcCurrentFolder</span> <span class='PDMOper'>=</span> <span class='PDMResF'>SPACE</span><span class='PDMOper'>(</span><span class='PDMVar'>MAX_PATH</span><span class='PDMOper'>)</span>      
+         <span class='PDMVar'>fResult</span> <span class='PDMOper'>=</span> <span class='PDMVar'>FtpGetCurrentDirectory</span><span class='PDMOper'>(</span><span class='PDMVar'>lnConnect_Handle</span><span class='PDMOper'>,</span> <span class='PDMOper'>@</span><span class='PDMVar'>lcCurrentFolder</span><span class='PDMOper'>,</span> <span class='PDMVar'>MAX_PATH</span><span class='PDMOper'>)</span>
+         <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>GetExtendedError</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span>
+      <span class='PDMResK'>ELSE</span>
+         <span class='PDMVar'>fResult</span> <span class='PDMOper'>=</span> <span class='PDMVar'>FtpSetCurrentDirectory</span><span class='PDMOper'>(</span><span class='PDMVar'>lnConnect_Handle</span><span class='PDMOper'>,</span> <span class='PDMOper'>@</span><span class='PDMVar'>lcCurrentFolder</span><span class='PDMOper'>)</span>
+      <span class='PDMResK'>ENDIF</span>
+
+      <span class='PDMResK'>IF</span> <span class='PDMVar'>fResult</span> <span class='PDMOper'>=</span> <span class='PDMLit'>1</span>
+         <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>cCurrentDir</span> <span class='PDMOper'>=</span> <span class='PDMResF'>RTRIM</span><span class='PDMOper'>(</span><span class='PDMVar'>lcCurrentFolder</span><span class='PDMOper'>)</span>
+         <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>nConnect_Handle</span> <span class='PDMOper'>=</span> <span class='PDMVar'>lnConnect_Handle</span>
+         <span class='PDMResK'>RETURN</span> <span class='PDMLit'>.T.</span>
+      <span class='PDMResK'>ELSE</span>
+         <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>GetExtendedError</span><span class='PDMOper'>(</span><span class='PDMOper'>)</span>     <span class='PDMCom'>&amp;&amp; Only Get extended Error information when there is an error</span>
+         <span class='PDMResK'>RETURN</span> <span class='PDMLit'>.F.</span>
+      <span class='PDMResK'>ENDIF</span></pre>
+ <!-- Code End -->
+  </div>
+ </div>
+</div>
+<div class="diaxp_mfoot"> <div class="PDM_AB_CopyRight"><!-- Footer Begin -->
+  <hr />
+  <div class="PDM_AB_Body">
+&copy; 2004-03-23 Robert Abram, &copy; 24.11.2005 Martina Jindr&uacute;
+  </div><!-- Body End -->
+ </div><!-- Footer End -->
+</div>
+<script language="JavaScript" type="text/javascript">
+lo=document.getElementById("TX_SP_1");
+lo.XType="SourceCode";
+lo.Dir="../../imgs/";
+
+
+</script>
+</body>
+</html>

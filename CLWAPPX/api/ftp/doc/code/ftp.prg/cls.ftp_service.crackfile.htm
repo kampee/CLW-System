@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+<head>
+<title>Method CrackFile of class FTP_SERVICE</title>
+<meta content="text/html; charset=windows-1250" http-equiv="Content-Type" />
+<meta name="Generator" content="Project Documenting Machine" />
+<meta name="Version" content="1.2.3" />
+<link rel="stylesheet" href="../../css/foxw.css" type="text/css" />
+<link rel="stylesheet" href="../../css/sc.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diamp_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab_notes.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diaf_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diap_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diac_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/ftp.css" type="text/css" />
+<script src="../../js/pdm.js" language="JavaScript" type="text/javascript"></script>
+<script src="../../repository/pdm_ab.js" language="JavaScript" type="text/javascript"></script>
+</head>
+<body>
+<div class="diaxp_mhead">CrackFile Method</div>
+<div class="diaxp_mbody_class">
+
+<table class="clear_table">
+ <tbody>
+  <tr><td>Class: </td><td><a href="cls.ftp_service.htm" title="Skip to class ftp_service">FTP_SERVICE</a></td></tr>
+ </tbody>
+</table>
+</div>
+<div class="diaxp_mbody">
+<!-- Created with _diamp_pdm_ab by Agnes Beste    03.09.2007 19:34 -->
+ <div class="PDM_AB_Descr"><!-- Descr Begin -->
+Internal method for parsing file's attributes and storing to array.
+ </div><!-- Descr End -->
+
+ <div class="DIAMP_PDM_AB_Syntax"><!-- Syntax Begin -->
+  <div class="SColor">
+   <div class="RetVal"><a href="#_26715Y827">RetVal</a>&nbsp;</div>   <div class="RetValEq">=</div>   <div class="PEM">
+    Object.CrackFile
+   </div>
+   <div class="Para">
+    (<a href="#_26715Y828">lcString</a>
+     <wbr />,@<a href="#_26715Y829">laDirectory</a>)
+   </div>
+   <div style="clear: both"></div>
+  </div><!-- Colour End -->
+ </div><!-- Syntax End -->
+
+ <div class="DIAMP_PDM_AB_Params"><!-- Parameters Begin -->
+  <span class="PDM_AB_Head">
+   Parameter
+  </span>
+  <dl class="DIAMP_PDM_AB_Params_List">
+   <dt class="dt_">
+    <a class="DIAMP_PDM_AB_Params_ParaName" id="_26715Y828" name="_26715Y828">
+     <span class="PDMEXPR PDMNor" ><span class='PDMVar'>lcString</span></span>
+
+    </a>
+   </dt>
+   <dd class="dd_">
+    <span class="Params_Short">
+     FtpFindFirstFile/FtpNextFirstFile
+    </span>
+    <table class="Params_Info">
+     <colgroup>
+      <col class="ColumnValue" />
+      <col class="ColumnData" />
+     </colgroup>
+     <tbody>
+      <tr>
+       <td class="CellValue">Type</td>
+       <td class="CellData">Character</td>
+      </tr>
+      <tr>
+       <td class="CellValue">Direction</td>
+       <td class="CellData">Input</td>
+      </tr>
+     </tbody>
+    </table>
+   </dd>
+   <dt class="dt_">
+    <a class="DIAMP_PDM_AB_Params_ParaName" id="_26715Y829" name="_26715Y829">
+     <span class="PDMEXPR PDMNor" ><span class='PDMVar'>laDirectory</span></span>
+
+    </a>
+   </dt>
+   <dd class="dd_">
+    <span class="Params_Short">
+     Array of files
+    </span>
+    <table class="Params_Info">
+     <colgroup>
+      <col class="ColumnValue" />
+      <col class="ColumnData" />
+     </colgroup>
+     <tbody>
+      <tr>
+       <td class="CellValue">Type</td>
+       <td class="CellData">Array</td>
+      </tr>
+      <tr>
+       <td class="CellValue">By reference</td>
+       <td class="CellData">&nbsp;</td>
+      </tr>
+      <tr>
+       <td class="CellValue">Direction</td>
+       <td class="CellData">Input/Output</td>
+      </tr>
+     </tbody>
+    </table>
+    <span class="Params_Detail">
+Holds an array of files after the function completes.
+    </span>
+   </dd>
+  </dl>
+ </div><!-- Parameters End -->
+
+ <div class="DIAMP_PDM_AB_RetVal"><!-- Returns Begin -->
+  <div>
+   <span class="PDM_AB_Head">
+    <a id="_26715Y827" name="_26715Y827">
+     Return value
+    </a>
+   </span> <span class="RetVal_Ttype">Boolean</span>
+  </div>
+  <div class="PDM_AB_Body">
+The return value is always <span class="PDMEXPR PDMNor" ><span class='PDMLit'>.T.</span></span>
+
+  </div>
+ </div><!-- Returns End -->
+
+ <div class="PDM_AB_Example"><!-- Example Begin -->
+  <span class="PDM_AB_Head">
+   Example
+  </span>
+  <div class="PDM_AB_Body">
+See source code of method <a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.getftpdirectoryarray.htm" title="Skip to method FTP_SERVICE::GetFTPDirectoryArray()">FTP_SERVICE::GetFTPDirectoryArray()</a>
+  </div>
+ </div><!-- Example End -->
+
+ <div class="PDM_AB_SeeAlso"><!-- SeeAlso Begin -->
+  <span class="PDM_AB_Head">
+   See also
+  </span>
+  <div class="PDM_AB_Body">
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.crackdate.htm" title="Skip to method FTP_SERVICE::CrackDate()">FTP_SERVICE::CrackDate()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.crackattributes.htm" title="Skip to method FTP_SERVICE::CrackAttributes()">FTP_SERVICE::CrackAttributes()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.getftpdirectoryarray.htm" title="Skip to method FTP_SERVICE::GetFTPDirectoryArray()">FTP_SERVICE::GetFTPDirectoryArray()</a>
+  </div><!-- Body End -->
+  <!--- "Applies to" need to be inserted here---->
+  <PlaceAppliesTo_Here />
+  <!--- /"Applies to" need to be inserted here---->
+ </div><!-- SeeAlso End -->
+
+
+<!-- /Created with _diamp_pdm_ab by Agnes Beste    03.09.2007 19:34 -->
+
+ <div class="SC">
+  <img onclick="ExpandSC('SP_1',-1);"class="imgEC" src="../../imgs/uptab.gif" alt="Expand/Collapse source code of procedure CrackFile" id="IMG_SP_1" />
+  <span ondblclick="ExpandSC('SP_1',-1);" class="SCCaption"><a name="FTP_SERVICE">Source Code</a></span>
+  <div ondblclick="ExpandSC('SP_1',-1);" class="SCE" id="TX_SP_1">
+<!-- Code Begin -->
+<pre class="PDMCODE PDMNor" ><span class='PDMResK'>LPARAMETERS</span> <span class='PDMVar'>INP</span> <span class='PDMVar'>lcString</span><span class='PDMOper'>,</span> <span class='PDMVar'>CHNGREF</span> <span class='PDMVar'>laDirectory</span>
+      <span class='PDMResK'>LOCAL</span> <span class='PDMVar'>lcFileName</span><span class='PDMOper'>,</span> <span class='PDMVar'>lcAlterName</span><span class='PDMOper'>,</span> <span class='PDMVar'>lnSizeHigh</span><span class='PDMOper'>,</span> <span class='PDMVar'>lnSizeLow</span><span class='PDMOper'>,</span> <span class='PDMVar'>lnFileSize</span><span class='PDMOper'>,</span> <span class='PDMOper'>;</span>
+            <span class='PDMVar'>lcAttributes</span><span class='PDMOper'>,</span> <span class='PDMVar'>lnArrayLen</span><span class='PDMOper'>,</span> <span class='PDMVar'>lcTimeBuff</span><span class='PDMOper'>,</span> <span class='PDMOper'>;</span>
+            <span class='PDMVar'>ldCreateDate</span><span class='PDMOper'>,</span> <span class='PDMVar'>ldAccessDate</span><span class='PDMOper'>,</span> <span class='PDMVar'>ldWriteDate</span><span class='PDMOper'>,</span> <span class='PDMVar'>laNewArray</span><span class='PDMOper'>,</span> <span class='PDMVar'>lnResult</span><span class='PDMOper'>,</span><span class='PDMVar'>lcPom</span>
+
+      <span class='PDMResK'>IF</span> <span class='PDMResF'>TYPE</span><span class='PDMOper'>(</span><span class='PDMStr'>'laDirectory[1, 1]'</span><span class='PDMOper'>)</span> <span class='PDMOper'>=</span> <span class='PDMStr'>'L'</span>    <span class='PDMCom'>&amp;&amp; Array Has Not Been Filed      </span>
+<span class='PDMCom'>         * Force Record size of 1</span>
+         <span class='PDMResK'>DIMENSION</span> <span class='PDMVar'>laDirectory</span> <span class='PDMOper'>[</span><span class='PDMLit'>1</span><span class='PDMOper'>,</span> <span class='PDMLit'>7</span><span class='PDMOper'>]</span>
+      <span class='PDMResK'>ELSE</span>    
+         <span class='PDMOper'>*</span> <span class='PDMVar'>Expand</span> <span class='PDMResK'>Array</span>
+         <span class='PDMResK'>DIMENSION</span> <span class='PDMVar'>laDirectory</span> <span class='PDMOper'>[</span><span class='PDMResF'>ALEN</span><span class='PDMOper'>(</span><span class='PDMVar'>laDirectory</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span> <span class='PDMOper'>+</span> <span class='PDMLit'>1</span><span class='PDMOper'>,</span> <span class='PDMLit'>7</span><span class='PDMOper'>]</span>
+      <span class='PDMResK'>ENDIF</span>
+
+<span class='PDMCom'>      * Get new Array Position</span>
+      <span class='PDMVar'>lnArrayLen</span> <span class='PDMOper'>=</span> <span class='PDMResF'>ALEN</span><span class='PDMOper'>(</span><span class='PDMVar'>laDirectory</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span>
+
+
+<span class='PDMCom'>*!* 4      DWORD    dwFileAttributes; </span>
+<span class='PDMCom'>*!* 8      FILETIME ftCreationTime; </span>
+<span class='PDMCom'>*!*    8      FILETIME ftLastAccessTime; </span>
+<span class='PDMCom'>*!* 8      FILETIME ftLastWriteTime; </span>
+<span class='PDMCom'>*!* 4      DWORD    nFileSizeHigh; </span>
+<span class='PDMCom'>*!* 4      DWORD    nFileSizeLow; </span>
+<span class='PDMCom'>*!* 4      DWORD    dwReserved0; </span>
+<span class='PDMCom'>*!* 4      DWORD    dwReserved1; </span>
+<span class='PDMCom'>*!* 4      TCHAR    cFileName[ MAX_PATH ]; </span>
+<span class='PDMCom'>*!*      TCHAR    cAlternateFileName[ 14 ]; </span>
+
+
+<span class='PDMCom'>*!*    typedef struct _FILETIME { </span>
+<span class='PDMCom'>*!*        DWORD dwLowDateTime; </span>
+<span class='PDMCom'>*!*        DWORD dwHighDateTime; </span>
+<span class='PDMCom'>*!*    } FILETIME, *PFILETIME; </span>
+
+
+
+<span class='PDMCom'>      lcFileName = SUBSTR(lcString, 45, MAX_PATH)</span>
+<span class='PDMCom'>      lcAlterName = RIGHT(lcString, 14)</span>
+
+<span class='PDMCom'>      lcFileName = LEFT(lcFileName, AT(cNull, lcFileName) - 1)  &amp;&amp; Copy out just the File Name Text</span>
+      <span class='PDMVar'>lcAlterName</span> <span class='PDMOper'>=</span> <span class='PDMResF'>LEFT</span><span class='PDMOper'>(</span><span class='PDMVar'>lcAlterName</span><span class='PDMOper'>,</span> <span class='PDMResF'>AT</span><span class='PDMOper'>(</span><span class='PDMVar'>cNull</span><span class='PDMOper'>,</span> <span class='PDMVar'>lcAlterName</span><span class='PDMOper'>)</span> <span class='PDMOper'>-</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span>
+
+<span class='PDMCom'>      * Convert File Size DWORDs</span>
+      <span class='PDMVar'>lnSizeHigh</span> <span class='PDMOper'>=</span> <span class='PDMOper'>(</span><span class='PDMResF'>ASC</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcString</span><span class='PDMOper'>,</span> <span class='PDMLit'>29</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>*</span> <span class='PDMVar'>BYTE_1</span><span class='PDMOper'>)</span> <span class='PDMOper'>+</span> <span class='PDMOper'>;</span>
+                   <span class='PDMOper'>(</span><span class='PDMResF'>ASC</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcString</span><span class='PDMOper'>,</span> <span class='PDMLit'>30</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>*</span> <span class='PDMVar'>BYTE_2</span><span class='PDMOper'>)</span> <span class='PDMOper'>+</span> <span class='PDMOper'>;</span>
+                   <span class='PDMOper'>(</span><span class='PDMResF'>ASC</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcString</span><span class='PDMOper'>,</span> <span class='PDMLit'>31</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>*</span> <span class='PDMVar'>BYTE_3</span><span class='PDMOper'>)</span> <span class='PDMOper'>+</span> <span class='PDMOper'>;</span>
+                   <span class='PDMOper'>(</span><span class='PDMResF'>ASC</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcString</span><span class='PDMOper'>,</span> <span class='PDMLit'>32</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>*</span> <span class='PDMVar'>BYTE_4</span><span class='PDMOper'>)</span> 
+
+      <span class='PDMVar'>lnSizeLow</span> <span class='PDMOper'>=</span>  <span class='PDMOper'>(</span><span class='PDMResF'>ASC</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcString</span><span class='PDMOper'>,</span> <span class='PDMLit'>33</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>*</span> <span class='PDMVar'>BYTE_1</span><span class='PDMOper'>)</span> <span class='PDMOper'>+</span> <span class='PDMOper'>;</span>
+                   <span class='PDMOper'>(</span><span class='PDMResF'>ASC</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcString</span><span class='PDMOper'>,</span> <span class='PDMLit'>34</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>*</span> <span class='PDMVar'>BYTE_2</span><span class='PDMOper'>)</span> <span class='PDMOper'>+</span> <span class='PDMOper'>;</span>
+                   <span class='PDMOper'>(</span><span class='PDMResF'>ASC</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcString</span><span class='PDMOper'>,</span> <span class='PDMLit'>35</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>*</span> <span class='PDMVar'>BYTE_3</span><span class='PDMOper'>)</span> <span class='PDMOper'>+</span> <span class='PDMOper'>;</span>
+                   <span class='PDMOper'>(</span><span class='PDMResF'>ASC</span><span class='PDMOper'>(</span><span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcString</span><span class='PDMOper'>,</span> <span class='PDMLit'>36</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span> <span class='PDMOper'>*</span> <span class='PDMVar'>BYTE_4</span><span class='PDMOper'>)</span> 
+
+      <span class='PDMOper'>*</span> <span class='PDMResK'>Build</span> <span class='PDMResK'>File</span> <span class='PDMResK'>Size</span>
+      <span class='PDMVar'>lnFileSize</span> <span class='PDMOper'>=</span> <span class='PDMOper'>(</span><span class='PDMVar'>lnSizeHigh</span> <span class='PDMOper'>*</span> <span class='PDMVar'>MAXDWORD</span><span class='PDMOper'>)</span> <span class='PDMOper'>+</span> <span class='PDMVar'>lnSizeLow</span>
+
+      <span class='PDMOper'>*</span><span class='PDMOper'>!</span><span class='PDMOper'>*</span> <span class='PDMVar'>FtpGetFileSize</span> <span class='PDMVar'>does</span> <span class='PDMOper'>NOT</span> <span class='PDMVar'>work</span> <span class='PDMResK'>as</span> <span class='PDMVar'>expected</span> <span class='PDMResK'>for</span> <span class='PDMResK'>files</span> <span class='PDMVar'>greater</span> <span class='PDMResK'>then</span> <span class='PDMVar'>4Gb</span> <span class='PDMOper'>(</span><span class='PDMVar'>dwFileSizeHigh</span> <span class='PDMVar'>always</span> <span class='PDMResK'>NULL</span><span class='PDMOper'>)</span>
+      <span class='PDMOper'>*</span><span class='PDMOper'>!</span><span class='PDMOper'>*</span> <span class='PDMVar'>http</span>:<span class='PDMOper'>/</span><span class='PDMOper'>/</span><span class='PDMVar'>groups</span><span class='PDMOper'>.</span><span class='PDMVar'>google</span><span class='PDMOper'>.</span><span class='PDMVar'>com</span><span class='PDMOper'>.</span><span class='PDMVar'>ar</span><span class='PDMOper'>/</span><span class='PDMResK'>group</span><span class='PDMOper'>/</span><span class='PDMVar'>microsoft</span><span class='PDMOper'>.</span><span class='PDMResK'>public</span><span class='PDMOper'>.</span><span class='PDMResK'>windows</span><span class='PDMOper'>.</span><span class='PDMVar'>inetexplorer</span><span class='PDMOper'>.</span><span class='PDMVar'>ie5</span><span class='PDMOper'>.</span><span class='PDMVar'>programming</span><span class='PDMOper'>.</span><span class='PDMVar'>wininet</span><span class='PDMOper'>/</span><span class='PDMVar'>browse_thread</span><span class='PDMOper'>/</span><span class='PDMVar'>thread</span><span class='PDMOper'>/</span><span class='PDMVar'>3c118ed4c7c32269</span><span class='PDMOper'>/</span><span class='PDMVar'>791a868311e60a00</span><span class='PDMOper'>?</span><span class='PDMVar'>lnk</span><span class='PDMOper'>=</span><span class='PDMVar'>st</span><span class='PDMOper'>&amp;</span><span class='PDMVar'>q</span><span class='PDMOper'>=</span><span class='PDMVar'>ftpfindfirstfile</span><span class='PDMOper'>+</span><span class='PDMOper'>AND</span><span class='PDMOper'>+</span><span class='PDMVar'>large</span><span class='PDMOper'>+</span><span class='PDMResK'>files</span><span class='PDMOper'>&amp;</span><span class='PDMVar'>rnum</span><span class='PDMOper'>=</span><span class='PDMLit'>2</span><span class='PDMOper'>&amp;</span><span class='PDMVar'>hl</span><span class='PDMOper'>=</span><span class='PDMVar'>es</span><span class='PDMOper'>#</span><span class='PDMVar'>791a868311e60a00</span>
+
+      <span class='PDMOper'>=</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>GetFileSize</span><span class='PDMOper'>(</span><span class='PDMVar'>lcFileName</span><span class='PDMOper'>,</span><span class='PDMOper'>@</span><span class='PDMVar'>lnFileSize</span><span class='PDMOper'>)</span>
+
+<span class='PDMCom'>      * Convert File Date</span>
+
+<span class='PDMCom'>      * Get File Create DateTime</span>
+      <span class='PDMVar'>lcTimeBuff</span> <span class='PDMOper'>=</span> <span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcString</span><span class='PDMOper'>,</span> <span class='PDMLit'>5</span><span class='PDMOper'>,</span> <span class='PDMLit'>8</span><span class='PDMOper'>)</span>
+      <span class='PDMVar'>ldCreateDate</span> <span class='PDMOper'>=</span> <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>CrackDate</span><span class='PDMOper'>(</span><span class='PDMVar'>lcTimeBuff</span><span class='PDMOper'>)</span>
+
+<span class='PDMCom'>      * Get File Last Access DateTime</span>
+      <span class='PDMVar'>lcTimeBuff</span> <span class='PDMOper'>=</span> <span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcString</span><span class='PDMOper'>,</span> <span class='PDMLit'>13</span><span class='PDMOper'>,</span> <span class='PDMLit'>8</span><span class='PDMOper'>)</span>
+      <span class='PDMVar'>ldAccessDate</span> <span class='PDMOper'>=</span> <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>CrackDate</span><span class='PDMOper'>(</span><span class='PDMVar'>lcTimeBuff</span><span class='PDMOper'>)</span>
+
+<span class='PDMCom'>      * Get File Last Write DateTime</span>
+      <span class='PDMVar'>lcTimeBuff</span> <span class='PDMOper'>=</span> <span class='PDMResF'>SUBSTR</span><span class='PDMOper'>(</span><span class='PDMVar'>lcString</span><span class='PDMOper'>,</span> <span class='PDMLit'>21</span><span class='PDMOper'>,</span> <span class='PDMLit'>8</span><span class='PDMOper'>)</span>
+      <span class='PDMVar'>ldWriteDate</span> <span class='PDMOper'>=</span> <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>CrackDate</span><span class='PDMOper'>(</span><span class='PDMVar'>lcTimeBuff</span><span class='PDMOper'>)</span>
+
+<span class='PDMCom'>      * Get File Attributes</span>
+      <span class='PDMVar'>lcAttributes</span> <span class='PDMOper'>=</span> <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>CrackAttributes</span><span class='PDMOper'>(</span><span class='PDMResF'>LEFT</span><span class='PDMOper'>(</span><span class='PDMVar'>lcString</span><span class='PDMOper'>,</span> <span class='PDMLit'>4</span><span class='PDMOper'>)</span><span class='PDMOper'>)</span>
+
+      <span class='PDMVar'>laDirectory</span><span class='PDMOper'>[</span><span class='PDMVar'>lnArrayLen</span><span class='PDMOper'>,</span> <span class='PDMLit'>1</span><span class='PDMOper'>]</span> <span class='PDMOper'>=</span> <span class='PDMResF'>ALLTRIM</span><span class='PDMOper'>(</span><span class='PDMVar'>lcFileName</span><span class='PDMOper'>)</span>
+      <span class='PDMVar'>laDirectory</span><span class='PDMOper'>[</span><span class='PDMVar'>lnArrayLen</span><span class='PDMOper'>,</span> <span class='PDMLit'>2</span><span class='PDMOper'>]</span> <span class='PDMOper'>=</span> <span class='PDMResF'>ALLTRIM</span><span class='PDMOper'>(</span><span class='PDMVar'>lcAlterName</span><span class='PDMOper'>)</span>
+      <span class='PDMVar'>laDirectory</span><span class='PDMOper'>[</span><span class='PDMVar'>lnArrayLen</span><span class='PDMOper'>,</span> <span class='PDMLit'>3</span><span class='PDMOper'>]</span> <span class='PDMOper'>=</span> <span class='PDMVar'>lnFileSize</span>
+      <span class='PDMVar'>laDirectory</span><span class='PDMOper'>[</span><span class='PDMVar'>lnArrayLen</span><span class='PDMOper'>,</span> <span class='PDMLit'>4</span><span class='PDMOper'>]</span> <span class='PDMOper'>=</span> <span class='PDMVar'>ldCreateDate</span>
+      <span class='PDMVar'>laDirectory</span><span class='PDMOper'>[</span><span class='PDMVar'>lnArrayLen</span><span class='PDMOper'>,</span> <span class='PDMLit'>5</span><span class='PDMOper'>]</span> <span class='PDMOper'>=</span> <span class='PDMVar'>ldAccessDate</span>
+      <span class='PDMVar'>laDirectory</span><span class='PDMOper'>[</span><span class='PDMVar'>lnArrayLen</span><span class='PDMOper'>,</span> <span class='PDMLit'>6</span><span class='PDMOper'>]</span> <span class='PDMOper'>=</span> <span class='PDMVar'>ldWriteDate</span>
+      <span class='PDMVar'>laDirectory</span><span class='PDMOper'>[</span><span class='PDMVar'>lnArrayLen</span><span class='PDMOper'>,</span> <span class='PDMLit'>7</span><span class='PDMOper'>]</span> <span class='PDMOper'>=</span> <span class='PDMVar'>lcAttributes</span>
+
+      <span class='PDMResK'>RETURN</span> </pre>
+ <!-- Code End -->
+  </div>
+ </div>
+</div>
+<div class="diaxp_mfoot"> <div class="PDM_AB_CopyRight"><!-- Footer Begin -->
+  <hr />
+  <div class="PDM_AB_Body">
+&copy; 2004-03-23 Robert Abram, &copy; 24.11.2005 Martina Jindr&uacute;
+  </div><!-- Body End -->
+ </div><!-- Footer End -->
+</div>
+<script language="JavaScript" type="text/javascript">
+lo=document.getElementById("TX_SP_1");
+lo.XType="SourceCode";
+lo.Dir="../../imgs/";
+
+
+</script>
+</body>
+</html>

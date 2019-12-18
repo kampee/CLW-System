@@ -1,0 +1,88 @@
+PROCEDURE chkd
+PARA mcode
+start = .T.
+mDIGIT = ""
+DO WHILE start
+IF LEN(mcode) <> 12
+start = .F.
+LOOP
+ENDIF
+ncode = LEN(mcode)
+DIME ean(ncode)
+ean1 = 0
+ean2 = 0
+FOR i = 1 TO ncode
+ean(i) = SUBSTR(mcode,i,1)
+IF MOD(i,2) = 0
+ean1 = ean1 + VAL(ean(i))
+ELSE
+ean2 = ean2 + VAL(ean(i))
+ENDIF
+ENDFOR
+nDigit = MOD(100 - ((ean1)*3 + (ean2)),10)
+mDigit = ALLT(STR(ndigit))
+start = .F.
+ENDDO
+RETURN mDigit
+
+
+FUNCTION EANCheckDigit
+* Generate Check Digit for -> EAN.UCC-8, UCC-12, EAN.UCC-13, EAN.UCC-14, SSCC
+* Example -> ?EanCheckDigit('940101115849') && 9
+PARAMETERS cDigit 
+LOCAL nSum
+nSum = 0
+cDigitReverse = ""
+FOR ni = LEN(ALLTRIM(cDigit)) TO 1 STEP -1 
+cDigitReverse = cDigitReverse + SUBSTR(cDigit, ni, 1)
+NEXT ni
+FOR ni = 1 TO LEN(ALLTRIM(cDigitReverse)) 
+nSum = nSum + (VAL(SUBSTR(ALLTRIM(cDigitReverse),ni,1)) * IIF(MOD(ni,2)=1,3,1))
+ENDFOR
+nDIV = MOD(nSum,10)
+RETURN IIF(nDiv > 0,PADL(10 - nDiv,1,'0'),'0')
+ENDFUNC
+
+FUNCTION ChkDig
+* For EAN.UCC-8, UCC-12, EAN.UCC-13, EAN.UCC-14, SSCC
+PARAMETERS bc
+IF ! (TYPE('bc')= 'C' ;	&& ?????
+	AND CHRTRAN(bc, '0123456789','') == '' ; && ???????
+	AND INLIST (LEN(bc), 7, 11, 12, 13, 17))	 && ???????
+	RETURN '*'
+ENDIF
+cS = 0
+FOR I = LEN(bc) TO 1 STEP -2 
+	cS = cS + VAL(SUBSTR(bc, I, 1))*3 + VAL(SUBSTR(bc, I-1, 1))
+ENDFOR
+RETURN RIGHT(STR(10 - MOD(cS, 10)),1)
+
+FUNCTION deEAN13
+PARAMETERS nbarcode
+
+IF VARTYPE(nbarcode)<>'C'
+RETURN ''
+ENDIF 
+IF LEN(ALLTRIM(nbarcode))<> 12
+RETURN ''
+ENDIF 
+STORE 0 TO x,y,z,m 
+FOR i = 1 TO 12
+IF MOD(i,2)=0 
+y = y + VAL(SUBSTR(nbarcode,i,1))
+ELSE 
+x = x + VAL(SUBSTR(nbarcode,i,1))
+
+ENDIF	
+ENDFOR
+z = x+(3*y)
+m = MOD(100-z,10)
+RETURN ALLTRIM(STR(m))
+ENDFUNC
+
+mnum = '220025343688'
+
+?ChkD(mnum) 
+
+
+

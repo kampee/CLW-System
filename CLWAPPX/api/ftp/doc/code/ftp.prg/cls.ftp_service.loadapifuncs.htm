@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+<head>
+<title>Method LoadAPIFuncs of class FTP_SERVICE</title>
+<meta content="text/html; charset=windows-1250" http-equiv="Content-Type" />
+<meta name="Generator" content="Project Documenting Machine" />
+<meta name="Version" content="1.2.3" />
+<link rel="stylesheet" href="../../css/foxw.css" type="text/css" />
+<link rel="stylesheet" href="../../css/sc.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diamp_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab_notes.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diaf_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diap_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diac_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/ftp.css" type="text/css" />
+<script src="../../js/pdm.js" language="JavaScript" type="text/javascript"></script>
+<script src="../../repository/pdm_ab.js" language="JavaScript" type="text/javascript"></script>
+</head>
+<body>
+<div class="diaxp_mhead">LoadAPIFuncs Method</div>
+<div class="diaxp_mbody_class">
+
+<table class="clear_table">
+ <tbody>
+  <tr><td>Class: </td><td><a href="cls.ftp_service.htm" title="Skip to class ftp_service">FTP_SERVICE</a></td></tr>
+ </tbody>
+</table>
+</div>
+<div class="diaxp_mbody">
+<!-- Created with _diamp_pdm_ab by Agnes Beste    03.09.2007 19:33 -->
+ <div class="DIAMP_PDM_AB_Syntax"><!-- Syntax Begin -->
+  <div class="SColor">
+   <div class="PEM">
+    Object.LoadAPIFuncs
+   </div>
+   <div class="Para">
+    ()
+   </div>
+   <div style="clear: both"></div>
+  </div><!-- Colour End -->
+ </div><!-- Syntax End -->
+
+ <div class="PDM_AB_Remarks"><!-- Remarks Begin -->
+  <span class="PDM_AB_Head">
+   Remarks
+  </span>
+  <div class="PDM_AB_Body">
+
+Load basic API functions
+  </div>
+ </div><!-- Remarks End -->
+
+ <div class="PDM_AB_SeeAlso"><!-- SeeAlso Begin -->
+  <span class="PDM_AB_Head">
+   See also
+  </span>
+  <div class="PDM_AB_Body">
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.autodialinternet.htm" title="Skip to method FTP_SERVICE::AutoDialInternet()">FTP_SERVICE::AutoDialInternet()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.autodialhangup.htm" title="Skip to method FTP_SERVICE::AutoDialHangUp()">FTP_SERVICE::AutoDialHangUp()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.dialinternet.htm" title="Skip to method FTP_SERVICE::DialInternet()">FTP_SERVICE::DialInternet()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.dialhangup.htm" title="Skip to method FTP_SERVICE::DialHangUp()">FTP_SERVICE::DialHangUp()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.getconnectedstate.htm" title="Skip to method FTP_SERVICE::GetConnectedState()">FTP_SERVICE::GetConnectedState()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.goonline.htm" title="Skip to method FTP_SERVICE::GoOnline()">FTP_SERVICE::GoOnline()</a>&nbsp;|
+<a class="PDM_AB_See" href="../../code/ftp.prg/cls.ftp_service.openinternet.htm" title="Skip to method FTP_SERVICE::OpenInternet()">FTP_SERVICE::OpenInternet()</a>
+  </div><!-- Body End -->
+  <!--- "Applies to" need to be inserted here---->
+  <PlaceAppliesTo_Here />
+  <!--- /"Applies to" need to be inserted here---->
+ </div><!-- SeeAlso End -->
+
+
+<!-- /Created with _diamp_pdm_ab by Agnes Beste    03.09.2007 19:33 -->
+
+ <div class="SC">
+  <img onclick="ExpandSC('SP_1',-1);"class="imgEC" src="../../imgs/uptab.gif" alt="Expand/Collapse source code of procedure LoadAPIFuncs" id="IMG_SP_1" />
+  <span ondblclick="ExpandSC('SP_1',-1);" class="SCCaption"><a name="FTP_SERVICE">Source Code</a></span>
+  <div ondblclick="ExpandSC('SP_1',-1);" class="SCE" id="TX_SP_1">
+<!-- Code Begin -->
+<pre class="PDMCODE PDMNor" >
+<span class='PDMCom'>      * Check to see if We have already declared functions and loaded the DLL</span>
+      <span class='PDMResK'>IF</span> <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>lDLL_Loaded</span>  
+         <span class='PDMResK'>RETURN</span> <span class='PDMVar'>ERROR_SUCCESS</span>
+      <span class='PDMResK'>ENDIF</span>
+
+<span class='PDMCom'>      * Declare a Kernel32 Functions</span>
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=GetLastError&x=7&y=5" target="blank">GetLastError</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>Kernel32</span>
+
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=FileTimeToSystemTime&x=7&y=5" target="blank">FileTimeToSystemTime</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>Kernel32</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcBuffer</span><span class='PDMOper'>,</span> <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcBuffer</span>
+
+<span class='PDMCom'>      * Declare DLL functions used by Program</span>
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=InternetAutodial&x=7&y=5" target="blank">InternetAutodial</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>nAccessType</span><span class='PDMOper'>,</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'>nHandle</span>
+
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=InternetAutodialHangup&x=7&y=5" target="blank">InternetAutodialHangup</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>nFlags</span>
+
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=InternetDial&x=7&y=5" target="blank">InternetDial</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>nHandle</span><span class='PDMOper'>,</span> <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcDialUp</span><span class='PDMOper'>,</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'>nAccessType</span><span class='PDMOper'>,</span> <span class='PDMResK'>Integer</span> <span class='PDMOper'>@</span><span class='PDMVar'>nConnect_Handle</span><span class='PDMOper'>,</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>nFlags</span>
+
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=InternetHangUp&x=7&y=5" target="blank">InternetHangUp</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>nConnect_Handle</span><span class='PDMOper'>,</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'>nFlags</span>
+
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=InternetGetConnectedState&x=7&y=5" target="blank">InternetGetConnectedState</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMOper'>@</span><span class='PDMVar'>nContext</span><span class='PDMOper'>,</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'>nFlags</span>
+
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=InternetGoOnline&x=7&y=5" target="blank">InternetGoOnline</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcURL</span><span class='PDMOper'>,</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'>nHandle</span><span class='PDMOper'>,</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'>nFlags</span>
+
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=InternetOpen&x=7&y=5" target="blank">InternetOpen</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcAgent</span><span class='PDMOper'>,</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'>nAccessType</span><span class='PDMOper'>,</span> <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcProxyName</span><span class='PDMOper'>,</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcProxyBypass</span><span class='PDMOper'>,</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'>nFlags</span>
+
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=InternetConnect&x=7&y=5" target="blank">InternetConnect</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>nInet_Handle</span><span class='PDMOper'>,</span> <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcServer</span><span class='PDMOper'>,</span> <span class='PDMResK'>Short</span> <span class='PDMVar'>nPort</span><span class='PDMOper'>,</span> <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcUserName</span><span class='PDMOper'>,</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcPassword</span><span class='PDMOper'>,</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'>nService</span><span class='PDMOper'>,</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'>nFlags</span><span class='PDMOper'>,</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'>nContext</span>
+
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=InternetCloseHandle&x=7&y=5" target="blank">InternetCloseHandle</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>nConnect_Handle</span>
+
+      <span class='PDMOper'>*</span> <span class='PDMVar'>FTP</span> <span class='PDMVar'>Functions</span>
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=FtpCreateDirectory&x=7&y=5" target="blank">FtpCreateDirectory</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>nConnect_Handle</span><span class='PDMOper'>,</span> <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcDirectory</span>
+
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=FtpDeleteFile&x=7&y=5" target="blank">FtpDeleteFile</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>nConnect_Handle</span><span class='PDMOper'>,</span> <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcFileName</span>
+
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=FtpFindFirstFile&x=7&y=5" target="blank">FtpFindFirstFile</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>nConnect_Handle</span><span class='PDMOper'>,</span> <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcSearchStr</span><span class='PDMOper'>,</span> <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcWIN32_FIND_DATA</span><span class='PDMOper'>,</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>nFlags</span><span class='PDMOper'>,</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'>nContext</span>
+
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=InternetFindNextFile&x=7&y=5" target="blank">InternetFindNextFile</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>nConnect_Handle</span><span class='PDMOper'>,</span> <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcWIN32_FIND_DATA</span>
+
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=FtpGetCurrentDirectory&x=7&y=5" target="blank">FtpGetCurrentDirectory</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>nConnect_Handle</span><span class='PDMOper'>,</span> <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcDirectory</span><span class='PDMOper'>,</span> <span class='PDMResK'>Integer</span> <span class='PDMOper'>@</span><span class='PDMVar'>nMax_Path</span>
+
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=FtpGetFile&x=7&y=5" target="blank">FtpGetFile</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>nConnect_Handle</span><span class='PDMOper'>,</span> <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcRemoteFile</span><span class='PDMOper'>,</span> <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcNewFile</span><span class='PDMOper'>,</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>nFailIfExists</span><span class='PDMOper'>,</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'>nAttributes</span><span class='PDMOper'>,</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'>nFlags</span><span class='PDMOper'>,</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>nContext</span>
+
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=FtpOpenFile&x=7&y=5" target="blank">FtpOpenFile</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>nConnect_Handle</span><span class='PDMOper'>,</span> <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcRemoteFile</span><span class='PDMOper'>,</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'>nAccessType</span><span class='PDMOper'>,</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>nFlags</span><span class='PDMOper'>,</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'>nContext</span>
+
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=FtpPutFile&x=7&y=5" target="blank">FtpPutFile</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>nConnect_Handle</span><span class='PDMOper'>,</span> <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcNewFile</span><span class='PDMOper'>,</span> <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcRemoteFile</span><span class='PDMOper'>,</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>nFlags</span><span class='PDMOper'>,</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'>nContext</span>
+
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=FtpRemoveDirectory&x=7&y=5" target="blank">FtpRemoveDirectory</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>nConnect_Handle</span><span class='PDMOper'>,</span> <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcDirectory</span>
+
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=FtpRenameFile&x=7&y=5" target="blank">FtpRenameFile</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>nConnect_Handle</span><span class='PDMOper'>,</span> <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcRemoteFile</span><span class='PDMOper'>,</span> <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcNewFile</span>
+
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=FtpSetCurrentDirectory&x=7&y=5" target="blank">FtpSetCurrentDirectory</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>nConnect_Handle</span><span class='PDMOper'>,</span> <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcDirectory</span>
+
+
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=FtpCommand&x=7&y=5" target="blank">FtpCommand</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>hConnect</span><span class='PDMOper'>,</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'>fExpectResponse</span><span class='PDMOper'>,</span><span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>dwFlags</span><span class='PDMOper'>,</span> <span class='PDMResK'>STRING</span> <span class='PDMOper'>@</span> <span class='PDMVar'>lpszCommand</span><span class='PDMOper'>,</span><span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMVar'>dwContext</span><span class='PDMOper'>,</span> <span class='PDMResK'>Integer</span> <span class='PDMOper'>@</span> <span class='PDMVar'>phFtpCommand</span>
+
+
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>Integer</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=InternetGetLastResponseInfo&x=7&y=5" target="blank">InternetGetLastResponseInfo</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>Integer</span> <span class='PDMOper'>@</span><span class='PDMVar'>nError</span><span class='PDMOper'>,</span> <span class='PDMResK'>String</span> <span class='PDMOper'>@</span><span class='PDMVar'>lpcBuffer</span><span class='PDMOper'>,</span> <span class='PDMResK'>Integer</span> <span class='PDMOper'>@</span><span class='PDMVar'>nMax_Path</span>
+
+
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>INTEGER</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=InternetWriteFile&x=7&y=5" target="blank">InternetWriteFile</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>INTEGER</span> <span class='PDMVar'>hFile</span><span class='PDMOper'>,</span> <span class='PDMResK'>STRING</span> <span class='PDMOper'>@</span> <span class='PDMVar'>lpBuffer</span><span class='PDMOper'>,</span><span class='PDMOper'>;</span>
+              <span class='PDMResK'>INTEGER</span> <span class='PDMVar'>dwNumberOfBytesToWrite</span><span class='PDMOper'>,</span> <span class='PDMResK'>INTEGER</span> <span class='PDMOper'>@</span> <span class='PDMVar'>lpdwNumberOfBytesWritten</span>
+
+      <span class='PDMResK'>DECLARE</span> <span class='PDMResK'>INTEGER</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=InternetReadFile&x=7&y=5" target="blank">InternetReadFile</a></span> <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>INTEGER</span> <span class='PDMVar'>hFile</span><span class='PDMOper'>,</span> <span class='PDMResK'>STRING</span> <span class='PDMOper'>@</span> <span class='PDMVar'>lpBuffer</span><span class='PDMOper'>,</span><span class='PDMOper'>;</span>
+              <span class='PDMResK'>INTEGER</span> <span class='PDMVar'>dwNumberOfBytesToWrite</span><span class='PDMOper'>,</span> <span class='PDMResK'>INTEGER</span> <span class='PDMOper'>@</span> <span class='PDMVar'>lpdwNumberOfBytesWritten</span>
+
+
+      <span class='PDMResK'>DECLARE</span> <span class='PDMVar'><a href="http://www.news2news.com/vfp/?search=InternetQueryOption&x=7&y=5" target="blank">InternetQueryOption</a></span>  <span class='PDMResK'>IN</span> <span class='PDMVar'>WinInet</span> <span class='PDMOper'>;</span>
+              <span class='PDMResK'>INTEGER</span> <span class='PDMVar'>hInternet</span><span class='PDMOper'>,</span><span class='PDMOper'>;</span>
+              <span class='PDMResK'>INTEGER</span> <span class='PDMVar'>dwOption</span><span class='PDMOper'>,</span><span class='PDMOper'>;</span>
+              <span class='PDMResK'>INTEGER</span> <span class='PDMOper'>@</span> <span class='PDMVar'>lpBuffer</span><span class='PDMOper'>,</span><span class='PDMOper'>;</span>
+              <span class='PDMResK'>INTEGER</span> <span class='PDMOper'>@</span> <span class='PDMVar'>lpdwBufferLength</span>
+
+
+      <span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>lDLL_Loaded</span> <span class='PDMOper'>=</span> <span class='PDMLit'>.T.</span>
+
+      <span class='PDMResK'>RETURN</span> <span class='PDMVar'>ERROR_SUCCESS</span>    
+</pre>
+ <!-- Code End -->
+  </div>
+ </div>
+</div>
+<div class="diaxp_mfoot"> <div class="PDM_AB_CopyRight"><!-- Footer Begin -->
+  <hr />
+  <div class="PDM_AB_Body">
+&copy; 2004-03-23 Robert Abram, &copy; 24.11.2005 Martina Jindr&uacute;
+  </div><!-- Body End -->
+ </div><!-- Footer End -->
+</div>
+<script language="JavaScript" type="text/javascript">
+lo=document.getElementById("TX_SP_1");
+lo.XType="SourceCode";
+lo.Dir="../../imgs/";
+
+
+</script>
+</body>
+</html>

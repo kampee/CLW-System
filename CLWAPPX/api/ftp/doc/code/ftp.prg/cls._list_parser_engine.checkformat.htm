@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+<head>
+<title>Method CheckFormat of class _LIST_PARSER_ENGINE</title>
+<meta content="text/html; charset=windows-1250" http-equiv="Content-Type" />
+<meta name="Generator" content="Project Documenting Machine" />
+<meta name="Version" content="1.2.3" />
+<link rel="stylesheet" href="../../css/foxw.css" type="text/css" />
+<link rel="stylesheet" href="../../css/sc.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diamp_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab_notes.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diaf_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diap_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/diac_pdm_ab.css" type="text/css" />
+<link rel="stylesheet" href="../../repository/ftp.css" type="text/css" />
+<script src="../../js/pdm.js" language="JavaScript" type="text/javascript"></script>
+<script src="../../repository/pdm_ab.js" language="JavaScript" type="text/javascript"></script>
+</head>
+<body>
+<div class="diaxp_mhead">CheckFormat Method</div>
+<div class="diaxp_mbody_class">
+
+<table class="clear_table">
+ <tbody>
+  <tr><td>Class: </td><td><a href="cls._list_parser_engine.htm" title="Skip to class _list_parser_engine">_LIST_PARSER_ENGINE</a></td></tr>
+ </tbody>
+</table>
+</div>
+<div class="diaxp_mbody">
+ <div class="SC">
+  <img onclick="ExpandSC('SP_8',-1);"class="imgEC" src="../../imgs/uptab.gif" alt="Expand/Collapse source code of procedure CheckFormat" id="IMG_SP_8" />
+  <span ondblclick="ExpandSC('SP_8',-1);" class="SCCaption"><a name="_LIST_PARSER_ENGINE">Source Code</a></span>
+  <div ondblclick="ExpandSC('SP_8',-1);" class="SCE" id="TX_SP_8">
+<!-- Code Begin -->
+<pre class="PDMCODE PDMNor" >      <span class='PDMResK'>IF</span> <span class='PDMResF'>AT</span><span class='PDMOper'>(</span><span class='PDMStr'>"\015\012"</span><span class='PDMOper'>,</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>cData</span><span class='PDMOper'>)</span><span class='PDMOper'>&gt;</span><span class='PDMLit'>0</span> <span class='PDMOper'>OR</span> <span class='PDMResF'>LEFT</span><span class='PDMOper'>(</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>cData</span><span class='PDMOper'>,</span><span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>=</span><span class='PDMStr'>"+"</span>
+         <span class='PDMResK'>RETURN</span> <span class='PDMVar'>_FTPC_PL_EPLF</span>
+      <span class='PDMResK'>ENDIF</span>
+
+      <span class='PDMResK'>IF</span> <span class='PDMResF'>SUBST</span><span class='PDMOper'>(</span><span class='PDMResK'>This</span><span class='PDMOper'>.</span><span class='PDMVar'>cData</span><span class='PDMOper'>,</span><span class='PDMLit'>2</span><span class='PDMOper'>,</span><span class='PDMLit'>1</span><span class='PDMOper'>)</span><span class='PDMOper'>=</span><span class='PDMStr'>" "</span>
+         <span class='PDMResK'>RETURN</span> <span class='PDMVar'>_FTPC_PL_NWL</span>
+      <span class='PDMResK'>ENDIF</span>
+
+      <span class='PDMResK'>RETURN</span> <span class='PDMVar'>_FTPC_PL_UNIX</span> <span class='PDMCom'>&amp;&amp; _FTPC_PL_MSWIN,_FTPC_PL_DOC, _FTPC_PL_MAC</span>
+
+
+<span class='PDMCom'>            * fňuk, fnuk, I'm lazy : http://cr.yp.to/ftpparse/ftpparse.c</span>
+<span class='PDMCom'>             * http://cr.yp.to/ftp/list/eplf.html</span>
+
+<span class='PDMCom'>*!*       /* see http://pobox.com/~djb/proto/eplf.txt */</span>
+<span class='PDMCom'>*!*       /* "+i8388621.29609,m824255902,/,\tdev" */</span>
+<span class='PDMCom'>*!*       /* "+i8388621.44468,m839956783,r,s10376,\tRFCEPLF" */</span>
+</pre>
+ <!-- Code End -->
+  </div>
+ </div>
+</div>
+<div class="diaxp_mfoot"> <div class="PDM_AB_CopyRight"><!-- Footer Begin -->
+  <hr />
+  <div class="PDM_AB_Body">
+&copy; 24.11.2005 Martina Jindr&uacute;
+  </div><!-- Body End -->
+ </div><!-- Footer End -->
+</div>
+<script language="JavaScript" type="text/javascript">
+lo=document.getElementById("TX_SP_8");
+lo.XType="SourceCode";
+lo.Dir="../../imgs/";
+
+
+</script>
+</body>
+</html>
